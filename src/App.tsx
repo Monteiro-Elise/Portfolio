@@ -2,9 +2,12 @@ import { useState, type JSX } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 function App(): JSX.Element {
   const [count, setCount] = useState(0);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -17,17 +20,16 @@ function App(): JSX.Element {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <LanguageSwitcher />
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+          {t('count')} {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
+          {t('edit')} <code>src/App.tsx</code> {t('save')}
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className="read-the-docs">{t('clic-logos')}</p>
     </>
   );
 }

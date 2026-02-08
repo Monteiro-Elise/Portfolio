@@ -1,7 +1,6 @@
-import type { JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 
-function LanguageSwitcher(): JSX.Element {
+function LanguageSwitcher() {
   const { t, i18n } = useTranslation();
 
   return (

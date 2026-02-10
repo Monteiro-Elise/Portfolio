@@ -5,21 +5,25 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
+import { FlatCompat } from '@eslint/eslintrc';
+const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
 export default [
+  ...compat.extends('prettier'),
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      parser: parser,
-      ecmaVersion: 2022,
-      sourceType: 'module',
+      parser,
       parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
       },
       globals: {
         ...globals.browser,
+        process: 'readonly',
       },
     },
     settings: {
@@ -44,7 +48,6 @@ export default [
       ],
       'react/react-in-jsx-scope': 'off',
 
-      '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/consistent-type-imports': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -58,16 +61,6 @@ export default [
       'no-debugger': 'warn',
       eqeqeq: ['warn', 'smart'],
       curly: ['warn', 'multi-line'],
-
-      indent: 'off',
-      semi: 'off',
-      quotes: 'off',
-      'comma-dangle': 'off',
-      'jsx-indent': 'off',
-      'jsx-indent-props': 'off',
-      'jsx-max-props-per-line': 'off',
-      'jsx-curly-spacing': 'off',
-      'brace-style': 'off',
     },
   },
 ];

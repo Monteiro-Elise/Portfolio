@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+set -e
+
+echo "Running lint-staged (ESLint + Prettier)..."
+npx lint-staged
+
+echo "Running TypeScript check..."
+npx tsc --build --noEmit
+
+echo "All pre-commit checks passed!"
+exit 0

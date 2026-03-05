@@ -10,10 +10,11 @@ on:
 
 jobs:
   lint:
-    name: Lint & Prettier Check
+    name: Lint & Prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - &setup-node
+        uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -25,31 +26,19 @@ jobs:
     name: TypeScript Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
+      - *setup-node
       - run: npx tsc --noEmit
 
   build:
     name: Build Project
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
+      - *setup-node
       - run: npm run build
 
   i18n:
-    name: i18n Check
+    name: i18n Consistency Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
+      - *setup-node
       - run: npm run i18n:check

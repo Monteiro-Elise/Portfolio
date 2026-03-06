@@ -20,26 +20,26 @@ jobs:
     name: TypeScript Check
     runs-on: ubuntu-latest
     steps:
-      - uses: ./actions/setup-node-npm
+      - uses: ./.github/actions/setup-node-npm/action.yml
       - run: npx tsc --noEmit
 
   build:
     name: Build Project
     runs-on: ubuntu-latest
     steps:
-      - uses: ./actions/setup-node-npm
+      - uses: ./.github/actions/setup-node-npm/action.yml
       - run: npm run build
 
   i18n:
     name: i18n Check
     runs-on: ubuntu-latest
     steps:
-      - uses: ./actions/setup-node-npm
+      - uses: ./.github/actions/setup-node-npm/action.yml
       - run: npm run i18n:check
 
   audit:
     name: audit Check
     runs-on: ubuntu-latest
     steps:
-      - uses: ./actions/setup-node-npm
+      - uses: ./.github/actions/setup-node-npm/action.yml
       - run: npm audit

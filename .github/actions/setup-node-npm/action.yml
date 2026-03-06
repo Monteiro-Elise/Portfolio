@@ -12,4 +12,6 @@ runs:
           ~/.npm
           node_modules
         key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
     - run: npm ci --prefer-offline --no-audit --progress=false
+      shell: bash

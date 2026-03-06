@@ -1,0 +1,11 @@
+name: Setup Node + npm ci
+description: Checkout repo, setup Node, cache npm, install dependencies
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 24
+        cache: 'npm'
+    - run: npm ci --prefer-offline --no-audit --progress=false
+      shell: bash

@@ -8,7 +8,7 @@
       "eslint --fix --max-warnings=0",
       "prettier --write"
     ],
-    "*.{json,css,md}": [
+    "*.{json,css,md,yml}": [
       "prettier --write"
     ]
   },
@@ -21,6 +21,7 @@
     "format:check": "prettier --check .",
     "preview": "vite preview",
     "i18n:extract": "i18next 'src/**/*.{ts,tsx}' --config i18next-parser.config.cjs",
+    "i18n:check": "npm run i18n:extract && git diff --exit-code",
     "prepare": "husky"
   },
   "dependencies": {

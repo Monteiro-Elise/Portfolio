@@ -6,12 +6,6 @@ runs:
     - uses: actions/setup-node@v4
       with:
         node-version: 24
-    - uses: actions/cache@v4
-      with:
-        path: |
-          ~/.npm
-          node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-
+        cache: 'npm'
     - run: npm ci --prefer-offline --no-audit --progress=false
       shell: bash

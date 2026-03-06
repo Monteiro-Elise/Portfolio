@@ -13,12 +13,14 @@ jobs:
     name: Lint & Prettier
     runs-on: ubuntu-latest
     steps:
-      - &setup-node
+      - &checkout
         uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - &setup-node
+        uses: actions/setup-node@v4
         with:
-          node-version: 20
-      - run: npm ci
+          node-version: 24
+      - &npm-install
+        run: npm ci
       - run: npm run lint
       - run: npx prettier --check .
 
@@ -26,19 +28,25 @@ jobs:
     name: TypeScript Check
     runs-on: ubuntu-latest
     steps:
+      - *checkout
       - *setup-node
+      - *npm-install
       - run: npx tsc --noEmit
 
   build:
     name: Build Project
     runs-on: ubuntu-latest
     steps:
+      - *checkout
       - *setup-node
+      - *npm-install
       - run: npm run build
 
   i18n:
     name: i18n Consistency Check
     runs-on: ubuntu-latest
     steps:
+      - *checkout
       - *setup-node
+      - *npm-install
       - run: npm run i18n:check

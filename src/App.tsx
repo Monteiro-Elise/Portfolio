@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
+import ToggleDarkMode from './components/ToggleDarkMode';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -11,8 +12,8 @@ function App() {
 
   return (
     <>
-      <div className="h-screen flex items-center justify-center bg-blue-500">
-        <h1 className="text-white text-4xl font-bold">Tailwind OK</h1>
+      <div className="bg-white dark:bg-black">
+        <ToggleDarkMode />
         <div>
           <a href="https://vite.dev" target="_blank" rel="noreferrer">
             <img src={viteLogo} className="logo" alt="Vite logo" />

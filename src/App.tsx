@@ -11,25 +11,28 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="h-screen flex items-center justify-center bg-blue-500">
+        <h1 className="text-white text-4xl font-bold">Tailwind OK</h1>
+        <div>
+          <a href="https://vite.dev" target="_blank" rel="noreferrer">
+            <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank" rel="noreferrer">
+            <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+        </div>
+        <h1>Vite + React</h1>
+        <LanguageSwitcher />
+        <div className="card">
+          <button onClick={() => setCount((count) => count + 1)}>
+            {t('count')} {count}
+          </button>
+          <p>
+            {t('edit')} <code>src/App.tsx</code> {t('save')}
+          </p>
+        </div>
+        <p className="read-the-docs">{t('clic-logos')}</p>
       </div>
-      <h1>Vite + React</h1>
-      <LanguageSwitcher />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          {t('count')} {count}
-        </button>
-        <p>
-          {t('edit')} <code>src/App.tsx</code> {t('save')}
-        </p>
-      </div>
-      <p className="read-the-docs">{t('clic-logos')}</p>
     </>
   );
 }

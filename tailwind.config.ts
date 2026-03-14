@@ -16,6 +16,9 @@ export default {
         secondary: 'var(--text-secondary)',
         tertiary: 'var(--text-tertiary)',
       },
+      backgroundImage: {
+        banner: 'var(--banner-image)',
+      },
     },
   },
 } satisfies Config;

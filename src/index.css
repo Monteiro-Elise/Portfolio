@@ -10,6 +10,7 @@
   --text-primary: #7e2a0c;
   --text-secondary: #9f2d00;
   --text-tertiary: #374151;
+  --banner-image: url('./assets/banner/banner.jpg');
 }
 
 .dark {
@@ -20,4 +21,5 @@
   --text-primary: #e9d4ff;
   --text-secondary: #d7affc;
   --text-tertiary: #e5e7eb;
+  --banner-image: url('./assets/banner/banner_dark.jpg');
 }

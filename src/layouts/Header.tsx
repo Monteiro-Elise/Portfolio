@@ -1,5 +1,6 @@
 import { Download } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
+import { FaLinkedin } from 'react-icons/fa6';
 import { CONSTANTS } from '../utils/constants';
 import { useTranslation } from 'react-i18next';
 
@@ -28,6 +29,14 @@ function Header() {
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <SiGithub className="w-5 h-5" />
+        </a>
+
+        {/* Linkedin */}
+        <a
+          href={CONSTANTS.linkedin}
+          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
+        >
+          <FaLinkedin className="w-5 h-5" />
         </a>
       </div>
     </header>

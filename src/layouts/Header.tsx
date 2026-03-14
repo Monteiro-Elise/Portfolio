@@ -1,4 +1,6 @@
 import { Download } from 'lucide-react';
+import { SiGithub } from 'react-icons/si';
+import { CONSTANTS } from '../utils/constants';
 import { useTranslation } from 'react-i18next';
 
 function Header() {
@@ -16,6 +18,16 @@ function Header() {
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <Download className="w-5 h-5" />
+        </a>
+
+        {/* Github */}
+        <a
+          href={CONSTANTS.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
+        >
+          <SiGithub className="w-5 h-5" />
         </a>
       </div>
     </header>

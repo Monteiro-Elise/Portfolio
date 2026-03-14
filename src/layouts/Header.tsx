@@ -1,4 +1,4 @@
-import { Download } from 'lucide-react';
+import { Download, Mail } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa6';
 import { CONSTANTS } from '../utils/constants';
@@ -37,6 +37,14 @@ function Header() {
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <FaLinkedin className="w-5 h-5" />
+        </a>
+
+        {/* Mail */}
+        <a
+          href={CONSTANTS.mail}
+          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
+        >
+          <Mail className="w-5 h-5" />
         </a>
       </div>
     </header>

@@ -1,3 +1,8 @@
 {
-  "copy-right": "All rights reserved"
+  "copy-right": "All rights reserved",
+  "lang": {
+    "en": "English",
+    "fr": "French"
+  },
+  "languages": "Languages"
 }

@@ -1,3 +1,4 @@
+import LanguageSwitcher from '../components/LanguageSwitcher';
 import { Download, Mail } from 'lucide-react';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa6';
@@ -46,6 +47,8 @@ function Header() {
         >
           <Mail className="w-5 h-5" />
         </a>
+
+        <LanguageSwitcher />
       </div>
     </header>
   );

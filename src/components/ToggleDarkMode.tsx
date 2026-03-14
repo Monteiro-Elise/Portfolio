@@ -1,16 +1,16 @@
-import useDarkMode from './useDarkMode';
+import { Moon, Sun } from 'lucide-react';
+import useDarkMode from '../hooks/useDarkMode';
 
 export default function ToggleDarkMode() {
-  const { toggleDarkMode, isDarkMode } = useDarkMode();
+  const { toggleDarkMode } = useDarkMode();
 
   return (
-    <div
+    <button
       onClick={toggleDarkMode}
-      className="relative w-14 h-8 rounded-3xl bg-slate-300 dark:bg-zinc-700 place--center cursor-pointer"
+      className="p-2 rounded-md text-accent transition-opacity hover:opacity-70"
     >
-      <div
-        className={`absolute top-1 rounded-full w-6 h-6 bg-blue-500 ${isDarkMode ? 'left-1' : 'right-1'}`}
-      />
-    </div>
+      <Moon className="h-5 w-5 dark:hidden" />
+      <Sun className="hidden h-5 w-5 dark:block" />
+    </button>
   );
 }

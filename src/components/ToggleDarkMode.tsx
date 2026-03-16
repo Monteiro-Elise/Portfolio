@@ -1,4 +1,4 @@
-import { Moon, Sun } from 'lucide-react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import useDarkMode from '../hooks/useDarkMode';
 
 export default function ToggleDarkMode() {
@@ -9,8 +9,8 @@ export default function ToggleDarkMode() {
       onClick={toggleDarkMode}
       className="p-2 rounded-md text-accent transition-opacity hover:opacity-70"
     >
-      <Moon className="h-5 w-5 dark:hidden" />
-      <Sun className="hidden h-5 w-5 dark:block" />
+      <FiMoon className="h-5 w-5 dark:hidden" />
+      <FiSun className="hidden h-5 w-5 dark:block" />
     </button>
   );
 }

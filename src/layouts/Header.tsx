@@ -1,6 +1,6 @@
 import LanguageSwitcher from '../components/LanguageSwitcher';
 import ToggleDarkMode from '../components/ToggleDarkMode';
-import { Download, Mail } from 'lucide-react';
+import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa6';
 import { CONSTANTS } from '../utils/constants';
@@ -20,7 +20,7 @@ function Header() {
           download="Elise_Monteiro_CV.pdf"
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
-          <Download className="w-5 h-5" />
+          <FiDownload className="w-5 h-5" />
         </a>
 
         {/* Github */}
@@ -46,7 +46,7 @@ function Header() {
           href={CONSTANTS.mail}
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
-          <Mail className="w-5 h-5" />
+          <FiMail className="w-5 h-5" />
         </a>
 
         <LanguageSwitcher />

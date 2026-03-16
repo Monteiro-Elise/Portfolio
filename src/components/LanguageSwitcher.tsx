@@ -1,4 +1,4 @@
-import { Globe } from 'lucide-react';
+import { FiGlobe } from 'react-icons/fi';
 import { useState } from 'react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
@@ -31,7 +31,7 @@ function LanguageSwitcher() {
         onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
         className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary"
       >
-        <Globe className="w-4 h-4" />
+        <FiGlobe className="w-4 h-4" />
         <span>{t('languages')}</span>
       </button>
       {languageMenuOpen && (

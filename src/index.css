@@ -1,3 +1,25 @@
 @import 'tailwindcss';
 
 @custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #ffffff;
+  --color-secondary: #fefce8;
+  --color-component: #fff7ee;
+  --color-accent: #f54900;
+  --text-primary: #7e2a0c;
+  --text-secondary: #9f2d00;
+  --text-tertiary: #374151;
+  --banner-image: url('./assets/banner/banner.jpg');
+}
+
+.dark {
+  --color-primary: #000000;
+  --color-secondary: #3c0366;
+  --color-component: #11172f;
+  --color-accent: #ad46ff;
+  --text-primary: #e9d4ff;
+  --text-secondary: #d7affc;
+  --text-tertiary: #e5e7eb;
+  --banner-image: url('./assets/banner/banner_dark.jpg');
+}

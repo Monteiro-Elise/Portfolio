@@ -1,40 +1,31 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import LanguageSwitcher from './components/LanguageSwitcher';
-import { useTranslation } from 'react-i18next';
-import ToggleDarkMode from './components/ToggleDarkMode';
+import Banner from './components/Banner';
+import Footer from './layouts/Footer';
+import Header from './layouts/Header';
+import AboutSection from './sections/AboutSection';
+import SkillsSection from './sections/SkillsSection';
+import ProjectsSection from './sections/ProjectsSection';
+import SectionLayout from './layouts/SectionLayout';
 
 function App() {
-  const [count, setCount] = useState(0);
-  const { t } = useTranslation();
+  const sections = [
+    { component: <AboutSection /> },
+    { component: <SkillsSection /> },
+    { component: <ProjectsSection /> },
+  ];
 
   return (
-    <>
-      <div className="bg-white dark:bg-black">
-        <ToggleDarkMode />
-        <div>
-          <a href="https://vite.dev" target="_blank" rel="noreferrer">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank" rel="noreferrer">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-          </a>
-        </div>
-        <h1>Vite + React</h1>
-        <LanguageSwitcher />
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            {t('count')} {count}
-          </button>
-          <p>
-            {t('edit')} <code>src/App.tsx</code> {t('save')}
-          </p>
-        </div>
-        <p className="read-the-docs">{t('clic-logos')}</p>
-      </div>
-    </>
+    <div className="min-h-screen bg-primary transition-colors duration-300">
+      <Header />
+      <main className="pt-9">
+        <Banner />
+        {sections.map((section, index) => (
+          <SectionLayout key={index} index={index} total={sections.length}>
+            {section.component}
+          </SectionLayout>
+        ))}
+      </main>
+      <Footer />
+    </div>
   );
 }
 

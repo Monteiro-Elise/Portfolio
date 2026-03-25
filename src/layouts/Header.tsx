@@ -7,7 +7,7 @@ import { CONSTANTS } from '../utils/constants';
 import { useTranslation } from 'react-i18next';
 
 function Header() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const cvHref = `/cv/CV_Elise_MONTEIRO_${i18n.language}.pdf`;
 
   return (
@@ -17,7 +17,7 @@ function Header() {
         {/* Download CV Button */}
         <a
           href={cvHref}
-          download="Elise_Monteiro_CV.pdf"
+          download={`${CONSTANTS.name} ${t(`resume`)}.pdf`}
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <FiDownload className="w-5 h-5" />
@@ -43,7 +43,7 @@ function Header() {
 
         {/* Mail */}
         <a
-          href={CONSTANTS.mail}
+          href={`mailto:${CONSTANTS.mail}`}
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <FiMail className="w-5 h-5" />

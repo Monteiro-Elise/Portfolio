@@ -43,7 +43,7 @@ function Header() {
 
         {/* Mail */}
         <a
-          href={CONSTANTS.mail}
+          href={`mailto:${CONSTANTS.mail}`}
           className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
         >
           <FiMail className="w-5 h-5" />

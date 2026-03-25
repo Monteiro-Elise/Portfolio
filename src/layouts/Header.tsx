@@ -4,11 +4,11 @@ import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 import { FaLinkedin } from 'react-icons/fa6';
 import { CONSTANTS } from '../utils/constants';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/useLanguage';
 
 function Header() {
-  const { i18n, t } = useTranslation();
-  const cvHref = `/cv/CV_Elise_MONTEIRO_${i18n.language}.pdf`;
+  const { t, currentLanguage } = useLanguage();
+  const cvHref = `/cv/CV_Elise_MONTEIRO_${currentLanguage}.pdf`;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-component backdrop-blur-sm">

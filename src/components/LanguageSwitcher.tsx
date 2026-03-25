@@ -1,42 +1,57 @@
 import { FiGlobe } from 'react-icons/fi';
-import { useState } from 'react';
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { CONSTANTS } from '../utils/constants';
+import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../hooks/useLanguage';
 
 function LanguageSwitcher() {
-  const { t, i18n } = useTranslation();
-  const language = i18n.language;
-  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
-  const buttons: React.ReactElement[] = [];
-  for (const lang of CONSTANTS.languages) {
-    buttons.push(
-      <button
-        key={lang}
-        onClick={() => i18n.changeLanguage(lang)}
-        className={`w-full text-left px-4 py-2 text-sm
-        ${
-          language === lang
-            ? 'bg-accent text-primary'
-            : 'bg-component text-accent'
-        } transition-colors`}
-      >
-        {t(`lang.${lang}`)}
-      </button>
-    );
-  }
+  const { t, currentLanguage, changeLanguage, languages } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  const handleLanguageChange = (lang: string) => {
+    changeLanguage(lang);
+    setIsOpen(false);
+  };
+
   return (
-    <div className="relative">
+    <div className="relative" ref={menuRef}>
       <button
-        onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+        onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary"
       >
         <FiGlobe className="w-4 h-4" />
         <span>{t('languages')}</span>
       </button>
-      {languageMenuOpen && (
+      {isOpen && (
         <div className="absolute right-0 mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent overflow-hidden">
-          {buttons}
+          {languages.map((lang) => (
+            <button
+              key={lang}
+              onClick={() => handleLanguageChange(lang)}
+              className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                currentLanguage === lang
+                  ? 'bg-accent text-primary'
+                  : 'bg-component text-accent'
+              }`}
+            >
+              {t(`lang.${lang}`)}
+            </button>
+          ))}
         </div>
       )}
     </div>

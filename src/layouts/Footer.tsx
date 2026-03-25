@@ -1,8 +1,8 @@
 import { CONSTANTS } from '../utils/constants';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../hooks/useLanguage';
 
 function Footer() {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   return (
     <footer className="py-8 border-t bg-primary border-accent text-accent">
       <div className="container mx-auto px-4 text-center">

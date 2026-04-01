@@ -1,6 +1,4 @@
 function Banner() {
-  return (
-    <div className="h-32 bg-cover bg-center bg-(image:--banner-image)"></div>
-  );
+  return <div className="h-48  bg-banner bg-cover bg-center"></div>;
 }
 export default Banner;

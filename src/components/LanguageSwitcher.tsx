@@ -32,7 +32,7 @@ function LanguageSwitcher() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary"
+        className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary hover"
       >
         <FiGlobe className="w-4 h-4" />
         <span>{t('languages')}</span>
@@ -43,7 +43,7 @@ function LanguageSwitcher() {
             <button
               key={lang}
               onClick={() => handleLanguageChange(lang)}
-              className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+              className={`w-full text-left px-4 py-2 text-sm transition-colors hover ${
                 currentLanguage === lang
                   ? 'bg-accent text-primary'
                   : 'bg-component text-accent'

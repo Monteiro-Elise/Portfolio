@@ -7,10 +7,13 @@
   --color-secondary: #fefce8;
   --color-component: #fff7ee;
   --color-accent: #f54900;
-  --text-primary: #7e2a0c;
-  --text-secondary: #9f2d00;
-  --text-tertiary: #374151;
-  --banner-image: url('./assets/banner/banner.jpg');
+  --color-text-primary: #7e2a0c;
+  --color-text-secondary: #9f2d00;
+  --color-text-tertiary: #374151;
+  --color-other: #faf5ba;
+  --background-image-banner: url('./assets/banner/banner.jpg');
+  --shadow-color-primary: rgba(126, 42, 12, 0.24);
+  --shadow-color-secondary: rgba(245, 73, 0, 0.24);
 }
 
 .dark {
@@ -18,8 +21,62 @@
   --color-secondary: #3c0366;
   --color-component: #11172f;
   --color-accent: #ad46ff;
-  --text-primary: #e9d4ff;
-  --text-secondary: #d7affc;
-  --text-tertiary: #e5e7eb;
-  --banner-image: url('./assets/banner/banner_dark.jpg');
+  --color-text-primary: #e9d4ff;
+  --color-text-secondary: #c995f9;
+  --color-text-tertiary: #e5e7eb;
+  --color-other: #d4fff5;
+  --background-image-banner: url('./assets/banner/banner_dark.jpg');
+  --shadow-color-primary: rgba(233, 212, 255, 0.5);
+  --shadow-color-secondary: rgba(173, 70, 255, 0.5);
+}
+
+h1 {
+  @apply text-3xl md:text-4xl mb-8 mx-auto max-w-5xl text-text-primary;
+}
+
+h2 {
+  @apply text-xl md:text-2xl font-bold text-text-secondary;
+}
+
+h3 {
+  @apply text-xl font-bold py-4 text-text-secondary;
+  text-align: center;
+}
+
+section p {
+  @apply text-text-tertiary;
+}
+
+video {
+  border-radius: 20px;
+  box-shadow: var(--shadow-color-secondary) 2px 2px 10px 9px;
+}
+
+img {
+  border-radius: 20px;
+  box-shadow: var(--shadow-color-secondary) 2px 2px 10px 9px;
+}
+
+.hover {
+  @apply hover:opacity-70 transition-opacity cursor-pointer;
+}
+
+.icon-btn {
+  @apply p-2 text-accent hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer;
+}
+
+.icon-decoration {
+  @apply w-5 h-5;
+}
+
+.icon-action {
+  @apply w-6 h-6;
+}
+
+.icon-header {
+  @apply w-5 h-5;
+}
+
+.section-content {
+  @apply mx-auto max-w-5xl px-4;
 }

@@ -6,7 +6,7 @@ module.exports = {
   keepRemoved: [/lang.*/, /section.*/],
   defaultNamespace: 'translation',
   useKeysAsDefaultValue: true,
-  keySeparator: false,
+  keySeparator: '.',
   namespaceSeparator: false,
   verbose: true,
 };

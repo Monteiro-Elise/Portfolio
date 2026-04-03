@@ -11,6 +11,16 @@
     "fr": "French"
   },
   "languages": "Languages",
+  "projects": {
+    "project1": {
+      "description": "description 1",
+      "title": "title 1"
+    },
+    "project2": {
+      "description": "description 2",
+      "title": "title 2"
+    }
+  },
   "resume": "Resume",
   "sections": {
     "about": "About",

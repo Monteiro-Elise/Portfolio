@@ -8,9 +8,9 @@ import SectionLayout from './layouts/SectionLayout';
 
 function App() {
   const sections = [
-    { component: <AboutSection /> },
-    { component: <SkillsSection /> },
-    { component: <ProjectsSection /> },
+    { id: 'about', component: <AboutSection /> },
+    { id: 'skills', component: <SkillsSection /> },
+    { id: 'projects', component: <ProjectsSection /> },
   ];
 
   return (
@@ -19,7 +19,12 @@ function App() {
       <main className="pt-9">
         <Banner />
         {sections.map((section, index) => (
-          <SectionLayout key={index} index={index} total={sections.length}>
+          <SectionLayout
+            key={index}
+            id={section.id}
+            index={index}
+            total={sections.length}
+          >
             {section.component}
           </SectionLayout>
         ))}

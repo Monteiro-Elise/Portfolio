@@ -1,5 +1,5 @@
 function ProjectsSection() {
-  return <div className="mx-auto max-w-5xl px-4">Section 3</div>;
+  return <>Section 3</>;
 }
 
 export default ProjectsSection;

@@ -13,14 +13,14 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-component backdrop-blur-sm">
       {/* Actions */}
-      <div className="flex items-center justify-end gap-3">
+      <div className="flex items-center justify-end gap-3 px-3">
         {/* Download CV Button */}
         <a
           href={cvHref}
           download={`${CONSTANTS.name} ${t(`resume`)}.pdf`}
-          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
+          className="icon-btn"
         >
-          <FiDownload className="w-5 h-5" />
+          <FiDownload className="icon-header" />
         </a>
 
         {/* Github */}
@@ -28,25 +28,19 @@ function Header() {
           href={CONSTANTS.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
+          className="icon-btn"
         >
-          <SiGithub className="w-5 h-5" />
+          <SiGithub className="icon-header" />
         </a>
 
         {/* Linkedin */}
-        <a
-          href={CONSTANTS.linkedin}
-          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
-        >
-          <FaLinkedin className="w-5 h-5" />
+        <a href={CONSTANTS.linkedin} className="icon-btn">
+          <FaLinkedin className="icon-header" />
         </a>
 
         {/* Mail */}
-        <a
-          href={`mailto:${CONSTANTS.mail}`}
-          className="p-2 rounded-md hover:opacity-70 transition-opacity text-accent"
-        >
-          <FiMail className="w-5 h-5" />
+        <a href={`mailto:${CONSTANTS.mail}`} className="icon-btn">
+          <FiMail className="icon-header" />
         </a>
 
         <LanguageSwitcher />

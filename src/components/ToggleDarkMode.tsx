@@ -5,12 +5,9 @@ export default function ToggleDarkMode() {
   const { toggleDarkMode } = useDarkMode();
 
   return (
-    <button
-      onClick={toggleDarkMode}
-      className="p-2 rounded-md text-accent transition-opacity hover:opacity-70"
-    >
-      <FiMoon className="h-5 w-5 dark:hidden" />
-      <FiSun className="hidden h-5 w-5 dark:block" />
+    <button onClick={toggleDarkMode} className="icon-btn">
+      <FiMoon className="icon-header dark:hidden" />
+      <FiSun className="hidden icon-header dark:block" />
     </button>
   );
 }

@@ -1,4 +1,9 @@
 {
+  "category": {
+    "databases": "Databases",
+    "frameworks": "Frameworks",
+    "languages": "Languages"
+  },
   "copy-right": "All rights reserved",
   "job": "Fullstack Developer",
   "lang": {

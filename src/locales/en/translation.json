@@ -5,5 +5,10 @@
     "fr": "French"
   },
   "languages": "Languages",
-  "resume": "Resume"
+  "resume": "Resume",
+  "sections": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills"
+  }
 }

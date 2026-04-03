@@ -3,7 +3,7 @@ module.exports = {
   output: 'src/locales/$LOCALE/$NAMESPACE.json',
   createOldCatalogs: false,
   sort: true,
-  keepRemoved: [/lang.*/],
+  keepRemoved: [/lang.*/, /section.*/],
   defaultNamespace: 'translation',
   useKeysAsDefaultValue: true,
   keySeparator: false,

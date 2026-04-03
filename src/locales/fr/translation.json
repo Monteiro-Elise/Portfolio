@@ -5,5 +5,10 @@
     "fr": "Français"
   },
   "languages": "Langues",
-  "resume": "CV"
+  "resume": "CV",
+  "sections": {
+    "about": "Présentation",
+    "projects": "Projets",
+    "skills": "Compétences"
+  }
 }

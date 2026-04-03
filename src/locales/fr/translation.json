@@ -1,4 +1,9 @@
 {
+  "category": {
+    "databases": "Base de données",
+    "frameworks": "Frameworks",
+    "languages": "Langues"
+  },
   "copy-right": "Tous droits réservés",
   "job": "Développeuse Fullstack",
   "lang": {

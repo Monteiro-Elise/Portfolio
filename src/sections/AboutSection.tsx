@@ -1,5 +1,11 @@
 function AboutSection() {
-  return <>Section 1</>;
+  return (
+    <div className="section-content">
+      <div className="text-lg leading-relaxed">
+        <p></p>
+      </div>
+    </div>
+  );
 }
 
 export default AboutSection;

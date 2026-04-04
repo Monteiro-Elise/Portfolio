@@ -9,7 +9,8 @@
   "category": {
     "databases": "Databases",
     "frameworks": "Frameworks",
-    "languages": "Languages"
+    "languages": "Languages",
+    "tools": "Tools"
   },
   "copy-right": "All rights reserved",
   "job": "Fullstack Developer",

@@ -1,6 +1,34 @@
 import { SkillsCategory } from '../components/SkillsCategory';
-import { FiMoon, FiSun, FiPhone, FiMail } from 'react-icons/fi';
 import { useLanguage } from '../hooks/useLanguage';
+import {
+  FaGitAlt,
+  FaPython,
+  FaDocker,
+  FaJava,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaAngular,
+  FaVuejs,
+  FaNodeJs,
+  FaDatabase,
+} from 'react-icons/fa';
+import { FaC } from 'react-icons/fa6';
+import { FaGolang } from 'react-icons/fa6';
+import {
+  SiGithubactions,
+  SiPhp,
+  SiIntellijidea,
+  SiKotlin,
+  SiTypescript,
+  SiDjango,
+  SiSpring,
+  SiMongodb,
+} from 'react-icons/si';
+import { BiLogoVisualStudio } from 'react-icons/bi';
+import { DiEclipse, DiJavascript1, DiRedis } from 'react-icons/di';
+import { GrMysql } from 'react-icons/gr';
+import { BiLogoPostgresql } from 'react-icons/bi';
 
 function SkillsSection() {
   const { t } = useLanguage();
@@ -8,31 +36,49 @@ function SkillsSection() {
     {
       category: t('category.languages'),
       skills: [
-        { name: 'L1', icon: FiMoon },
-        { name: 'L2', icon: FiSun },
-        { name: 'L3', icon: FiPhone },
-        { name: 'L4', icon: FiMail },
-        { name: 'L5', icon: FiMoon },
-        { name: 'L6', icon: FiMoon },
-        { name: 'L7', icon: FiSun },
+        { name: 'Python', icon: FaPython },
+        { name: 'Java', icon: FaJava },
+        { name: 'C', icon: FaC },
+        { name: 'PHP', icon: SiPhp },
+        { name: 'Go', icon: FaGolang },
+        { name: 'Kotlin', icon: SiKotlin },
+        { name: 'Javascript', icon: DiJavascript1 },
+        { name: 'Typescript', icon: SiTypescript },
+        { name: 'HTML', icon: FaHtml5 },
+        { name: 'CSS', icon: FaCss3Alt },
       ],
     },
     {
       category: t('category.frameworks'),
       skills: [
-        { name: 'f1', icon: FiMoon },
-        { name: 'f2', icon: FiSun },
-        { name: 'f3', icon: FiSun },
+        { name: 'Django', icon: SiDjango },
+        { name: 'Spring', icon: SiSpring },
+        { name: 'React', icon: FaReact },
+        { name: 'Angular', icon: FaAngular },
+        { name: 'Vue.js', icon: FaVuejs },
+        { name: 'Node.js', icon: FaNodeJs },
       ],
     },
     {
       category: t('category.databases'),
       skills: [
-        { name: 'd1', icon: FiMoon },
-        { name: 'd2', icon: FiMoon },
-        { name: 'd3', icon: FiSun },
-        { name: 'd4', icon: FiMoon },
-        { name: 'D5', icon: FiMoon },
+        { name: 'SQL', icon: FaDatabase },
+        { name: 'PostgreSQL', icon: BiLogoPostgresql },
+        { name: 'MySQL', icon: GrMysql },
+        { name: 'NoSQL', icon: FaDatabase },
+        { name: 'MongoDB', icon: SiMongodb },
+        { name: 'Redis', icon: DiRedis },
+      ],
+    },
+    {
+      category: t('category.tools'),
+      skills: [
+        { name: 'Git', icon: FaGitAlt },
+        { name: 'CI/CD', icon: SiGithubactions },
+        { name: 'Docker', icon: FaDocker },
+        { name: 'Visual Studio Code', icon: BiLogoVisualStudio },
+        { name: 'Eclipse', icon: DiEclipse },
+        { name: 'IntelliJ', icon: SiIntellijidea },
       ],
     },
   ];

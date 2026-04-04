@@ -1,4 +1,11 @@
 {
+  "about": {
+    "construction": "Ce site est en construction et évoluera avec moi au fil de mes projets et de mes expériences.",
+    "contact": "N'hésitez pas à me contacter. Je serai très heureuse de pouvoir vous aider dans vos futurs projets.",
+    "intro": "Bienvenue sur mon portfolio, un espace où je centralise mes projets, mon CV et mes différents moyens pour apprendre à me connaître.",
+    "passion": "Aimant la résolution de problèmes et adorant apprendre, je me suis naturellement dirigée vers l'informatique, une science nouvelle dans laquelle il y a tant de choses à découvrir et évoluant à une vitesse folle.",
+    "skills": "Mon parcours m'a amenée à pratiquer différents langages ainsi que plusieurs frameworks. Cette diversité témoigne de ma capacité d'adaptation, d'apprentissage rapide, et je suis convaincue de pouvoir assimiler vos outils et technologies pour devenir la ressource dont vous avez besoin."
+  },
   "category": {
     "databases": "Base de données",
     "frameworks": "Frameworks",

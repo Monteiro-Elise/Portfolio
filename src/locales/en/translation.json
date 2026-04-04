@@ -1,4 +1,11 @@
 {
+  "about": {
+    "construction": "This site is under construction and will evolve with me as I progress through my projects and experiences.",
+    "contact": "Please feel free to contact me. I would be very happy to assist you with your future projects.",
+    "intro": "Welcome to my portfolio, a space where I centralize my projects, my CV, and various ways to get to know me.",
+    "passion": "Loving problem-solving and enjoying learning, I naturally turned to computer science, a new field with so much to discover and evolving at a remarkable speed.",
+    "skills": "My journey has led me to work with different programming languages and several frameworks. This diversity reflects my adaptability and quick learning, and I am confident in my ability to master your tools and technologies to become the resource you need."
+  },
   "category": {
     "databases": "Databases",
     "frameworks": "Frameworks",

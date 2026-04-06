@@ -6,6 +6,7 @@
   --color-primary: #ffffff;
   --color-secondary: #fefce8;
   --color-component: #fff7ee;
+  --color-subcomponent: #f8ece1;
   --color-accent: #f54900;
   --color-text-primary: #7e2a0c;
   --color-text-secondary: #9f2d00;
@@ -20,6 +21,7 @@
   --color-primary: #000000;
   --color-secondary: #3c0366;
   --color-component: #11172f;
+  --color-subcomponent: #210040;
   --color-accent: #ad46ff;
   --color-text-primary: #e9d4ff;
   --color-text-secondary: #c995f9;
@@ -81,6 +83,19 @@ img {
   @apply mx-auto max-w-5xl px-4;
 }
 
+.show-pc {
+  @apply hidden md:block;
+}
+
+.show-mobile {
+  @apply flex sm:hidden;
+}
+
+.hidden-mobile {
+  @apply hidden sm:flex;
+}
+
+/* Projects Section Styles */
 .project-container {
   margin-right: 10vw;
   margin-left: 5vw;

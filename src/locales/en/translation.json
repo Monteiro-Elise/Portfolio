@@ -20,13 +20,42 @@
   },
   "languages": "Languages",
   "projects": {
-    "project1": {
-      "description": "description 1",
-      "title": "title 1"
+    "compiler": {
+      "description": "This project translates a subset of the C language into executable assembly code (NASM).",
+      "features": {
+        "amd64_code": "Generation of code compliant with AMD64 conventions",
+        "ast": "Construction and traversal of an abstract syntax tree (AST)",
+        "lex_syntax": "Lexical and syntactic analysis of the TPC language",
+        "test_coverage": "Implementation of tests covering all known scenarios: success, syntax errors, semantic errors, and warnings.",
+        "test_report": "Automated and centralized generation of test reports."
+      },
+      "title": "Compiler"
     },
-    "project2": {
-      "description": "description 2",
-      "title": "title 2"
+    "distribu_calcul": {
+      "description": "TCP-based distributed system for delegating and executing intensive computations across a network of machines.",
+      "features": {
+        "architecture": "Distributed architecture with parent/child management between machines",
+        "connection_handling": "Handling connections, disconnections, and failures without data loss",
+        "distributed_execution": "Distributed execution of conjectures over value ranges",
+        "non_blocking": "Non-blocking download of JARs containing algorithms",
+        "results": "Centralization of results into a file"
+      },
+      "title": "DistribuMath"
+    },
+    "dodge_run": {
+      "description": "A small real-time game where the player controls a character. This mini-project demonstrates the practical use of data structures to determine the execution order of events, including the use of a priority queue to schedule events.",
+      "title": "DodgeRun"
+    },
+    "review": {
+      "description": "This project allows users to submit Java code and unit tests to receive reviews from other users. The platform provides features for tracking, voting, and commenting on code and reviews.",
+      "features": {
+        "collaboration": "Collaboration in a team of 5 using Agile Scrum methodology",
+        "mvc_role": "MVC architecture with role-based access control",
+        "secure": "Secure authentication system and user data protection",
+        "setup": "Application and database configuration",
+        "test": "Microservice for safely executing unit tests"
+      },
+      "title": "Review"
     }
   },
   "resume": "Resume",

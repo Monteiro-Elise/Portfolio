@@ -11,7 +11,7 @@
   --color-text-secondary: #9f2d00;
   --color-text-tertiary: #374151;
   --color-other: #faf5ba;
-  --background-image-banner: url('./assets/banner/banner.jpg');
+  --background-image-banner: url('/banner/banner.jpg');
   --shadow-color-primary: rgba(126, 42, 12, 0.24);
   --shadow-color-secondary: rgba(245, 73, 0, 0.24);
 }
@@ -25,7 +25,7 @@
   --color-text-secondary: #c995f9;
   --color-text-tertiary: #e5e7eb;
   --color-other: #d4fff5;
-  --background-image-banner: url('./assets/banner/banner_dark.jpg');
+  --background-image-banner: url('/banner/banner_dark.jpg');
   --shadow-color-primary: rgba(233, 212, 255, 0.5);
   --shadow-color-secondary: rgba(173, 70, 255, 0.5);
 }

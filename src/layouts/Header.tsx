@@ -86,7 +86,7 @@ function Header() {
             <div className="flex flex-col">
               <NavItems
                 onClick={scrollToSection}
-                className="text-left py-1 px-2 text-text-primary border-b border-text-primary"
+                className="text-left py-4 px-2 text-text-primary border-b border-text-primary"
               />
             </div>
           </nav>

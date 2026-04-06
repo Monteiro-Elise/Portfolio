@@ -70,7 +70,7 @@ img {
 }
 
 .icon-header {
-  @apply w-5 h-5;
+  @apply w-6 h-6 md:w-5 md:h-5;
 }
 
 .section-content {
@@ -82,7 +82,7 @@ img {
 }
 
 .show-mobile {
-  @apply flex sm:hidden;
+  @apply block sm:hidden;
 }
 
 .hidden-mobile {

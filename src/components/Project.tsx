@@ -6,8 +6,8 @@ interface Props {
   isVideo: boolean;
   media: string;
   title: string;
-  year: number;
   description: string;
+  features: string[];
   skills: string[];
   githubLink: string;
   demoLink: string;
@@ -18,9 +18,9 @@ function Project({
   isVideo,
   media,
   title,
-  year,
   description,
   skills,
+  features,
   githubLink,
   demoLink,
 }: Props) {
@@ -40,10 +40,18 @@ function Project({
           )}
         </div>
         <div className={`project-content ${contentPosition}`}>
-          <h3>
-            {title} • {year}
-          </h3>
-          <p>{description}</p>
+          <h3>{title}</h3>
+          <p className="text-center">
+            <b>{description}</b>
+          </p>
+          <div>
+            {features.map((feature, index) => (
+              <p key={index}>
+                • {feature}
+                <br />
+              </p>
+            ))}
+          </div>
           <div className="project-bottom py-4">
             <div className="flex flex-wrap items-center gap-2">
               {skills.map((skill, index) => (

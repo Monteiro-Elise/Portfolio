@@ -20,13 +20,42 @@
   },
   "languages": "Langues",
   "projects": {
-    "project1": {
-      "description": "description 1",
-      "title": "titre 1"
+    "compiler": {
+      "description": "Ce projet traduit un sous-ensemble du langage C en code assembleur (NASM) exécutable.",
+      "features": {
+        "amd64_code": "Production de code conforme aux conventions AMD64",
+        "ast": "Construction et parcours d'un arbre syntaxique abstrait (AST)",
+        "lex_syntax": "Analyse lexicale et syntaxique du language TPC",
+        "test_coverage": "Mise en place de tests couvrant tous les scénarios connus : succès, erreurs syntaxiques, erreurs sémantiques et warnings.",
+        "test_report": "Génération automatisée et centralisée des rapports de tests."
+      },
+      "title": "Compilateur"
     },
-    "project2": {
-      "description": "description 2",
-      "title": "titre 2"
+    "distribu_calcul": {
+      "description": "Système distribué basé sur TCP permettant de déléguer et exécuter des calculs intensifs sur un réseau de machines.",
+      "features": {
+        "architecture": "Architecture distribuée avec gestion parent/enfant entre machines",
+        "connection_handling": "Gestion des connexions, des déconnexions et des pannes sans perte",
+        "distributed_execution": "Exécution distribuée de conjectures sur des plages de valeurs",
+        "non_blocking": "Téléchargement non bloquant de JAR contenant les algorithmes",
+        "results": "Centralisation des résultats dans un fichier"
+      },
+      "title": "DistribuCalcul"
+    },
+    "dodge_run": {
+      "description": "Petit jeu en temps réel où le joueur contrôle un personnage. Ce mini projet illustre l'utilisation pratique des structures de données pour déterminer l'ordre d'exécution des événements. Gestion d'une file de priorité pour planifier les événements",
+      "title": "DodgeRun"
+    },
+    "review": {
+      "description": "Ce projet permet aux utilisateurs de soumettre du code Java et des tests unitaires pour recevoir des revues de la part d'autres utilisateurs. La plateforme offre des fonctionnalités de suivi, de vote et de commentaire sur le code et les revues.",
+      "features": {
+        "collaboration": "Collaboration en équipe de 5 en méthodologie Agile Scrum",
+        "mvc_role": "Architecture MVC avec gestion des accès par rôle",
+        "secure": "Système d'authentification sécurisé et protection des données utilisateur",
+        "setup": "Configuration de l'application et de la base de données",
+        "test": "Micro-service pour exécuter les tests unitaires en toute sécurité"
+      },
+      "title": "Review"
     }
   },
   "resume": "CV",

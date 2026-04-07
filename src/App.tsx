@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen bg-primary transition-colors duration-300">
       <Header />
-      <main className="pt-9">
+      <main>
         <Banner />
         {CONSTANTS.sections.map((section, index) => {
           const Component = section.component;

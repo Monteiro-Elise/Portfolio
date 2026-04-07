@@ -9,6 +9,7 @@ import { RxCrossCircled } from 'react-icons/rx';
 import { CONSTANTS } from '../utils/constants';
 import { useLanguage } from '../hooks/useLanguage';
 import { useState } from 'react';
+import { useScrollVisibility } from './../hooks/useScrollVisibility';
 
 function Header() {
   const { t, currentLanguage } = useLanguage();
@@ -22,9 +23,14 @@ function Header() {
     }
   };
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isVisible = useScrollVisibility();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-component backdrop-blur-sm">
+    <header
+      className={`fixed top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } shadow`}
+    >
       <div className="flex justify-between">
         {/* Navigation */}
         <div className="flex items-center justify-center gap-3">

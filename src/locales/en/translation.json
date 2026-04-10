@@ -29,6 +29,7 @@
         "test_coverage": "Implementation of tests covering all known scenarios: success, syntax errors, semantic errors, and warnings.",
         "test_report": "Automated and centralized generation of test reports."
       },
+      "media_description": "Diagram of the compiler project workflow: a .tcp file is lexically and syntactically analyzed using Flex and Bison to produce an abstract syntax tree, then converted into assembly code (.asm) by a C program.",
       "title": "Compiler"
     },
     "distribu_calcul": {
@@ -40,10 +41,12 @@
         "non_blocking": "Non-blocking download of JARs containing algorithms",
         "results": "Centralization of results into a file"
       },
+      "media_description": "Illustration of a distributed system",
       "title": "DistribuMath"
     },
     "dodge_run": {
       "description": "A small real-time game where the player controls a character. This mini-project demonstrates the practical use of data structures to determine the execution order of events, including the use of a priority queue to schedule events.",
+      "media_description": "Image of the DodgeRun game",
       "title": "DodgeRun"
     },
     "review": {
@@ -55,6 +58,7 @@
         "setup": "Application and database configuration",
         "test": "Microservice for safely executing unit tests"
       },
+      "media_description": "Video demonstrating the use of a code review platform: a user browses a list of published code, sorts it by date, views code in detail, runs associated tests, then logs in to publish code, vote, follow other users, and add a review by reusing a previous one.",
       "title": "Review"
     }
   },
@@ -63,5 +67,6 @@
     "about": "About",
     "projects": "Projects",
     "skills": "Skills"
-  }
+  },
+  "videoNotSupported": "Your browser does not support videos."
 }

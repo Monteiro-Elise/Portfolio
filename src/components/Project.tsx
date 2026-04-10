@@ -1,10 +1,12 @@
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface Props {
   bool: boolean;
   isVideo: boolean;
   media: string;
+  mediaDescription: string;
   title: string;
   description: string;
   features: string[];
@@ -17,6 +19,7 @@ function Project({
   bool,
   isVideo,
   media,
+  mediaDescription,
   title,
   description,
   skills,
@@ -25,18 +28,34 @@ function Project({
   demoLink,
 }: Props) {
   const contentPosition = bool ? 'right' : 'left';
+  const { t } = useLanguage();
 
   return (
     <div className="mx-auto max-w-5xl px-4 gap-12 py-12">
       <div className={`project-container ${contentPosition}`}>
         <div className="project-media">
           {isVideo ? (
-            <video autoPlay loop muted className="w-full h-auto">
-              <source src={media} type="video/mp4" />
-              Votre navigateur ne supporte pas les vidéos.
-            </video>
+            <>
+              <p id={`video-desc-${title}`} className="sr-only">
+                {mediaDescription}
+              </p>
+              <video
+                autoPlay
+                loop
+                muted
+                className="w-full h-auto"
+                aria-describedby={`video-desc-${title}`}
+              >
+                <source src={media} type="video/mp4" />
+                {t('videoNotSupported')}
+              </video>
+            </>
           ) : (
-            <img src={media} alt={title} className="w-full h-auto rounded-lg" />
+            <img
+              src={media}
+              alt={mediaDescription}
+              className="w-full h-auto rounded-lg"
+            />
           )}
         </div>
         <div className={`project-content ${contentPosition}`}>

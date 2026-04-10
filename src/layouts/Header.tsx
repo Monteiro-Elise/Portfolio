@@ -35,7 +35,10 @@ function Header() {
         {/* Navigation */}
         <div className="flex items-center justify-center gap-3">
           <nav className="hidden-mobile items-center gap-6">
-            <NavItems onClick={scrollToSection} className="icon-btn" />
+            <NavItems
+              onClick={scrollToSection}
+              className="icon-btn text-text-primary"
+            />
           </nav>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

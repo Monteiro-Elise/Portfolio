@@ -15,7 +15,7 @@ function NavItems({ onClick, className }: NavItemsProps) {
           onClick={() => onClick(section.id)}
           className={className}
         >
-          {t(`sections.${section.id}`)}
+          <b>{t(`sections.${section.id}`)}</b>
         </button>
       ))}
     </>

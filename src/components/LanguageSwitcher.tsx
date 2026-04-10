@@ -35,7 +35,9 @@ function LanguageSwitcher() {
         className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary hover"
       >
         <FiGlobe className="w-4 h-4" />
-        <span>{t('languages')}</span>
+        <span>
+          <b>{t('languages')}</b>
+        </span>
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent overflow-hidden">
@@ -49,7 +51,7 @@ function LanguageSwitcher() {
                   : 'bg-component text-accent'
               }`}
             >
-              {t(`lang.${lang}`)}
+              <b>{t(`lang.${lang}`)}</b>
             </button>
           ))}
         </div>

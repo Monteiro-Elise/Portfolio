@@ -43,11 +43,17 @@ function Header() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="icon-btn show-mobile"
+            aria-label={
+              mobileMenuOpen
+                ? t('aria-label.closeSectionMenu')
+                : t('aria-label.openSectionMenu')
+            }
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              <RxCrossCircled className="icon-header" />
+              <RxCrossCircled className="icon-header" aria-hidden="true" />
             ) : (
-              <MdMenu className="icon-header" />
+              <MdMenu className="icon-header" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -59,28 +65,38 @@ function Header() {
             href={cvHref}
             download={`${CONSTANTS.name} ${t(`resume`)}.pdf`}
             className="icon-btn show-pc"
+            aria-label={t('aria-label.resume')}
           >
-            <FiDownload className="icon-header" />
+            <FiDownload className="icon-header" aria-hidden="true" />
           </a>
 
           {/* Github */}
           <a
+            aria-label={t('aria-label.github')}
             href={CONSTANTS.github}
             target="_blank"
             rel="noopener noreferrer"
             className="icon-btn show-pc"
           >
-            <SiGithub className="icon-header" />
+            <SiGithub className="icon-header" aria-hidden="true" />
           </a>
 
           {/* Linkedin */}
-          <a href={CONSTANTS.linkedin} className="icon-btn show-pc">
-            <FaLinkedin className="icon-header" />
+          <a
+            href={CONSTANTS.linkedin}
+            aria-label={t('aria-label.linkedin')}
+            className="icon-btn show-pc"
+          >
+            <FaLinkedin className="icon-header" aria-hidden="true" />
           </a>
 
           {/* Mail */}
-          <a href={`mailto:${CONSTANTS.mail}`} className="icon-btn show-pc">
-            <FiMail className="icon-header" />
+          <a
+            href={`mailto:${CONSTANTS.mail}`}
+            aria-label={t('aria-label.email')}
+            className="icon-btn show-pc"
+          >
+            <FiMail className="icon-header" aria-hidden="true" />
           </a>
 
           <ToggleDarkMode />

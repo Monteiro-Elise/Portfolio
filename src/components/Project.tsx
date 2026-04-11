@@ -85,8 +85,9 @@ function Project({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-btn"
+                  aria-label={t('aria-label.githubRepo', { project: title })}
                 >
-                  <SiGithub className="icon-action" />
+                  <SiGithub className="icon-action" aria-hidden="true" />
                 </a>
               )}
 
@@ -96,8 +97,9 @@ function Project({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-btn"
+                  aria-label={t('aria-label.liveDemo', { project: title })}
                 >
-                  <FaPlay className="icon-action" />
+                  <FaPlay className="icon-action" aria-hidden="true" />
                 </a>
               )}
             </div>

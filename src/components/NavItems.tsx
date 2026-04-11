@@ -14,6 +14,9 @@ function NavItems({ onClick, className }: NavItemsProps) {
           key={section.id}
           onClick={() => onClick(section.id)}
           className={className}
+          aria-label={t('aria-label.nav', {
+            section: t(`sections.${section.id}`),
+          })}
         >
           <b>{t(`sections.${section.id}`)}</b>
         </button>

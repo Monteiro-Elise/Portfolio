@@ -16,7 +16,7 @@ function Banner() {
               {t('job')}
             </p>
             <div className="flex items-center justify-end gap-2 text-white">
-              <FiPhone className="icon-decoration" />
+              <FiPhone className="icon-decoration" aria-hidden="true" />
               <span className="text-sm md:text-base">
                 {currentLanguage === 'fr'
                   ? CONSTANTS.phoneLocal
@@ -24,7 +24,7 @@ function Banner() {
               </span>
             </div>
             <div className="flex items-center justify-end gap-2 text-white">
-              <FiMail className="icon-decoration" />
+              <FiMail className="icon-decoration" aria-hidden="true" />
               <span className="text-sm md:text-base">{CONSTANTS.mail}</span>
             </div>
           </div>

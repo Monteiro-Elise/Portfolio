@@ -6,6 +6,23 @@
     "passion": "Loving problem-solving and enjoying learning, I naturally turned to computer science, a new field with so much to discover and evolving at a remarkable speed.",
     "skills": "My journey has led me to work with different programming languages and several frameworks. This diversity reflects my adaptability and quick learning, and I am confident in my ability to master your tools and technologies to become the resource you need."
   },
+  "aria-label": {
+    "closeLanguageMenu": "Close language menu",
+    "closeSectionMenu": "Close section menu",
+    "email": "Send an email",
+    "github": "View my GitHub profile",
+    "githubRepo": "View the GitHub repository for the {{project}} project",
+    "linkedin": "View my LinkedIn profile",
+    "liveDemo": "View the live demo for the {{project}} project",
+    "nav": "Go to the {{section}} section",
+    "openLanguageMenu": "Open language menu",
+    "openSectionMenu": "Open section menu",
+    "resume": "Download my Resume",
+    "setLanguage": "Set language to {{language}}",
+    "showLessSkills": "Show fewer skills",
+    "showMoreSkills": "Show more skills",
+    "theme": "Toggle site theme"
+  },
   "category": {
     "databases": "Databases",
     "frameworks": "Frameworks",

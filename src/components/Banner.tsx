@@ -5,8 +5,8 @@ import { useLanguage } from '../hooks/useLanguage';
 function Banner() {
   const { t, currentLanguage } = useLanguage();
   return (
-    <div className="h-40 md:h-56 bg-banner bg-cover bg-center">
-      <div className="relative z-10 container mx-auto px-4 pt-9">
+    <div className="h-32 md:h-54 bg-banner bg-cover bg-center">
+      <div className="relative z-10 container mx-auto px-4 pt-1 md:pt-4">
         <div className="flex justify-end">
           <div className="max-w-lg text-right">
             <p className="text-2xl md:text-6xl text-white mb-2">

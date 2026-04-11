@@ -1,6 +1,6 @@
 import Banner from './components/Banner';
 import Footer from './layouts/Footer';
-import Header from './layouts/Header';
+import Header from './layouts/header/Header';
 import SectionLayout from './layouts/SectionLayout';
 import { CONSTANTS } from './utils/constants';
 

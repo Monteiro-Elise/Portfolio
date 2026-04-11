@@ -32,7 +32,7 @@ function LanguageSwitcher() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-1 rounded-md text-sm bg-accent text-primary hover"
+        className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hover"
         aria-label={
           isOpen
             ? t('aria-label.closeLanguageMenu')
@@ -40,7 +40,7 @@ function LanguageSwitcher() {
         }
         aria-expanded={isOpen}
       >
-        <FiGlobe className="w-4 h-4" aria-hidden="true" />
+        <FiGlobe className="w-5 h-5 sm:w-4 sm:h-4" aria-hidden="true" />
         <span>
           <b>{t('languages')}</b>
         </span>
@@ -55,7 +55,7 @@ function LanguageSwitcher() {
               aria-selected={currentLanguage === lang}
               key={lang}
               onClick={() => handleLanguageChange(lang)}
-              className={`w-full text-left px-4 py-2 text-sm transition-colors hover ${
+              className={`w-full text-left px-4 py-2 sm:text-sm transition-colors hover ${
                 currentLanguage === lang
                   ? 'bg-accent text-primary'
                   : 'bg-component text-accent'

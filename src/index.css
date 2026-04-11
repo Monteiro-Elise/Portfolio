@@ -58,7 +58,7 @@ img {
 }
 
 .icon-btn {
-  @apply p-2 hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer;
+  @apply p-3 hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer;
 }
 
 .icon-decoration {

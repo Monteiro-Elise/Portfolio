@@ -27,7 +27,7 @@ function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-300 ${
+      className={`sticky top-0 py-1 sm:py-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } shadow`}
     >

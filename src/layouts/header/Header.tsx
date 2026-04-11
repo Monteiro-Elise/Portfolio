@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 import HeaderActions from './HeaderActions';
 import HeaderDesktopNav from './HeaderDesktopNav';
@@ -15,6 +15,33 @@ function Header() {
   };
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false);
   const isVisible = useScrollVisibility();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isMobileNavMenuOpen) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
+
+      if (menuRef.current?.contains(target)) return;
+
+      setIsMobileNavMenuOpen(false);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileNavMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMobileNavMenuOpen]);
 
   return (
     <header
@@ -41,7 +68,7 @@ function Header() {
       </div>
 
       {/* Navigation Mobile Menu */}
-      <div>
+      <div ref={menuRef}>
         {isMobileNavMenuOpen && (
           <HeaderMobileNavMenu scrollToSection={scrollToSection} />
         )}

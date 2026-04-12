@@ -2,11 +2,17 @@ import NavItems from '../../components/NavItems';
 
 type Props = {
   scrollToSection: (sectionId: string) => void;
+  isOpen: boolean;
 };
 
-function HeaderMobileNavMenu({ scrollToSection }: Props) {
+function HeaderMobileNavMenu({ scrollToSection, isOpen }: Props) {
   return (
-    <nav id="mobile-nav" className="show-mobile bg-subcomponent">
+    <nav
+      id="mobile-nav"
+      className="show-mobile bg-subcomponent"
+      hidden={!isOpen}
+      aria-hidden={!isOpen}
+    >
       <div className="flex flex-col">
         <NavItems
           onClick={scrollToSection}

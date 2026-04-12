@@ -69,9 +69,10 @@ function Header() {
 
       {/* Navigation Mobile Menu */}
       <div ref={menuRef}>
-        {isMobileNavMenuOpen && (
-          <HeaderMobileNavMenu scrollToSection={scrollToSection} />
-        )}
+        <HeaderMobileNavMenu
+          scrollToSection={scrollToSection}
+          isOpen={isMobileNavMenuOpen}
+        />
       </div>
     </header>
   );

@@ -13,6 +13,7 @@ function NavItems({ onClick, className }: NavItemsProps) {
         <button
           key={section.id}
           onClick={() => onClick(section.id)}
+          type="button"
           className={className}
           aria-label={t('aria-label.nav', {
             section: t(`sections.${section.id}`),

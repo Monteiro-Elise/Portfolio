@@ -1,10 +1,12 @@
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface Props {
   bool: boolean;
   isVideo: boolean;
   media: string;
+  mediaDescription: string;
   title: string;
   description: string;
   features: string[];
@@ -17,6 +19,7 @@ function Project({
   bool,
   isVideo,
   media,
+  mediaDescription,
   title,
   description,
   skills,
@@ -25,39 +28,57 @@ function Project({
   demoLink,
 }: Props) {
   const contentPosition = bool ? 'right' : 'left';
+  const { t } = useLanguage();
 
   return (
-    <div className="mx-auto max-w-5xl px-4 gap-12 py-12">
+    <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
       <div className={`project-container ${contentPosition}`}>
-        <div className="project-media">
+        <figure className="project-media">
           {isVideo ? (
-            <video autoPlay loop muted className="w-full h-auto">
-              <source src={media} type="video/mp4" />
-              Votre navigateur ne supporte pas les vidéos.
-            </video>
+            <>
+              <p id={`video-desc-${title}`} className="sr-only">
+                {mediaDescription}
+              </p>
+              <video
+                autoPlay
+                loop
+                muted
+                className="w-full h-auto"
+                aria-describedby={`video-desc-${title}`}
+              >
+                <source src={media} type="video/mp4" />
+                {t('videoNotSupported')}
+              </video>
+            </>
           ) : (
-            <img src={media} alt={title} className="w-full h-auto rounded-lg" />
+            <img
+              src={media}
+              alt={mediaDescription}
+              className="w-full h-auto rounded-lg"
+            />
           )}
-        </div>
+          <figcaption className="sr-only">{mediaDescription}</figcaption>
+        </figure>
         <div className={`project-content ${contentPosition}`}>
-          <h3>{title}</h3>
+          <h3 className="py-4">{title}</h3>
           <p className="text-center">
             <b>{description}</b>
           </p>
-          <div>
+          <ul>
             {features.map((feature, index) => (
-              <p key={index}>
-                • {feature}
-                <br />
-              </p>
+              <li key={index}>
+                <p>• {feature}</p>
+              </li>
             ))}
-          </div>
+          </ul>
           <div className="project-bottom py-4">
-            <div className="flex flex-wrap items-center gap-2">
+            <ul className="flex flex-wrap items-center gap-2">
               {skills.map((skill, index) => (
-                <b key={index}>{skill}</b>
+                <li key={index}>
+                  <b>{skill}</b>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <div className="flex items-center gap-3">
               {githubLink && (
@@ -66,8 +87,9 @@ function Project({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-btn"
+                  aria-label={t('aria-label.githubRepo', { project: title })}
                 >
-                  <SiGithub className="icon-action" />
+                  <SiGithub className="icon-action" aria-hidden="true" />
                 </a>
               )}
 
@@ -77,15 +99,16 @@ function Project({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="icon-btn"
+                  aria-label={t('aria-label.liveDemo', { project: title })}
                 >
-                  <FaPlay className="icon-action" />
+                  <FaPlay className="icon-action" aria-hidden="true" />
                 </a>
               )}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

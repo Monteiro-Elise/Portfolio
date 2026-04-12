@@ -7,6 +7,7 @@ function ProjectsSection() {
     {
       isVideo: true,
       media: '/project/review.mp4',
+      mediaDescription: t('projects.review.media_description'),
       title: t('projects.review.title'),
       description: t('projects.review.description'),
       features: [
@@ -40,6 +41,7 @@ function ProjectsSection() {
     {
       isVideo: false,
       media: `/project/compiler_${currentLanguage}.png`,
+      mediaDescription: t('projects.compiler.media_description'),
       title: t('projects.compiler.title'),
       description: t('projects.compiler.description'),
       features: [
@@ -67,6 +69,7 @@ function ProjectsSection() {
     {
       isVideo: false,
       media: '/project/distribuCalcul.png',
+      mediaDescription: t('projects.distribu_calcul.media_description'),
       title: t('projects.distribu_calcul.title'),
       description: t('projects.distribu_calcul.description'),
       features: [
@@ -83,6 +86,7 @@ function ProjectsSection() {
     {
       isVideo: false,
       media: '/project/dodgeRun.png',
+      mediaDescription: t('projects.dodge_run.media_description'),
       title: t('projects.dodge_run.title'),
       description: t('projects.dodge_run.description'),
       features: [],

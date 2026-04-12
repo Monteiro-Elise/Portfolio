@@ -18,9 +18,9 @@ export default function SectionLayout({ id, index, total, children }: Props) {
 
   return (
     <div className="-mb-1">
-      <section id={id} className={`py-20 ${bg}`}>
+      <section id={id} className={`py-20 scroll-mt-40 sm:scroll-mt-0 ${bg}`}>
         <div className="container mx-auto px-4">
-          <h1>{t(`sections.${id}`)}</h1>
+          <h2>{t(`sections.${id}`)}</h2>
           <div className="section-content">{children}</div>
         </div>
       </section>

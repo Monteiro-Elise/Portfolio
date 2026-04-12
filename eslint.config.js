@@ -4,6 +4,7 @@ import parser from '@typescript-eslint/parser';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
 import { FlatCompat } from '@eslint/eslintrc';
 const compat = new FlatCompat({ baseDirectory: process.cwd() });
@@ -36,12 +37,15 @@ export default [
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint,
+      'jsx-a11y': jsxA11y,
     },
     rules: {
       ...js.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      ...jsxA11y.configs.recommended.rules,
+
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

@@ -1,10 +1,19 @@
 import Banner from './components/Banner';
 import Footer from './layouts/Footer';
-import Header from './layouts/Header';
+import Header from './layouts/header/Header';
 import SectionLayout from './layouts/SectionLayout';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { CONSTANTS } from './utils/constants';
 
 function App() {
+  const { t } = useTranslation();
+  useEffect(() => {
+    document.title = `${t('title', {
+      name: `${CONSTANTS.name}`,
+    })}`;
+  }, [t]);
+
   return (
     <div className="min-h-screen bg-primary transition-colors duration-300">
       <Header />

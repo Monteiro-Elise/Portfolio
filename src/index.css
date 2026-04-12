@@ -22,7 +22,7 @@
   --color-secondary: #3c0366;
   --color-component: #11172f;
   --color-subcomponent: #210040;
-  --color-accent: #ad46ff;
+  --color-accent: #b04fff;
   --color-text-primary: #e9d4ff;
   --color-text-secondary: #c995f9;
   --color-text-tertiary: #e5e7eb;
@@ -33,15 +33,15 @@
 }
 
 h1 {
-  @apply text-3xl md:text-4xl mb-8 mx-auto max-w-5xl text-text-primary;
+  @apply text-2xl md:text-6xl text-white mb-2;
 }
 
 h2 {
-  @apply text-xl md:text-2xl font-bold text-text-secondary;
+  @apply text-3xl md:text-4xl mb-8 mx-auto max-w-5xl text-text-primary;
 }
 
 h3 {
-  @apply text-xl font-bold py-4 text-text-secondary text-center;
+  @apply text-xl md:text-2xl font-bold text-text-secondary text-center;
 }
 
 section p {
@@ -58,7 +58,7 @@ img {
 }
 
 .icon-btn {
-  @apply p-2 text-accent hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer;
+  @apply p-3 hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer;
 }
 
 .icon-decoration {
@@ -66,11 +66,11 @@ img {
 }
 
 .icon-action {
-  @apply w-6 h-6;
+  @apply w-6 h-6 text-accent;
 }
 
 .icon-header {
-  @apply w-6 h-6 md:w-5 md:h-5;
+  @apply w-6 h-6 md:w-5 md:h-5 text-accent;
 }
 
 .section-content {

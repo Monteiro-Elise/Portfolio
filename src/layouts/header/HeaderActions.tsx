@@ -36,6 +36,8 @@ function HeaderActions() {
       {/* Linkedin */}
       <a
         href={CONSTANTS.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label={t('aria-label.linkedin')}
         className="icon-btn show-pc"
       >

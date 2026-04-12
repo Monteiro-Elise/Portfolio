@@ -8,6 +8,7 @@ type Props = {
 function HeaderMobileNavMenu({ scrollToSection, isOpen }: Props) {
   return (
     <nav
+      aria-label="mobile nav"
       id="mobile-nav"
       className="show-mobile bg-subcomponent"
       hidden={!isOpen}

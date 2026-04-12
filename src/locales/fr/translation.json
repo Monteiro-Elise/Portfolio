@@ -85,5 +85,6 @@
     "projects": "Projets",
     "skills": "Compétences"
   },
+  "title": "Portfolio - {{name}}",
   "videoNotSupported": "Votre navigateur ne supporte pas les vidéos."
 }

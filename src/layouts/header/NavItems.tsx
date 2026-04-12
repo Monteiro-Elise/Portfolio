@@ -1,5 +1,5 @@
-import { CONSTANTS } from '../utils/constants';
-import { useLanguage } from '../hooks/useLanguage';
+import { CONSTANTS } from '../../utils/constants';
+import { useLanguage } from '../../hooks/useLanguage';
 interface NavItemsProps {
   onClick: (id: string) => void;
   className?: string;

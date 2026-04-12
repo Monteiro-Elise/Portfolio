@@ -1,4 +1,4 @@
-import NavItems from '../../components/NavItems';
+import NavItems from './NavItems';
 
 type Props = {
   scrollToSection: (sectionId: string) => void;

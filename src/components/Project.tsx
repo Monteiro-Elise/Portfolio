@@ -31,9 +31,9 @@ function Project({
   const { t } = useLanguage();
 
   return (
-    <div className="mx-auto max-w-5xl px-4 gap-12 py-12">
+    <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
       <div className={`project-container ${contentPosition}`}>
-        <div className="project-media">
+        <figure className="project-media">
           {isVideo ? (
             <>
               <p id={`video-desc-${title}`} className="sr-only">
@@ -57,26 +57,28 @@ function Project({
               className="w-full h-auto rounded-lg"
             />
           )}
-        </div>
+          <figcaption className="sr-only">{mediaDescription}</figcaption>
+        </figure>
         <div className={`project-content ${contentPosition}`}>
-          <h3>{title}</h3>
+          <h3 className="py-4">{title}</h3>
           <p className="text-center">
             <b>{description}</b>
           </p>
-          <div>
+          <ul>
             {features.map((feature, index) => (
-              <p key={index}>
-                • {feature}
-                <br />
-              </p>
+              <li key={index}>
+                <p>• {feature}</p>
+              </li>
             ))}
-          </div>
+          </ul>
           <div className="project-bottom py-4">
-            <div className="flex flex-wrap items-center gap-2">
+            <ul className="flex flex-wrap items-center gap-2">
               {skills.map((skill, index) => (
-                <b key={index}>{skill}</b>
+                <li key={index}>
+                  <b>{skill}</b>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <div className="flex items-center gap-3">
               {githubLink && (
@@ -106,7 +108,7 @@ function Project({
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 

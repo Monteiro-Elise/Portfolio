@@ -43,7 +43,7 @@ function LanguageSwitcher() {
               aria-label={t('aria-label.setLanguage', {
                 language: t(`lang.${lang}`),
               })}
-              aria-selected={currentLanguage === lang}
+              aria-pressed={currentLanguage === lang}
               key={lang}
               onClick={() => handleLanguageChange(lang)}
               className={`w-full text-left px-4 py-2 sm:text-sm transition-colors hover border-b-0 first:rounded-t-md last:rounded-b-md ${

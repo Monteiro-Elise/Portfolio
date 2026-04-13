@@ -50,6 +50,7 @@ Projets inclus :
 - React-icons v5
 - Husky v9
 - Commitlint v20
+- Radix v1
 
 ### Justification des choix
 
@@ -83,6 +84,16 @@ Pour garantir la qualité du code publié, Prettier est utilisé pour le formata
 
 Enfin, Husky et GitHub Actions sont mis en place pour assurer que les bonnes pratiques soient respectées. Husky permet d’exécuter des vérifications avant chaque commit ou push, tandis que GitHub Actions automatise des tests et validations avant un merge, garantissant ainsi la stabilité et la qualité du code.
 
+#### Radix UI
+
+Radix UI a été utilisé pour améliorer l’accessibilité de certains composants, notamment le menu pour changer de langue. Il permet de gérer facilement les comportements accessibles (navigation clavier, focus, ARIA) tout en conservant un design personnalisé.
+
+Son utilisation reste ciblée, car il ne correspond pas à tous les besoins, notamment pour le menu mobile de navigation.
+
+#### Vercel
+
+Vercel a été choisi pour le déploiement du projet. Il permet une mise en ligne rapide avec un déploiement automatique à chaque push sur GitHub. Il offre également des preview deployments pour tester les modifications avant merge, ainsi que des outils d’analyse pour suivre les performances du site.
+
 ## Installation
 
 1. Cloner le dépôt :
@@ -103,3 +114,11 @@ npm install
 ```bash
 npm run dev
 ```
+
+## Déploiement
+
+Le projet est déployé avec Vercel.
+
+Chaque push sur GitHub déclenche automatiquement un nouveau déploiement. Des environnements de preview sont générés pour tester les modifications avant leur mise en production.
+
+Le site est accessible à l’adresse suivante : https://portfolio-monteiro-elise.vercel.app/

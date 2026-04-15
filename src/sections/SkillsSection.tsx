@@ -84,15 +84,16 @@ function SkillsSection() {
   ];
 
   return (
-    <div className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
-      {skillsData.map((category, idx) => (
-        <SkillsCategory
-          key={idx}
-          category={category.category}
-          skills={category.skills}
-        />
+    <ul className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
+      {skillsData.map((category, id) => (
+        <li key={id}>
+          <SkillsCategory
+            category={category.category}
+            skills={category.skills}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

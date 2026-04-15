@@ -97,11 +97,13 @@ function ProjectsSection() {
   ];
 
   return (
-    <>
+    <ul>
       {projects.map((project, index) => (
-        <Project key={index} bool={index % 2 === 0} {...project} />
+        <li key={index}>
+          <Project bool={index % 2 === 0} {...project} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }
 

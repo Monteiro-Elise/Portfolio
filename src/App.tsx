@@ -23,7 +23,7 @@ function App() {
           const Component = section.component;
           return (
             <SectionLayout
-              key={section.id}
+              key={index}
               id={section.id}
               index={index}
               total={CONSTANTS.sections.length}

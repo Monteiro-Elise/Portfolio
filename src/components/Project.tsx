@@ -4,6 +4,7 @@ import { useLanguage } from '../hooks/useLanguage';
 
 interface Props {
   bool: boolean;
+  id: string;
   isVideo: boolean;
   media: string;
   mediaDescription: string;
@@ -17,6 +18,7 @@ interface Props {
 
 function Project({
   bool,
+  id,
   isVideo,
   media,
   mediaDescription,
@@ -36,7 +38,7 @@ function Project({
         <figure className="project-media">
           {isVideo ? (
             <>
-              <p id={`video-desc-${title}`} className="sr-only">
+              <p id={`project-${id}-video-desc`} className="sr-only">
                 {mediaDescription}
               </p>
               <video
@@ -44,7 +46,7 @@ function Project({
                 loop
                 muted
                 className="w-full h-auto"
-                aria-describedby={`video-desc-${title}`}
+                aria-describedby={`project-${id}-video-desc`}
               >
                 <source src={media} type="video/mp4" />
                 {t('videoNotSupported')}

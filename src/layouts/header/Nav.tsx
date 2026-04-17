@@ -12,8 +12,8 @@ function Nav({ id, ariaLabel, closeMenu, className }: NavItemsProps) {
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
       <ul>
-        {CONSTANTS.sections.map((section) => (
-          <li key={`${id}-${section.id}`}>
+        {CONSTANTS.sections.map((section, index) => (
+          <li key={index}>
             <a
               href={`#title-section-${section.id}`}
               onClick={() => closeMenu()}

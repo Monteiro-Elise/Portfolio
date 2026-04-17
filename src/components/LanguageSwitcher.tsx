@@ -7,7 +7,7 @@ import { useScrollVisibility } from './../hooks/useScrollVisibility';
 function LanguageSwitcher() {
   const { t, currentLanguage, changeLanguage, languages } = useLanguage();
   const [open, setOpen] = useState(false);
-  const isVisible = useScrollVisibility();
+  const { isVisible } = useScrollVisibility();
   const handleLanguageChange = (lang: string) => {
     changeLanguage(lang);
     setOpen(false);
@@ -35,8 +35,7 @@ function LanguageSwitcher() {
       <Popover.Content>
         <div
           id="language-menu"
-          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent
-        ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         >
           {languages.map((lang) => (
             <button

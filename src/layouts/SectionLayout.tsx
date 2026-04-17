@@ -21,10 +21,12 @@ export default function SectionLayout({ id, index, total, children }: Props) {
       <section
         id={id}
         aria-labelledby={`title-${t(`sections.${id}`)}`}
-        className={`py-20 scroll-mt-40 sm:scroll-mt-0 ${bg}`}
+        className={`py-20 ${bg}`}
       >
         <div className="container mx-auto px-4">
-          <h2 id={`title-${t(`sections.${id}`)}`}>{t(`sections.${id}`)}</h2>
+          <h2 id={`title-section-${id}`} className="scroll-mt-15">
+            {t(`sections.${id}`)}
+          </h2>
           <div className="section-content">{children}</div>
         </div>
       </section>

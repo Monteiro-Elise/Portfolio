@@ -32,6 +32,10 @@
   --shadow-color-secondary: rgba(173, 70, 255, 0.5);
 }
 
+html {
+  @apply scroll-smooth;
+}
+
 h1 {
   @apply text-2xl md:text-6xl text-white mb-2;
 }
@@ -87,6 +91,32 @@ img {
 
 .hidden-mobile {
   @apply hidden sm:flex;
+}
+
+/* Navigation Styles*/
+
+.desktop-nav {
+  @apply items-center gap-6;
+}
+
+.desktop-nav ul {
+  @apply flex;
+}
+
+.desktop-nav li {
+  @apply p-3 hover:scale-[1.1] hover:opacity-70 transition-opacity cursor-pointer text-text-primary;
+}
+
+.mobile-nav {
+  @apply bg-subcomponent;
+}
+
+.mobile-nav ul {
+  @apply flex flex-col;
+}
+
+.mobile-nav li {
+  @apply text-left py-4 px-2 text-text-primary border-b border-text-primary;
 }
 
 /* Projects Section Styles */

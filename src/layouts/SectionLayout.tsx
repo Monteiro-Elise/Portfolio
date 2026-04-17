@@ -20,7 +20,7 @@ export default function SectionLayout({ id, index, total, children }: Props) {
     <div className="-mb-1">
       <section
         id={`section-${id}`}
-        aria-labelledby={`title-${t(`sections.${id}`)}`}
+        aria-labelledby={`title-section-${id}`}
         className={`py-20 ${bg}`}
       >
         <div className="container mx-auto px-4">

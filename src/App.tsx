@@ -3,11 +3,11 @@ import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import SectionLayout from './layouts/SectionLayout';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
 
 function App() {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
   useEffect(() => {
     document.title = `${t('title', {
       name: `${CONSTANTS.name}`,

@@ -7,12 +7,12 @@ import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
 
 function App() {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   useEffect(() => {
     document.title = `${t('title', {
       name: `${CONSTANTS.name}`,
     })}`;
-  }, [t]);
+  }, [currentLanguage, t]);
 
   return (
     <div className="min-h-screen bg-primary transition-colors duration-300">

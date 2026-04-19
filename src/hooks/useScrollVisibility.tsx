@@ -26,5 +26,5 @@ export function useScrollVisibility() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return isVisible;
+  return { isVisible, setIsVisible };
 }

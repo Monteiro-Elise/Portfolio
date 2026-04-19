@@ -47,8 +47,8 @@ export function SkillsCategory({ category, skills }: CategoryProps) {
             className="icon-btn"
             aria-label={
               isExpanded
-                ? t('aria-label.showLessSkills')
-                : t('aria-label.showMoreSkills')
+                ? t('aria-label.showLessSkills', { category })
+                : t('aria-label.showMoreSkills', { category })
             }
           >
             <Icon className="icon-action" />

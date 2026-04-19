@@ -3,16 +3,16 @@ import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import SectionLayout from './layouts/SectionLayout';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
 
 function App() {
-  const { t } = useTranslation();
+  const { t, currentLanguage } = useLanguage();
   useEffect(() => {
     document.title = `${t('title', {
       name: `${CONSTANTS.name}`,
     })}`;
-  }, [t]);
+  }, [currentLanguage, t]);
 
   return (
     <div className="min-h-screen bg-primary transition-colors duration-300">
@@ -23,7 +23,7 @@ function App() {
           const Component = section.component;
           return (
             <SectionLayout
-              key={section.id}
+              key={index}
               id={section.id}
               index={index}
               total={CONSTANTS.sections.length}

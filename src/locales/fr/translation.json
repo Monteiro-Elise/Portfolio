@@ -19,8 +19,8 @@
     "openSectionMenu": "Ouvrir le menu des sections",
     "resume": "Télécharger mon CV",
     "setLanguage": "Changer la langue en {{language}}",
-    "showLessSkills": "Afficher moins de compétences",
-    "showMoreSkills": "Afficher plus de compétences",
+    "showLessSkills": "Afficher moins de compétences pour la sous-section {{category}}",
+    "showMoreSkills": "Afficher plus de compétences pour la sous-section {{category}}",
     "theme": "Changer le thème du site"
   },
   "category": {

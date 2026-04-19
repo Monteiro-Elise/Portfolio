@@ -9,6 +9,30 @@
     <link rel="preload" as="image" href="/project/compiler_en.png" />
   </head>
   <body>
+    <script>
+      (function () {
+        function getLangFromQuery() {
+          const params = new URLSearchParams(window.location.search);
+          return params.get('lng') || params.get('lang');
+        }
+
+        function getLangFromStorage() {
+          return localStorage.getItem('i18nextLng');
+        }
+
+        function getLangFromNavigator() {
+          return navigator.language || navigator.userLanguage;
+        }
+
+        const lang =
+          getLangFromQuery() ||
+          getLangFromStorage() ||
+          getLangFromNavigator()?.split('-')[0] ||
+          'en';
+
+        document.documentElement.setAttribute('lang', lang);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

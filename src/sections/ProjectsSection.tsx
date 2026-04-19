@@ -5,6 +5,7 @@ function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
   const projects = [
     {
+      id: 'review',
       isVideo: true,
       media: '/project/review.mp4',
       mediaDescription: t('projects.review.media_description'),
@@ -39,6 +40,7 @@ function ProjectsSection() {
       demoLink: '',
     },
     {
+      id: 'compiler',
       isVideo: false,
       media: `/project/compiler_${currentLanguage}.png`,
       mediaDescription: t('projects.compiler.media_description'),
@@ -67,6 +69,7 @@ function ProjectsSection() {
       demoLink: '',
     },
     {
+      id: 'distribu_calcul',
       isVideo: false,
       media: '/project/distribuCalcul.png',
       mediaDescription: t('projects.distribu_calcul.media_description'),
@@ -84,6 +87,7 @@ function ProjectsSection() {
       demoLink: '',
     },
     {
+      id: 'dodge_run',
       isVideo: false,
       media: '/project/dodgeRun.png',
       mediaDescription: t('projects.dodge_run.media_description'),
@@ -97,11 +101,13 @@ function ProjectsSection() {
   ];
 
   return (
-    <>
+    <ul>
       {projects.map((project, index) => (
-        <Project key={index} bool={index % 2 === 0} {...project} />
+        <li key={index}>
+          <Project bool={index % 2 === 0} {...project} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }
 

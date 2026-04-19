@@ -1,64 +1,46 @@
-import { useState, useEffect, useRef } from 'react';
-import { useScrollVisibility } from './../../hooks/useScrollVisibility';
+import { useRef } from 'react';
 import HeaderActions from './HeaderActions';
-import HeaderDesktopNav from './HeaderDesktopNav';
-import HeaderMobileNavMenu from './HeaderMobileNavMenu';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
+import Nav from './Nav';
+import { useNav } from './useNav';
+import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 
 function Header() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileNavMenuOpen(false);
-    }
-  };
-  const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false);
-  const isVisible = useScrollVisibility();
   const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!isMobileNavMenuOpen) return;
-
-    const handleClickOutside = (e: MouseEvent) => {
-      const target = e.target as Node;
-
-      if (menuRef.current?.contains(target)) return;
-
-      setIsMobileNavMenuOpen(false);
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsMobileNavMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [isMobileNavMenuOpen]);
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useNav({
+    buttonRef,
+    menuRef,
+  });
+  const { isVisible } = useScrollVisibility();
+  const closeMenu = () => {
+    setIsMobileNavMenuOpen(false);
+  };
 
   return (
     <header
-      className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-300 ${
+      className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-500 ${
         isVisible || isMobileNavMenuOpen ? 'translate-y-0' : '-translate-y-full'
       } shadow`}
     >
       <div className="flex justify-between py-1 sm:py-0">
         {/* Navigation */}
         <div className="flex items-center justify-center gap-3">
-          <HeaderDesktopNav scrollToSection={scrollToSection} />
-
-          {/* MobileNavigation */}
-          <HeaderMobileNavToggle
-            isOpen={isMobileNavMenuOpen}
-            setIsOpen={setIsMobileNavMenuOpen}
+          {/* DesktopNavigation */}
+          <Nav
+            id="desktop-nav"
+            ariaLabel="desktop navigation"
+            className="desktop-nav hidden-mobile"
+            closeMenu={() => {}}
           />
+
+          {/* MobileNavigationToggle */}
+          <div ref={buttonRef}>
+            <HeaderMobileNavToggle
+              isOpen={isMobileNavMenuOpen}
+              setIsOpen={setIsMobileNavMenuOpen}
+            />
+          </div>
         </div>
 
         {/* Actions */}
@@ -67,12 +49,16 @@ function Header() {
         </div>
       </div>
 
-      {/* Navigation Mobile Menu */}
+      {/* MobileNavigation */}
       <div ref={menuRef}>
-        <HeaderMobileNavMenu
-          scrollToSection={scrollToSection}
-          isOpen={isMobileNavMenuOpen}
-        />
+        {isMobileNavMenuOpen && (
+          <Nav
+            id="mobile-nav"
+            ariaLabel="mobile navigation"
+            className="mobile-nav show-mobile"
+            closeMenu={closeMenu}
+          />
+        )}
       </div>
     </header>
   );

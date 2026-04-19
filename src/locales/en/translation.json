@@ -19,8 +19,8 @@
     "openSectionMenu": "Open section menu",
     "resume": "Download my Resume",
     "setLanguage": "Set language to {{language}}",
-    "showLessSkills": "Show fewer skills",
-    "showMoreSkills": "Show more skills",
+    "showLessSkills": "Show fewer skills for the {{category}} sub-section",
+    "showMoreSkills": "Show more skills for the {{category}} sub-section",
     "theme": "Toggle site theme"
   },
   "category": {

@@ -59,7 +59,6 @@ function Project({
               className="w-full h-auto rounded-lg"
             />
           )}
-          <figcaption className="sr-only">{mediaDescription}</figcaption>
         </figure>
         <div className={`project-content ${contentPosition}`}>
           <h3 className="py-4">{title}</h3>

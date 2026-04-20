@@ -15,4 +15,5 @@ export const CONSTANTS = {
     { id: 'skills', component: SkillsSection },
     { id: 'projects', component: ProjectsSection },
   ],
+  domain: 'https://portfolio-monteiro-elise.vercel.app',
 } as const;

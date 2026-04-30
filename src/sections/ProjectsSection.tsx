@@ -3,11 +3,14 @@ import { useLanguage } from '../hooks/useLanguage';
 
 function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
+  const isMobile = window.innerWidth < 768;
   const projects = [
     {
       id: 'review',
       isVideo: true,
-      media: '/project/review.mp4',
+      media: isMobile
+        ? `/project/mobile_review.mp4`
+        : `/project/desktop_review.mp4`,
       mediaDescription: t('projects.review.media_description'),
       title: t('projects.review.title'),
       description: t('projects.review.description'),

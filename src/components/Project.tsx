@@ -47,6 +47,8 @@ function Project({
                 muted
                 playsInline
                 preload="none"
+                poster={`/project/preview_${id}.webp`}
+                controls
                 className="w-full h-auto"
                 aria-describedby={`project-${id}-video-desc`}
               >

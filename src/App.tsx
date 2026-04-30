@@ -6,9 +6,11 @@ import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
 import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
+import useDarkMode from './hooks/useDarkMode';
 
 function App() {
   const { t, currentLanguage } = useLanguage();
+  const { isDarkMode } = useDarkMode();
 
   return (
     <HelmetProvider>
@@ -31,6 +33,23 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/preview.jpg" />
         <meta property="og:url" content={CONSTANTS.domain} />
+        {isDarkMode ? (
+          <link
+            rel="preload"
+            as="image"
+            href="/banner/banner_dark.webp"
+            fetchPriority="high"
+            type="image/webp"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href="/banner/banner.webp"
+            fetchPriority="high"
+            type="image/webp"
+          />
+        )}
       </Helmet>
       <div className="min-h-screen bg-primary transition-colors duration-300">
         <Header />

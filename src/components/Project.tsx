@@ -45,6 +45,8 @@ function Project({
                 autoPlay
                 loop
                 muted
+                playsInline
+                preload="none"
                 className="w-full h-auto"
                 aria-describedby={`project-${id}-video-desc`}
               >
@@ -56,6 +58,7 @@ function Project({
             <img
               src={media}
               alt={mediaDescription}
+              loading="lazy"
               className="w-full h-auto rounded-lg"
             />
           )}

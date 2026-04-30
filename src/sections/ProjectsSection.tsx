@@ -42,7 +42,7 @@ function ProjectsSection() {
     {
       id: 'compiler',
       isVideo: false,
-      media: `/project/compiler_${currentLanguage}.png`,
+      media: `/project/compiler_${currentLanguage}.webp`,
       mediaDescription: t('projects.compiler.media_description'),
       title: t('projects.compiler.title'),
       description: t('projects.compiler.description'),
@@ -71,7 +71,7 @@ function ProjectsSection() {
     {
       id: 'distribu_calcul',
       isVideo: false,
-      media: '/project/distribuCalcul.png',
+      media: '/project/distribuCalcul.webp',
       mediaDescription: t('projects.distribu_calcul.media_description'),
       title: t('projects.distribu_calcul.title'),
       description: t('projects.distribu_calcul.description'),

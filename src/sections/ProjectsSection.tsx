@@ -1,9 +1,10 @@
 import Project from '../components/Project';
 import { useLanguage } from '../hooks/useLanguage';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useIsMobile();
   const projects = [
     {
       id: 'review',

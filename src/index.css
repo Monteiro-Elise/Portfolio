@@ -13,6 +13,7 @@
   --color-text-tertiary: #374151;
   --color-other: #faf5ba;
   --background-image-banner: url('/banner/banner.webp');
+  --background-image-banner-mobile: url('/banner/mobile_banner.webp');
   --shadow-color-primary: rgba(126, 42, 12, 0.24);
   --shadow-color-secondary: rgba(245, 73, 0, 0.24);
 }
@@ -28,6 +29,7 @@
   --color-text-tertiary: #e5e7eb;
   --color-other: #d4fff5;
   --background-image-banner: url('/banner/banner_dark.webp');
+  --background-image-banner-mobile: url('/banner/mobile_banner_dark.webp');
   --shadow-color-primary: rgba(233, 212, 255, 0.5);
   --shadow-color-secondary: rgba(173, 70, 255, 0.5);
 }

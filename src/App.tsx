@@ -7,10 +7,12 @@ import { CONSTANTS } from './utils/constants';
 import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 import useDarkMode from './hooks/useDarkMode';
+import { useIsMobile } from './hooks/useIsMobile';
 
 function App() {
   const { t, currentLanguage } = useLanguage();
   const { isDarkMode } = useDarkMode();
+  const isMobile = useIsMobile();
 
   return (
     <HelmetProvider>
@@ -37,7 +39,11 @@ function App() {
           <link
             rel="preload"
             as="image"
-            href="/banner/banner_dark.webp"
+            href={
+              isMobile
+                ? '/banner/mobile_banner_dark.webp'
+                : '/banner/banner_dark.webp'
+            }
             fetchPriority="high"
             type="image/webp"
           />
@@ -45,7 +51,9 @@ function App() {
           <link
             rel="preload"
             as="image"
-            href="/banner/banner.webp"
+            href={
+              isMobile ? '/banner/mobile_banner.webp' : '/banner/banner.webp'
+            }
             fetchPriority="high"
             type="image/webp"
           />

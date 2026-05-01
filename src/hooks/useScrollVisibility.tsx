@@ -5,26 +5,27 @@ export function useScrollVisibility() {
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
+    let ticking = false;
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
 
-      // prevent small scroll movements
-      if (Math.abs(currentScrollY - lastScrollY) < 5) return;
+          setIsVisible(currentScrollY < lastScrollY);
 
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        setIsVisible(false); // scrolling down
-      } else {
-        setIsVisible(true); // scrolling up
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
-
-      lastScrollY = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return { isVisible, setIsVisible };
+  return { isVisible };
 }

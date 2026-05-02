@@ -53,7 +53,7 @@ function Project({
                 playsInline
                 preload="none"
                 poster={`/project/preview_${id}.webp`}
-                controls
+                controls={false}
                 className="w-full h-auto"
                 aria-describedby={`project-${id}-video-desc`}
               >

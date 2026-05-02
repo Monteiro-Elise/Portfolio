@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 import useDarkMode from './hooks/useDarkMode';
 import { useIsMobile } from './hooks/useIsMobile';
+import { Suspense } from 'react';
 
 function App() {
   const { t, currentLanguage } = useLanguage();
@@ -63,19 +64,21 @@ function App() {
         <Header />
         <main>
           <Banner />
-          {CONSTANTS.sections.map((section, index) => {
-            const Component = section.component;
-            return (
-              <SectionLayout
-                key={index}
-                id={section.id}
-                index={index}
-                total={CONSTANTS.sections.length}
-              >
-                <Component />
-              </SectionLayout>
-            );
-          })}
+          <Suspense fallback={null}>
+            {CONSTANTS.sections.map((section, index) => {
+              const Component = section.component;
+              return (
+                <SectionLayout
+                  key={index}
+                  id={section.id}
+                  index={index}
+                  total={CONSTANTS.sections.length}
+                >
+                  <Component />
+                </SectionLayout>
+              );
+            })}
+          </Suspense>
         </main>
         <Footer />
       </div>

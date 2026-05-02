@@ -17,6 +17,8 @@ export default defineConfig({
         manualChunks: {
           vendor: ['react', 'react-dom'],
           i18n: ['i18next', 'react-i18next'],
+          ui: ['@radix-ui/react-popover', 'react-icons'],
+          utils: ['i18next-browser-languagedetector'],
         },
       },
     },

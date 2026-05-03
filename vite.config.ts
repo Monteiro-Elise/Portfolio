@@ -9,7 +9,18 @@ export default defineConfig({
     tailwindcss(),
     sitemap({
       hostname: 'https://portfolio-monteiro-elise.vercel.app',
-      dynamicRoutes: ['/'],
     }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          i18n: ['i18next', 'react-i18next'],
+          ui: ['@radix-ui/react-popover', 'react-icons'],
+          utils: ['i18next-browser-languagedetector'],
+        },
+      },
+    },
+  },
 });

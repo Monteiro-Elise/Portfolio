@@ -1,6 +1,6 @@
 import { FiGlobe } from 'react-icons/fi';
 import { useState } from 'react';
-import * as Popover from '@radix-ui/react-popover';
+import { Root, Trigger, Content } from '@radix-ui/react-popover';
 import { useLanguage } from '../hooks/useLanguage';
 import { useScrollVisibility } from './../hooks/useScrollVisibility';
 
@@ -14,8 +14,8 @@ function LanguageSwitcher() {
   };
 
   return (
-    <Popover.Root open={open} onOpenChange={setOpen}>
-      <Popover.Trigger asChild>
+    <Root open={open} onOpenChange={setOpen}>
+      <Trigger asChild>
         <button
           className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hover"
           aria-label={
@@ -31,8 +31,8 @@ function LanguageSwitcher() {
             <b>{t('languages')}</b>
           </span>
         </button>
-      </Popover.Trigger>
-      <Popover.Content>
+      </Trigger>
+      <Content>
         <div
           id="language-menu"
           className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
@@ -55,8 +55,8 @@ function LanguageSwitcher() {
             </button>
           ))}
         </div>
-      </Popover.Content>
-    </Popover.Root>
+      </Content>
+    </Root>
   );
 }
 

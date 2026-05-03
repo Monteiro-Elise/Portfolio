@@ -6,9 +6,14 @@ import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
 import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
+import useDarkMode from './hooks/useDarkMode';
+import { useIsMobile } from './hooks/useIsMobile';
+import { Suspense } from 'react';
 
 function App() {
   const { t, currentLanguage } = useLanguage();
+  const { isDarkMode } = useDarkMode();
+  const isMobile = useIsMobile();
 
   return (
     <HelmetProvider>
@@ -31,24 +36,49 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/preview.jpg" />
         <meta property="og:url" content={CONSTANTS.domain} />
+        {isDarkMode ? (
+          <link
+            rel="preload"
+            as="image"
+            href={
+              isMobile
+                ? '/banner/mobile_banner_dark.webp'
+                : '/banner/banner_dark.webp'
+            }
+            fetchPriority="high"
+            type="image/webp"
+          />
+        ) : (
+          <link
+            rel="preload"
+            as="image"
+            href={
+              isMobile ? '/banner/mobile_banner.webp' : '/banner/banner.webp'
+            }
+            fetchPriority="high"
+            type="image/webp"
+          />
+        )}
       </Helmet>
       <div className="min-h-screen bg-primary transition-colors duration-300">
         <Header />
         <main>
           <Banner />
-          {CONSTANTS.sections.map((section, index) => {
-            const Component = section.component;
-            return (
-              <SectionLayout
-                key={index}
-                id={section.id}
-                index={index}
-                total={CONSTANTS.sections.length}
-              >
-                <Component />
-              </SectionLayout>
-            );
-          })}
+          <Suspense fallback={null}>
+            {CONSTANTS.sections.map((section, index) => {
+              const Component = section.component;
+              return (
+                <SectionLayout
+                  key={index}
+                  id={section.id}
+                  index={index}
+                  total={CONSTANTS.sections.length}
+                >
+                  <Component />
+                </SectionLayout>
+              );
+            })}
+          </Suspense>
         </main>
         <Footer />
       </div>

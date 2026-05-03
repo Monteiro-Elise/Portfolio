@@ -1,0 +1,91 @@
+{
+  "about": {
+    "construction": "Ce site est en construction et évoluera avec moi au fil de mes projets et de mes expériences.",
+    "contact": "N'hésitez pas à me contacter. Je serai très heureuse de pouvoir vous aider dans vos futurs projets.",
+    "intro": "Bienvenue sur mon portfolio, un espace où je centralise mes projets, mon CV et mes différents moyens pour apprendre à me connaître.",
+    "passion": "Aimant la résolution de problèmes et adorant apprendre, je me suis naturellement dirigée vers l'informatique, une science nouvelle dans laquelle il y a tant de choses à découvrir et évoluant à une vitesse folle.",
+    "skills": "Mon parcours m'a amenée à pratiquer différents langages ainsi que plusieurs frameworks. Cette diversité témoigne de ma capacité d'adaptation, d'apprentissage rapide, et je suis convaincue de pouvoir assimiler vos outils et technologies pour devenir la ressource dont vous avez besoin."
+  },
+  "aria-label": {
+    "closeLanguageMenu": "Fermer le menu des langues",
+    "closeSectionMenu": "Fermer le menu des sections",
+    "email": "Envoyer un email",
+    "github": "Voir mon profil GitHub",
+    "githubRepo": "Voir le dépôt GitHub du projet {{project}}",
+    "linkedin": "Voir mon profil LinkedIn",
+    "liveDemo": "Voir la démo en ligne du projet {{project}}",
+    "nav": "Aller à la section {{section}}",
+    "openLanguageMenu": "Ouvrir le menu des langues",
+    "openSectionMenu": "Ouvrir le menu des sections",
+    "resume": "Télécharger mon CV",
+    "setLanguage": "Changer la langue en {{language}}",
+    "showLessSkills": "Afficher moins de compétences pour la sous-section {{category}}",
+    "showMoreSkills": "Afficher plus de compétences pour la sous-section {{category}}",
+    "theme": "Changer le thème du site"
+  },
+  "category": {
+    "databases": "Base de données",
+    "frameworks": "Frameworks",
+    "languages": "Langues",
+    "tools": "Outils"
+  },
+  "copy-right": "Tous droits réservés",
+  "description": "Bienvenue sur mon portfolio, un espace où je centralise mes projets, mon CV et mes différents moyens pour apprendre à me connaître.",
+  "job": "Développeuse Fullstack",
+  "lang": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "languages": "Langues",
+  "projects": {
+    "compiler": {
+      "description": "Ce projet traduit un sous-ensemble du langage C en code assembleur (NASM) exécutable.",
+      "features": {
+        "amd64_code": "Production de code conforme aux conventions AMD64",
+        "ast": "Construction et parcours d'un arbre syntaxique abstrait (AST)",
+        "lex_syntax": "Analyse lexicale et syntaxique du language TPC",
+        "test_coverage": "Mise en place de tests couvrant tous les scénarios connus : succès, erreurs syntaxiques, erreurs sémantiques et warnings.",
+        "test_report": "Génération automatisée et centralisée des rapports de tests."
+      },
+      "media_description": "Schéma du fonctionnement du projet compilateur : un fichier .tcp est analysé lexicalement et syntaxiquement avec Flex et Bison pour produire un arbre syntaxique abstrait, puis transformé en code assembleur (.asm) par un programme en C.",
+      "title": "Compilateur"
+    },
+    "distribu_calcul": {
+      "description": "Système distribué basé sur TCP permettant de déléguer et exécuter des calculs intensifs sur un réseau de machines.",
+      "features": {
+        "architecture": "Architecture distribuée avec gestion parent/enfant entre machines",
+        "connection_handling": "Gestion des connexions, des déconnexions et des pannes sans perte",
+        "distributed_execution": "Exécution distribuée de conjectures sur des plages de valeurs",
+        "non_blocking": "Téléchargement non bloquant de JAR contenant les algorithmes",
+        "results": "Centralisation des résultats dans un fichier"
+      },
+      "media_description": "Illustration d'un système distribué",
+      "title": "DistribuCalcul"
+    },
+    "dodge_run": {
+      "description": "Petit jeu en temps réel où le joueur contrôle un personnage. Ce mini projet illustre l'utilisation pratique des structures de données pour déterminer l'ordre d'exécution des événements. Gestion d'une file de priorité pour planifier les événements",
+      "media_description": "Image du jeu DodgeRun",
+      "title": "DodgeRun"
+    },
+    "review": {
+      "description": "Ce projet permet aux utilisateurs de soumettre du code Java et des tests unitaires pour recevoir des revues de la part d'autres utilisateurs. La plateforme offre des fonctionnalités de suivi, de vote et de commentaire sur le code et les revues.",
+      "features": {
+        "collaboration": "Collaboration en équipe de 5 en méthodologie Agile Scrum",
+        "mvc_role": "Architecture MVC avec gestion des accès par rôle",
+        "secure": "Système d'authentification sécurisé et protection des données utilisateur",
+        "setup": "Configuration de l'application et de la base de données",
+        "test": "Micro-service pour exécuter les tests unitaires en toute sécurité"
+      },
+      "media_description": "Vidéo présentant l'utilisation de la plateforme de revue de code: un utilisateur parcourt une liste de codes publiés, les trie par date, consulte du code publié, exécute les tests associés au code, puis se connecte pour publier du code, voter, suivre d'autres utilisateurs et ajouter une revue en réutilisant une précédente.",
+      "title": "Review"
+    }
+  },
+  "resume": "CV",
+  "sections": {
+    "about": "Présentation",
+    "projects": "Projets",
+    "skills": "Compétences"
+  },
+  "title": "Portfolio - {{name}}",
+  "videoNotSupported": "Votre navigateur ne supporte pas les vidéos."
+}

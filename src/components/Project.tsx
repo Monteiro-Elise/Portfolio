@@ -1,6 +1,8 @@
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
 import { useLanguage } from '../hooks/useLanguage';
+import { useVisibility } from '../hooks/useVisibility';
+import { useRef } from 'react';
 
 interface Props {
   bool: boolean;
@@ -31,6 +33,8 @@ function Project({
 }: Props) {
   const contentPosition = bool ? 'right' : 'left';
   const { t } = useLanguage();
+  const refVideo = useRef<HTMLVideoElement>(null);
+  const isVisible = useVisibility(refVideo);
 
   return (
     <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
@@ -42,13 +46,18 @@ function Project({
                 {mediaDescription}
               </p>
               <video
+                ref={refVideo}
                 autoPlay
                 loop
                 muted
+                playsInline
+                preload="none"
+                poster={`/project/preview_${id}.webp`}
+                controls={false}
                 className="w-full h-auto"
                 aria-describedby={`project-${id}-video-desc`}
               >
-                <source src={media} type="video/mp4" />
+                {isVisible && <source src={media} type="video/mp4" />}
                 {t('videoNotSupported')}
               </video>
             </>
@@ -56,6 +65,7 @@ function Project({
             <img
               src={media}
               alt={mediaDescription}
+              loading="lazy"
               className="w-full h-auto rounded-lg"
             />
           )}

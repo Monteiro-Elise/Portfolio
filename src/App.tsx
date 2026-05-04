@@ -64,21 +64,21 @@ function App() {
         <Header />
         <main>
           <Banner />
-          <Suspense fallback={null}>
-            {CONSTANTS.sections.map((section, index) => {
-              const Component = section.component;
-              return (
-                <SectionLayout
-                  key={index}
-                  id={section.id}
-                  index={index}
-                  total={CONSTANTS.sections.length}
-                >
+          {CONSTANTS.sections.map((section, index) => {
+            const Component = section.component;
+            return (
+              <SectionLayout
+                key={index}
+                id={section.id}
+                index={index}
+                total={CONSTANTS.sections.length}
+              >
+                <Suspense fallback={null}>
                   <Component />
-                </SectionLayout>
-              );
-            })}
-          </Suspense>
+                </Suspense>
+              </SectionLayout>
+            );
+          })}
         </main>
         <Footer />
       </div>

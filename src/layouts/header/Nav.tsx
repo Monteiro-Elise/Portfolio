@@ -1,5 +1,5 @@
-import { CONSTANTS } from '../../utils/constants';
 import { useLanguage } from '../../hooks/useLanguage';
+import { CONSTANTS } from '../../utils/constants';
 interface NavItemsProps {
   id: string;
   ariaLabel: string;

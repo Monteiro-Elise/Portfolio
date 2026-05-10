@@ -1,9 +1,10 @@
 import { useRef } from 'react';
+
+import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
 import Nav from './Nav';
 import { useNav } from './useNav';
-import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 
 function Header() {
   const menuRef = useRef<HTMLDivElement>(null);

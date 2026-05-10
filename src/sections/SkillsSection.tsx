@@ -1,7 +1,8 @@
-import { SkillsCategory } from '../components/SkillsCategory';
-import { getSkillsData } from './SkillsData';
-import { useLanguage } from '../hooks/useLanguage';
 import { useMemo } from 'react';
+
+import { SkillsCategory } from '../components/SkillsCategory';
+import { useLanguage } from '../hooks/useLanguage';
+import { getSkillsData } from './SkillsData';
 
 function SkillsSection() {
   const { t } = useLanguage();

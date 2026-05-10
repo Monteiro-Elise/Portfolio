@@ -1,6 +1,7 @@
-import { CONSTANTS } from '../utils/constants';
-import { FiPhone, FiMail } from 'react-icons/fi';
+import { FiMail, FiPhone } from 'react-icons/fi';
+
 import { useLanguage } from '../hooks/useLanguage';
+import { CONSTANTS } from '../utils/constants';
 
 function Banner() {
   const { t, currentLanguage } = useLanguage();

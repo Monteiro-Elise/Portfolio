@@ -1,8 +1,9 @@
+import { useRef } from 'react';
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
+
 import { useLanguage } from '../hooks/useLanguage';
 import { useVisibility } from '../hooks/useVisibility';
-import { useRef } from 'react';
 
 interface Props {
   bool: boolean;

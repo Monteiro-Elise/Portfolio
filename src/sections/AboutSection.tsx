@@ -1,5 +1,6 @@
-import { useLanguage } from '../hooks/useLanguage';
 import { memo } from 'react';
+
+import { useLanguage } from '../hooks/useLanguage';
 
 const AboutSection = memo(function AboutSection() {
   const { t } = useLanguage();

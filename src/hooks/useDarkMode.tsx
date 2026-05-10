@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function useDarkMode() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {

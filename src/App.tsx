@@ -1,14 +1,15 @@
+import { Suspense } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
+
 import Banner from './components/Banner';
+import useDarkMode from './hooks/useDarkMode';
+import { useIsMobile } from './hooks/useIsMobile';
+import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import SectionLayout from './layouts/SectionLayout';
-import { useLanguage } from './hooks/useLanguage';
 import { CONSTANTS } from './utils/constants';
-import { Helmet } from 'react-helmet-async';
-import { HelmetProvider } from 'react-helmet-async';
-import useDarkMode from './hooks/useDarkMode';
-import { useIsMobile } from './hooks/useIsMobile';
-import { Suspense } from 'react';
 
 function App() {
   const { t, currentLanguage } = useLanguage();

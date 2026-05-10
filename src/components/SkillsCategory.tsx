@@ -1,6 +1,7 @@
+import type { ComponentType } from 'react';
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import type { ComponentType } from 'react';
+
 import { useLanguage } from '../hooks/useLanguage';
 
 type Skill = {

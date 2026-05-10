@@ -1,4 +1,5 @@
 import { lazy } from 'react';
+
 import AboutSection from './../sections/AboutSection';
 
 const SkillsSection = lazy(() => import('./../sections/SkillsSection'));

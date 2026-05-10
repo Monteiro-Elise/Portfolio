@@ -1,6 +1,7 @@
-import { FiGlobe } from 'react-icons/fi';
+import { Content, Root, Trigger } from '@radix-ui/react-popover';
 import { useState } from 'react';
-import { Root, Trigger, Content } from '@radix-ui/react-popover';
+import { FiGlobe } from 'react-icons/fi';
+
 import { useLanguage } from '../hooks/useLanguage';
 import { useScrollVisibility } from './../hooks/useScrollVisibility';
 

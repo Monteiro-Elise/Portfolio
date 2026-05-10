@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import Project from '../components/Project';
-import { useIsMobile } from '../hooks/useIsMobile';
-import { useLanguage } from '../hooks/useLanguage';
-import { getProjectsData } from './ProjectsData';
+import { useIsMobile } from '../../hooks/useIsMobile';
+import { useLanguage } from '../../hooks/useLanguage';
+import ProjectItem from './ProjectItem';
+import { getProjectsData } from './projects.data';
 
 function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
@@ -17,7 +17,7 @@ function ProjectsSection() {
     <ul>
       {projects.map((project, index) => (
         <li key={index}>
-          <Project bool={index % 2 === 0} {...project} />
+          <ProjectItem bool={index % 2 === 0} project={project} />
         </li>
       ))}
     </ul>

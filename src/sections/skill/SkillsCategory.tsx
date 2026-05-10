@@ -1,20 +1,10 @@
-import type { ComponentType } from 'react';
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-import { useLanguage } from '../hooks/useLanguage';
+import { useLanguage } from '../../hooks/useLanguage';
+import type { Category } from './skills.type';
 
-type Skill = {
-  name: string;
-  icon: ComponentType<{ className?: string }>;
-};
-
-type CategoryProps = {
-  category: string;
-  skills: Skill[];
-};
-
-export function SkillsCategory({ category, skills }: CategoryProps) {
+export function SkillsCategory({ category, skills }: Category) {
   const { t } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
   const displayedSkills = isExpanded ? skills : skills.slice(0, 5);

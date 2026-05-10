@@ -8,7 +8,7 @@ import { useIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
-import SectionLayout from './layouts/SectionLayout';
+import SectionLayout from './sections/SectionLayout';
 import { CONSTANTS } from './utils/constants';
 
 function App() {

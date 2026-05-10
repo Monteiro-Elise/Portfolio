@@ -2,8 +2,10 @@ import { lazy } from 'react';
 
 import AboutSection from './../sections/AboutSection';
 
-const SkillsSection = lazy(() => import('./../sections/SkillsSection'));
-const ProjectsSection = lazy(() => import('./../sections/ProjectsSection'));
+const SkillsSection = lazy(() => import('../sections/skill/SkillsSection'));
+const ProjectsSection = lazy(
+  () => import('../sections/project/ProjectsSection')
+);
 
 export const CONSTANTS = {
   languages: ['fr', 'en'],

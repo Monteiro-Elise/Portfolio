@@ -28,7 +28,9 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-export function getSkillsData(t: (key: string) => string) {
+import type { Category } from './skills.type';
+
+export function getSkillsData(t: (key: string) => string): Category[] {
   return [
     {
       category: t('category.languages'),

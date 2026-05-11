@@ -7,7 +7,7 @@ import ToggleDarkMode from '../../components/ToggleDarkMode';
 import { useLanguage } from '../../hooks/useLanguage';
 import { CONSTANTS } from '../../utils/constants';
 
-function HeaderActions() {
+export default function HeaderActions() {
   const { t, currentLanguage } = useLanguage();
   const cvHref = `/cv/CV_Elise_MONTEIRO_${currentLanguage}.pdf`;
 
@@ -60,5 +60,3 @@ function HeaderActions() {
     </>
   );
 }
-
-export default HeaderActions;

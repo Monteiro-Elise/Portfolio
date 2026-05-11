@@ -3,12 +3,13 @@ import { RxCrossCircled } from 'react-icons/rx';
 
 import { useLanguage } from '../../hooks/useLanguage';
 
-type Props = {
+export default function HeaderMobileNavToggle({
+  isOpen,
+  setIsOpen,
+}: {
   isOpen: boolean;
   setIsOpen: (value: boolean) => void;
-};
-
-function HeaderMobileNavToggle({ isOpen, setIsOpen }: Props) {
+}) {
   const { t } = useLanguage();
 
   return (
@@ -31,5 +32,3 @@ function HeaderMobileNavToggle({ isOpen, setIsOpen }: Props) {
     </button>
   );
 }
-
-export default HeaderMobileNavToggle;

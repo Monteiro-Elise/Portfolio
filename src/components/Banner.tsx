@@ -3,7 +3,7 @@ import { FiMail, FiPhone } from 'react-icons/fi';
 import { useLanguage } from '../hooks/useLanguage';
 import { CONSTANTS } from '../utils/constants';
 
-function Banner() {
+export default function Banner() {
   const { t, currentLanguage } = useLanguage();
   return (
     <section
@@ -35,4 +35,3 @@ function Banner() {
     </section>
   );
 }
-export default Banner;

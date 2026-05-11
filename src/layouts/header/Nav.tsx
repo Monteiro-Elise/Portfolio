@@ -1,13 +1,14 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { CONSTANTS } from '../../utils/constants';
-interface NavItemsProps {
+
+type NavProps = {
   id: string;
   ariaLabel: string;
   className: string;
   closeMenu: () => void;
-}
+};
 
-function Nav({ id, ariaLabel, closeMenu, className }: NavItemsProps) {
+export default function Nav({ id, ariaLabel, closeMenu, className }: NavProps) {
   const { t } = useLanguage();
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
@@ -29,5 +30,3 @@ function Nav({ id, ariaLabel, closeMenu, className }: NavItemsProps) {
     </nav>
   );
 }
-
-export default Nav;

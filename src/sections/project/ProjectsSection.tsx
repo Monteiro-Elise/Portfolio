@@ -5,7 +5,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 import ProjectItem from './ProjectItem';
 import { getProjectsData } from './projects.data';
 
-function ProjectsSection() {
+export default function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
   const isMobile = useIsMobile();
   const projects = useMemo(
@@ -23,5 +23,3 @@ function ProjectsSection() {
     </ul>
   );
 }
-
-export default ProjectsSection;

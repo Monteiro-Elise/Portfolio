@@ -1,11 +1,12 @@
 import { type RefObject, useEffect, useState } from 'react';
 
-type Props = {
-  buttonRef: RefObject<HTMLDivElement | null>;
-  menuRef: RefObject<HTMLDivElement | null>;
-};
-
-export function useNav({ buttonRef, menuRef }: Props) {
+export function useNav<T extends HTMLElement, U extends HTMLElement>({
+  buttonRef,
+  menuRef,
+}: {
+  buttonRef: RefObject<T | null>;
+  menuRef: RefObject<U | null>;
+}) {
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false);
 
   useEffect(() => {

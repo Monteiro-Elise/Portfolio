@@ -5,7 +5,7 @@ import { FiGlobe } from 'react-icons/fi';
 import { useLanguage } from '../hooks/useLanguage';
 import { useScrollVisibility } from './../hooks/useScrollVisibility';
 
-function LanguageSwitcher() {
+export default function LanguageSwitcher() {
   const { t, currentLanguage, changeLanguage, languages } = useLanguage();
   const [open, setOpen] = useState(false);
   const { isVisible } = useScrollVisibility();
@@ -60,5 +60,3 @@ function LanguageSwitcher() {
     </Root>
   );
 }
-
-export default LanguageSwitcher;

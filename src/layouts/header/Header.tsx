@@ -6,7 +6,7 @@ import HeaderMobileNavToggle from './HeaderMobileNavToggle';
 import Nav from './Nav';
 import { useNav } from './useNav';
 
-function Header() {
+export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useNav({
@@ -64,5 +64,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

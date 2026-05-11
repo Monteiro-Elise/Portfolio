@@ -1,16 +1,21 @@
 import type { ReactNode } from 'react';
 
-import { DiagonalSeparator } from '../components/DiagonalSeparator';
+import DiagonalSeparator from '../components/DiagonalSeparator';
 import { useLanguage } from '../hooks/useLanguage';
 
-interface Props {
+type SectionLayoutProps = {
   id: string;
   index: number;
   total: number;
   children: ReactNode;
-}
+};
 
-export default function SectionLayout({ id, index, total, children }: Props) {
+export default function SectionLayout({
+  id,
+  index,
+  total,
+  children,
+}: SectionLayoutProps) {
   const { t } = useLanguage();
   const colors = ['bg-primary', 'bg-secondary'];
   const bg = colors[index % 2];

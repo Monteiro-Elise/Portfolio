@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 
 import Banner from './components/Banner';
-import useDarkMode from './hooks/useDarkMode';
+import { useDarkMode } from './hooks/useDarkMode';
 import { useIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
@@ -11,7 +11,7 @@ import Header from './layouts/header/Header';
 import SectionLayout from './sections/SectionLayout';
 import { CONSTANTS } from './utils/constants';
 
-function App() {
+export default function App() {
   const { t, currentLanguage } = useLanguage();
   const { isDarkMode } = useDarkMode();
   const isMobile = useIsMobile();
@@ -86,5 +86,3 @@ function App() {
     </HelmetProvider>
   );
 }
-
-export default App;

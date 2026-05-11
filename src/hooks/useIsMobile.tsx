@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
-export function useIsMobile(breakpoint = 768) {
-  const query = `(max-width: ${breakpoint}px)`;
+const MOBILE_QUERY = '(max-width: 768px)';
+
+export function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const media = window.matchMedia(query);
-
+    const media = window.matchMedia(MOBILE_QUERY);
     const update = () => setIsMobile(media.matches);
 
     update();
     media.addEventListener('change', update);
 
     return () => media.removeEventListener('change', update);
-  }, [query]);
+  }, []);
 
   return isMobile;
 }

@@ -1,12 +1,10 @@
-interface DiagonalSeparatorProps {
-  fromColor: string;
-  toColor: string;
-}
-
-export function DiagonalSeparator({
+export default function DiagonalSeparator({
   fromColor,
   toColor,
-}: DiagonalSeparatorProps) {
+}: {
+  fromColor: string;
+  toColor: string;
+}) {
   return (
     <div className="relative h-16 md:h-24">
       <div

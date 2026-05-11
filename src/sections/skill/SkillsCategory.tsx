@@ -4,7 +4,7 @@ import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { Category } from './skills.type';
 
-export function SkillsCategory({ category, skills }: Category) {
+export default function SkillsCategory({ category, skills }: Category) {
   const { t } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
   const displayedSkills = isExpanded ? skills : skills.slice(0, 5);

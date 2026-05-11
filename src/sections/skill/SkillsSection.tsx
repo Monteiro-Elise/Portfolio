@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import { useLanguage } from '../../hooks/useLanguage';
 import { getSkillsData } from './skills.data';
-import { SkillsCategory } from './SkillsCategory';
+import SkillsCategory from './SkillsCategory';
 
-function SkillsSection() {
+export default function SkillsSection() {
   const { t } = useLanguage();
 
   const skillsData = useMemo(() => getSkillsData(t), [t]);
@@ -22,5 +22,3 @@ function SkillsSection() {
     </ul>
   );
 }
-
-export default SkillsSection;

@@ -6,7 +6,13 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useVisibility } from '../../hooks/useVisibility';
 import type { Project } from './projects.type';
 
-function ProjectItem({ bool, project }: { bool: boolean; project: Project }) {
+export default function ProjectItem({
+  bool,
+  project,
+}: {
+  bool: boolean;
+  project: Project;
+}) {
   const contentPosition = bool ? 'right' : 'left';
   const { t } = useLanguage();
   const refVideo = useRef<HTMLVideoElement>(null);
@@ -102,5 +108,3 @@ function ProjectItem({ bool, project }: { bool: boolean; project: Project }) {
     </article>
   );
 }
-
-export default ProjectItem;

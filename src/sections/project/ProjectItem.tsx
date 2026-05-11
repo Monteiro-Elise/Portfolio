@@ -16,7 +16,7 @@ export default function ProjectItem({
   const contentPosition = bool ? 'right' : 'left';
   const { t } = useLanguage();
   const refVideo = useRef<HTMLVideoElement>(null);
-  const isVisible = useVisibility(refVideo);
+  const isVisible = useVisibility(refVideo, { rootMargin: '200px' });
 
   return (
     <article className="mx-auto max-w-5xl px-4 gap-12 py-12">

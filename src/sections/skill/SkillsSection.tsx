@@ -1,23 +1,28 @@
 import { useMemo } from 'react';
 
+import Reveal from '../../components/Reveal';
+import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
 import { getSkillsData } from './skills.data';
 import SkillsCategory from './SkillsCategory';
 
 export default function SkillsSection() {
   const { t } = useLanguage();
+  const isMobile = useIsMobile();
 
   const skillsData = useMemo(() => getSkillsData(t), [t]);
 
   return (
     <ul className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
       {skillsData.map((category, index) => (
-        <li key={index}>
-          <SkillsCategory
-            category={category.category}
-            skills={category.skills}
-          />
-        </li>
+        <Reveal key={index} delay={500 + (isMobile ? 0 : (index % 2) * 300)}>
+          <li>
+            <SkillsCategory
+              category={category.category}
+              skills={category.skills}
+            />
+          </li>
+        </Reveal>
       ))}
     </ul>
   );

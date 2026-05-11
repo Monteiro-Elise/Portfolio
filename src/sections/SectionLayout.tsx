@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import DiagonalSeparator from '../components/DiagonalSeparator';
+import Reveal from '../components/Reveal';
 import { useLanguage } from '../hooks/useLanguage';
 
 type SectionLayoutProps = {
@@ -30,9 +31,11 @@ export default function SectionLayout({
         className={`py-20 ${bg}`}
       >
         <div className="container mx-auto px-4">
-          <h2 id={`title-section-${id}`} className="scroll-mt-15">
-            {t(`sections.${id}`)}
-          </h2>
+          <Reveal delay={200}>
+            <h2 id={`title-section-${id}`} className="scroll-mt-15">
+              {t(`sections.${id}`)}
+            </h2>
+          </Reveal>
           <div className="section-content">{children}</div>
         </div>
       </section>

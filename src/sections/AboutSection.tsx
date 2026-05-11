@@ -1,5 +1,6 @@
 import { memo } from 'react';
 
+import Reveal from '../components/Reveal';
 import { useLanguage } from '../hooks/useLanguage';
 
 const AboutSection = memo(function AboutSection() {
@@ -14,16 +15,18 @@ const AboutSection = memo(function AboutSection() {
   };
 
   return (
-    <div className="section-content">
-      <div className="text-lg leading-relaxed space-y-8">
-        <p>{about.construction}</p>
-        <p>
-          {about.intro} {about.passion}
-        </p>
-        <p>{about.skills}</p>
-        <p>{about.contact}</p>
+    <Reveal delay={200}>
+      <div className="section-content">
+        <div className="text-lg leading-relaxed space-y-8">
+          <p>{about.construction}</p>
+          <p>
+            {about.intro} {about.passion}
+          </p>
+          <p>{about.skills}</p>
+          <p>{about.contact}</p>
+        </div>
       </div>
-    </div>
+    </Reveal>
   );
 });
 

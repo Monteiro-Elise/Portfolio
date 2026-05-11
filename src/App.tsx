@@ -3,14 +3,19 @@ import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 
 import Banner from './components/Banner';
+import Reveal from './components/Reveal';
+import { getInitialDarkMode } from './hooks/useDarkMode';
+import { getInitialIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import SectionLayout from './sections/SectionLayout';
-import { getBannerImage } from './utils/assetResolver';
 import { CONSTANTS } from './utils/constants';
+
 export default function App() {
   const { t } = useLanguage();
+  const isDarkMode = getInitialDarkMode();
+  const device = getInitialIsMobile() ? 'mobile_banner' : 'banner';
 
   return (
     <HelmetProvider>
@@ -34,15 +39,23 @@ export default function App() {
         <link
           rel="preload"
           as="image"
-          href={getBannerImage()}
+          href={`/banner/${device}${isDarkMode ? '_dark' : ''}.webp`}
           fetchPriority="high"
+          type="image/webp"
+        />
+        <link
+          rel="prefetch"
+          as="image"
+          href={`/banner/${device}${isDarkMode ? '' : '_dark'}.webp`}
           type="image/webp"
         />
       </Helmet>
       <div className="min-h-screen bg-primary">
         <Header />
         <main>
-          <Banner />
+          <Reveal delay={100}>
+            <Banner />
+          </Reveal>
           {CONSTANTS.sections.map((section, index) => {
             const Component = section.component;
             return (
@@ -52,7 +65,7 @@ export default function App() {
                 index={index}
                 total={CONSTANTS.sections.length}
               >
-                <Suspense fallback={null}>
+                <Suspense>
                   <Component />
                 </Suspense>
               </SectionLayout>

@@ -20,8 +20,9 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
         !buttonRef.current ||
         menuRef.current.contains(target) ||
         buttonRef.current.contains(target)
-      )
+      ) {
         return;
+      }
       setIsMobileNavMenuOpen(false);
     };
 
@@ -38,8 +39,9 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
         !(e.key === 'Enter' || e.key === ' ' || e.code === 'Space') ||
         buttonRef.current?.contains(target) ||
         menuRef.current?.contains(target)
-      )
+      ) {
         return;
+      }
       setIsMobileNavMenuOpen(false);
     };
 

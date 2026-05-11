@@ -30,8 +30,9 @@ export function useLanguage() {
         e.key !== CONSTANTS.languageStorageKey ||
         !e.newValue ||
         !isLanguage(e.newValue)
-      )
+      ) {
         return;
+      }
       changeLanguage(e.newValue);
     };
 

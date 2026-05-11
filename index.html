@@ -34,7 +34,7 @@
           getLangFromStorage() ||
           getLangFromNavigator()?.split('-')[0];
         lang = LANGUAGES.includes(lang) ? lang : 'en';
-        
+
         // Initialize i18n language and sync HTML lang attribute
         localStorage.setItem('i18nextLng', lang);
         document.documentElement.setAttribute('lang', lang);

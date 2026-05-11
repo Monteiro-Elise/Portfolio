@@ -95,7 +95,7 @@ img {
   @apply hidden sm:flex;
 }
 
-/* Navigation Styles*/
+/* Navigation Styles */
 
 .desktop-nav {
   @apply items-center gap-6;
@@ -118,7 +118,11 @@ img {
 }
 
 .mobile-nav li {
-  @apply text-left py-4 px-2 text-text-primary border-b border-text-primary;
+  @apply text-left cursor-pointer text-text-primary border-b border-text-primary;
+}
+
+.mobile-nav a {
+  @apply block py-4 px-2 w-full h-full;
 }
 
 /* Projects Section Styles */

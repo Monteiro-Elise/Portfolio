@@ -129,14 +129,14 @@ section p {
   @apply block py-4 px-2 w-full h-full;
 }
 
-.project-container video,
-.project-container img {
-  @apply rounded-xl shadow-[2px_2px_10px_9px_var(--shadow-color-secondary)];
-}
-
 /* Projects Section Styles */
 .project-container {
   @apply mt-[10%] flex justify-between;
+}
+
+.project-container video,
+.project-container img {
+  @apply rounded-xl shadow-[2px_2px_10px_9px_var(--shadow-color-secondary)];
 }
 
 .project-container.right {

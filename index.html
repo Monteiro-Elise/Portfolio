@@ -18,7 +18,11 @@
         }
 
         function getLangFromStorage() {
-          return localStorage.getItem('i18nextLng');
+          try {
+            return localStorage.getItem('i18nextLng');
+          } catch {
+            return null;
+          }
         }
 
         function getLangFromNavigator() {

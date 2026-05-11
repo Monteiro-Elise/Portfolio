@@ -3,18 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 
 import Banner from './components/Banner';
-import { useDarkMode } from './hooks/useDarkMode';
-import { useIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import SectionLayout from './sections/SectionLayout';
+import { getBannerImage } from './utils/assetResolver';
 import { CONSTANTS } from './utils/constants';
-
 export default function App() {
   const { t } = useLanguage();
-  const { isDarkMode } = useDarkMode();
-  const isMobile = useIsMobile();
 
   return (
     <HelmetProvider>
@@ -35,29 +31,13 @@ export default function App() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/preview.jpg" />
         <meta property="og:url" content={CONSTANTS.domain} />
-        {isDarkMode ? (
-          <link
-            rel="preload"
-            as="image"
-            href={
-              isMobile
-                ? '/banner/mobile_banner_dark.webp'
-                : '/banner/banner_dark.webp'
-            }
-            fetchPriority="high"
-            type="image/webp"
-          />
-        ) : (
-          <link
-            rel="preload"
-            as="image"
-            href={
-              isMobile ? '/banner/mobile_banner.webp' : '/banner/banner.webp'
-            }
-            fetchPriority="high"
-            type="image/webp"
-          />
-        )}
+        <link
+          rel="preload"
+          as="image"
+          href={getBannerImage()}
+          fetchPriority="high"
+          type="image/webp"
+        />
       </Helmet>
       <div className="min-h-screen bg-primary">
         <Header />

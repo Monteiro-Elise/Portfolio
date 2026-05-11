@@ -59,7 +59,7 @@ export default function App() {
           />
         )}
       </Helmet>
-      <div className="min-h-screen bg-primary transition-colors duration-300">
+      <div className="min-h-screen bg-primary">
         <Header />
         <main>
           <Banner />

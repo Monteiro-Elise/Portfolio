@@ -38,6 +38,15 @@ html {
   @apply scroll-smooth;
 }
 
+body * {
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    fill 0.3s ease,
+    stroke 0.3s ease;
+}
+
 h1 {
   @apply text-2xl md:text-6xl text-white mb-2;
 }

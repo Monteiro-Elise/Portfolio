@@ -23,7 +23,7 @@ export default function SkillsCategory({ category, skills }: Category) {
             return (
               <li
                 key={index}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all bg-component text-text-primary"
+                className="flex items-center gap-3 px-3 py-2 rounded-lg bg-component text-text-primary"
               >
                 <IconComponent className="icon-decoration" aria-hidden="true" />
                 <span className="text-sm">{skill.name}</span>

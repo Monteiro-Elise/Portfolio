@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-500 ${
+      className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-translate duration-500 ${
         isVisible || isMobileNavMenuOpen ? 'translate-y-0' : '-translate-y-full'
       } shadow`}
     >

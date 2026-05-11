@@ -48,7 +48,7 @@ export default function LanguageSwitcher() {
               aria-pressed={currentLanguage === lang}
               key={index}
               onClick={() => handleLanguageChange(lang)}
-              className={`w-full text-left px-4 py-2 sm:text-sm transition-colors hover border-b-0 first:rounded-t-md last:rounded-b-md ${
+              className={`w-full text-left px-4 py-2 sm:text-sm hover border-b-0 first:rounded-t-md last:rounded-b-md ${
                 currentLanguage === lang
                   ? 'bg-accent text-primary'
                   : 'bg-component text-accent'

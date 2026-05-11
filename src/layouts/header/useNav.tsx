@@ -10,17 +10,18 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
   const [isMobileNavMenuOpen, setIsMobileNavMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (!isMobileNavMenuOpen) {
-      return;
-    }
-    const firstLink = menuRef.current?.querySelector<HTMLAnchorElement>('a');
-    firstLink?.focus();
+    if (!isMobileNavMenuOpen || !menuRef.current || !buttonRef.current) return;
+    menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
 
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as Node;
-
-      if (menuRef.current?.contains(target)) return;
-
+      if (
+        !menuRef.current ||
+        !buttonRef.current ||
+        menuRef.current.contains(target) ||
+        buttonRef.current.contains(target)
+      )
+        return;
       setIsMobileNavMenuOpen(false);
     };
 
@@ -29,28 +30,25 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
 
       if (e.key === 'Escape') {
         setIsMobileNavMenuOpen(false);
-        const b = buttonRef.current?.querySelector<HTMLButtonElement>('button');
-        b?.focus();
+        buttonRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
         return;
       }
 
-      if (!(e.key === 'Enter' || e.key === ' ' || e.code === 'Space')) return;
-
-      if (buttonRef.current?.contains(target)) {
+      if (
+        !(e.key === 'Enter' || e.key === ' ' || e.code === 'Space') ||
+        buttonRef.current?.contains(target) ||
+        menuRef.current?.contains(target)
+      )
         return;
-      }
-
-      if (!menuRef.current?.contains(target)) {
-        setIsMobileNavMenuOpen(false);
-      }
+      setIsMobileNavMenuOpen(false);
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobileNavMenuOpen, buttonRef, menuRef]);
   return { setIsMobileNavMenuOpen, isMobileNavMenuOpen };

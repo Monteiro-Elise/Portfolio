@@ -63,11 +63,6 @@ section p {
   @apply text-text-tertiary;
 }
 
-video,
-img {
-  @apply rounded-xl shadow-[2px_2px_10px_9px_var(--shadow-color-secondary)];
-}
-
 .hover {
   @apply hover:opacity-70 transition-opacity cursor-pointer;
 }
@@ -132,6 +127,11 @@ img {
 
 .mobile-nav a {
   @apply block py-4 px-2 w-full h-full;
+}
+
+.project-container video,
+.project-container img {
+  @apply rounded-xl shadow-[2px_2px_10px_9px_var(--shadow-color-secondary)];
 }
 
 /* Projects Section Styles */

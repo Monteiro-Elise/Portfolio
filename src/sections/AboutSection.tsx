@@ -6,7 +6,7 @@ import { useLanguage } from '../hooks/useLanguage';
 const AboutSection = memo(function AboutSection() {
   const { t } = useLanguage();
 
-  const about = {
+  const aboutSection = {
     construction: t('about.construction'),
     intro: t('about.intro'),
     passion: t('about.passion'),
@@ -18,12 +18,12 @@ const AboutSection = memo(function AboutSection() {
     <Reveal delay={200}>
       <div className="section-content">
         <div className="text-lg leading-relaxed space-y-8">
-          <p>{about.construction}</p>
+          <p>{aboutSection.construction}</p>
           <p>
-            {about.intro} {about.passion}
+            {aboutSection.intro} {aboutSection.passion}
           </p>
-          <p>{about.skills}</p>
-          <p>{about.contact}</p>
+          <p>{aboutSection.skills}</p>
+          <p>{aboutSection.contact}</p>
         </div>
       </div>
     </Reveal>

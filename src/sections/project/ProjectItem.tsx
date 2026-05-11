@@ -9,13 +9,13 @@ import { useVisibility } from '../../hooks/useVisibility';
 import type { Project } from './projects.type';
 
 export default function ProjectItem({
-  bool,
+  isTextRight,
   project,
 }: {
-  bool: boolean;
+  isTextRight: boolean;
   project: Project;
 }) {
-  const contentPosition = bool ? 'right' : 'left';
+  const contentPosition = isTextRight ? 'right' : 'left';
   const { t } = useLanguage();
   const refVideo = useRef<HTMLVideoElement>(null);
   const isVisible = useVisibility(refVideo, { rootMargin: '200px' });

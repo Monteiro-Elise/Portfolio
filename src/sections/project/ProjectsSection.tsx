@@ -17,7 +17,7 @@ export default function ProjectsSection() {
     <ul>
       {projects.map((project, index) => (
         <li key={index}>
-          <ProjectItem bool={index % 2 === 0} project={project} />
+          <ProjectItem isTextRight={index % 2 === 0} project={project} />
         </li>
       ))}
     </ul>

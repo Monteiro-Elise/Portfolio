@@ -4,24 +4,24 @@ import DiagonalSeparator from '../components/DiagonalSeparator';
 import Reveal from '../components/Reveal';
 import { useLanguage } from '../hooks/useLanguage';
 
-type SectionLayoutProps = {
+type LayoutSectionProps = {
   id: string;
   index: number;
   total: number;
   children: ReactNode;
 };
 
-export default function SectionLayout({
+export default function LayoutSection({
   id,
   index,
   total,
   children,
-}: SectionLayoutProps) {
+}: LayoutSectionProps) {
   const { t } = useLanguage();
   const colors = ['bg-primary', 'bg-secondary'];
   const bg = colors[index % 2];
   const nextBg = colors[(index + 1) % 2];
-  const isLast = index !== total - 1;
+  const isNotLast = index !== total - 1;
 
   return (
     <div className="-mb-1">
@@ -40,7 +40,7 @@ export default function SectionLayout({
         </div>
       </section>
 
-      {isLast && <DiagonalSeparator fromColor={bg} toColor={nextBg} />}
+      {isNotLast && <DiagonalSeparator fromColor={bg} toColor={nextBg} />}
     </div>
   );
 }

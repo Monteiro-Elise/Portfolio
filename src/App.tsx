@@ -9,7 +9,7 @@ import { getInitialIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
-import SectionLayout from './sections/SectionLayout';
+import LayoutSection from './sections/LayoutSection';
 import { CONSTANTS } from './utils/constants';
 
 export default function App() {
@@ -59,7 +59,7 @@ export default function App() {
           {CONSTANTS.sections.map((section, index) => {
             const Component = section.component;
             return (
-              <SectionLayout
+              <LayoutSection
                 key={index}
                 id={section.id}
                 index={index}
@@ -68,7 +68,7 @@ export default function App() {
                 <Suspense>
                   <Component />
                 </Suspense>
-              </SectionLayout>
+              </LayoutSection>
             );
           })}
         </main>

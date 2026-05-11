@@ -12,15 +12,13 @@ import SectionLayout from './sections/SectionLayout';
 import { CONSTANTS } from './utils/constants';
 
 export default function App() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const { isDarkMode } = useDarkMode();
   const isMobile = useIsMobile();
 
   return (
     <HelmetProvider>
       <Helmet>
-        <html lang={currentLanguage} />
-
         <title>{t('title', { name: CONSTANTS.name })}</title>
 
         <meta name="description" content={t('description')} />

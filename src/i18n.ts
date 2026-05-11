@@ -3,13 +3,16 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpBackend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 
+import { CONSTANTS } from './utils/constants';
+
 i18n
   .use(LanguageDetector)
   .use(HttpBackend)
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    supportedLngs: ['en', 'fr'],
+    supportedLngs: CONSTANTS.languages,
+    nonExplicitSupportedLngs: false,
     interpolation: {
       escapeValue: false,
     },
@@ -18,9 +21,12 @@ i18n
       loadPath: '/locales/{{lng}}.json',
     },
 
+    // Use localStorage to keep a consistent language source during initialization and runtime
+    // localStorage detects language updates between tabs, unlike the HTML lang attribute
     detection: {
-      order: ['htmlTag'],
+      order: ['localStorage', 'htmlTag'],
       caches: ['localStorage'],
+      lookupLocalStorage: CONSTANTS.languageStorageKey,
     },
   });
 

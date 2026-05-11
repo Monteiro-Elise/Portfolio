@@ -8,7 +8,8 @@ const ProjectsSection = lazy(
 );
 
 export const CONSTANTS = {
-  languages: ['fr', 'en'],
+  languages: ['fr', 'en'], // Hardcoded in index.html for initial language setup
+  languageStorageKey: 'i18nextLng', // Hardcoded in index.html
   name: 'Elise Monteiro',
   mail: 'elise.ma.monteiro@orange.fr',
   linkedin: 'https://www.linkedin.com/in/elise-monteiro-60b752253/',

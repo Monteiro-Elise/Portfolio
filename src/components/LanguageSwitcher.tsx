@@ -6,10 +6,12 @@ import { useLanguage } from '../hooks/useLanguage';
 import { useScrollVisibility } from './../hooks/useScrollVisibility';
 
 export default function LanguageSwitcher() {
-  const { t, currentLanguage, changeLanguage, languages } = useLanguage();
+  const { t, currentLanguage, changeLanguage, languages, isLanguage } =
+    useLanguage();
   const [open, setOpen] = useState(false);
   const { isVisible } = useScrollVisibility();
   const handleLanguageChange = (lang: string) => {
+    if (!isLanguage(lang)) return;
     changeLanguage(lang);
     setOpen(false);
   };

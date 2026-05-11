@@ -1,12 +1,13 @@
-import LanguageSwitcher from '../../components/LanguageSwitcher';
-import ToggleDarkMode from '../../components/ToggleDarkMode';
+import { FaLinkedin } from 'react-icons/fa6';
 import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
-import { FaLinkedin } from 'react-icons/fa6';
-import { CONSTANTS } from '../../utils/constants';
-import { useLanguage } from '../../hooks/useLanguage';
 
-function HeaderActions() {
+import LanguageSwitcher from '../../components/LanguageSwitcher';
+import ToggleDarkMode from '../../components/ToggleDarkMode';
+import { useLanguage } from '../../hooks/useLanguage';
+import { CONSTANTS } from '../../utils/constants';
+
+export default function HeaderActions() {
   const { t, currentLanguage } = useLanguage();
   const cvHref = `/cv/CV_Elise_MONTEIRO_${currentLanguage}.pdf`;
 
@@ -59,5 +60,3 @@ function HeaderActions() {
     </>
   );
 }
-
-export default HeaderActions;

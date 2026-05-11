@@ -1,8 +1,10 @@
+import type { Project } from './projects.type';
+
 export function getProjectsData(
   t: (key: string) => string,
   currentLanguage: string,
   isMobile: boolean
-) {
+): Project[] {
   return [
     {
       id: 'review',
@@ -38,8 +40,6 @@ export function getProjectsData(
         'Gitlab',
         'SCRUM',
       ],
-      githubLink: '',
-      demoLink: '',
     },
     {
       id: 'compiler',
@@ -67,8 +67,6 @@ export function getProjectsData(
         'Git',
         'Redmine',
       ],
-      githubLink: '',
-      demoLink: '',
     },
     {
       id: 'distribu_calcul',
@@ -85,8 +83,6 @@ export function getProjectsData(
         t('projects.distribu_calcul.features.non_blocking'),
       ],
       skills: ['Java', 'TCP', 'IP', 'Threads', 'Jar', 'RFC', 'JUnit', 'Gitlab'],
-      githubLink: '',
-      demoLink: '',
     },
     {
       id: 'dodge_run',
@@ -97,8 +93,6 @@ export function getProjectsData(
       description: t('projects.dodge_run.description'),
       features: [],
       skills: ['C', 'MLV', 'Makefile', 'Git', 'Redmine'],
-      githubLink: '',
-      demoLink: '',
     },
   ];
 }

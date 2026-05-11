@@ -5,27 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <!--
+      Sets initial page language before React loads to ensure correct <html lang="">
+      for accessibility (screen readers like NVDA) and prevent mismatch during first render.
+    -->
     <script>
       (function () {
+        const LANGUAGES = ['fr', 'en'];
         function getLangFromQuery() {
           const params = new URLSearchParams(window.location.search);
           return params.get('lng') || params.get('lang');
         }
 
         function getLangFromStorage() {
-          return localStorage.getItem('i18nextLng');
+          try {
+            return localStorage.getItem('i18nextLng');
+          } catch {
+            return null;
+          }
         }
 
         function getLangFromNavigator() {
           return navigator.language || navigator.userLanguage;
         }
 
-        const lang =
+        let lang =
           getLangFromQuery() ||
           getLangFromStorage() ||
-          getLangFromNavigator()?.split('-')[0] ||
-          'en';
+          getLangFromNavigator()?.split('-')[0];
+        lang = LANGUAGES.includes(lang) ? lang : 'en';
 
+        // Initialize i18n language and sync HTML lang attribute
+        localStorage.setItem('i18nextLng', lang);
         document.documentElement.setAttribute('lang', lang);
       })();
     </script>

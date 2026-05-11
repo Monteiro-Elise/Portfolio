@@ -1,5 +1,6 @@
 import { FiMoon, FiSun } from 'react-icons/fi';
-import useDarkMode from '../hooks/useDarkMode';
+
+import { useDarkMode } from '../hooks/useDarkMode';
 import { useLanguage } from '../hooks/useLanguage';
 
 export default function ToggleDarkMode() {

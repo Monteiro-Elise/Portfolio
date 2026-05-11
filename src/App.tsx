@@ -1,25 +1,25 @@
-import Banner from './components/Banner';
-import Footer from './layouts/Footer';
-import Header from './layouts/header/Header';
-import SectionLayout from './layouts/SectionLayout';
-import { useLanguage } from './hooks/useLanguage';
-import { CONSTANTS } from './utils/constants';
+import { Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
-import useDarkMode from './hooks/useDarkMode';
-import { useIsMobile } from './hooks/useIsMobile';
-import { Suspense } from 'react';
 
-function App() {
-  const { t, currentLanguage } = useLanguage();
-  const { isDarkMode } = useDarkMode();
-  const isMobile = useIsMobile();
+import Banner from './components/Banner';
+import Reveal from './components/Reveal';
+import { getInitialDarkMode } from './hooks/useDarkMode';
+import { getInitialIsMobile } from './hooks/useIsMobile';
+import { useLanguage } from './hooks/useLanguage';
+import Footer from './layouts/Footer';
+import Header from './layouts/header/Header';
+import LayoutSection from './sections/LayoutSection';
+import { CONSTANTS } from './utils/constants';
+
+export default function App() {
+  const { t } = useLanguage();
+  const isDarkMode = getInitialDarkMode();
+  const device = getInitialIsMobile() ? 'mobile_banner' : 'banner';
 
   return (
     <HelmetProvider>
       <Helmet>
-        <html lang={currentLanguage} />
-
         <title>{t('title', { name: CONSTANTS.name })}</title>
 
         <meta name="description" content={t('description')} />
@@ -36,47 +36,39 @@ function App() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/preview.jpg" />
         <meta property="og:url" content={CONSTANTS.domain} />
-        {isDarkMode ? (
-          <link
-            rel="preload"
-            as="image"
-            href={
-              isMobile
-                ? '/banner/mobile_banner_dark.webp'
-                : '/banner/banner_dark.webp'
-            }
-            fetchPriority="high"
-            type="image/webp"
-          />
-        ) : (
-          <link
-            rel="preload"
-            as="image"
-            href={
-              isMobile ? '/banner/mobile_banner.webp' : '/banner/banner.webp'
-            }
-            fetchPriority="high"
-            type="image/webp"
-          />
-        )}
+        <link
+          rel="preload"
+          as="image"
+          href={`/banner/${device}${isDarkMode ? '_dark' : ''}.webp`}
+          fetchPriority="high"
+          type="image/webp"
+        />
+        <link
+          rel="prefetch"
+          as="image"
+          href={`/banner/${device}${isDarkMode ? '' : '_dark'}.webp`}
+          type="image/webp"
+        />
       </Helmet>
-      <div className="min-h-screen bg-primary transition-colors duration-300">
+      <div className="min-h-screen bg-primary">
         <Header />
         <main>
-          <Banner />
+          <Reveal delay={100}>
+            <Banner />
+          </Reveal>
           {CONSTANTS.sections.map((section, index) => {
             const Component = section.component;
             return (
-              <SectionLayout
+              <LayoutSection
                 key={index}
                 id={section.id}
                 index={index}
                 total={CONSTANTS.sections.length}
               >
-                <Suspense fallback={null}>
+                <Suspense>
                   <Component />
                 </Suspense>
-              </SectionLayout>
+              </LayoutSection>
             );
           })}
         </main>
@@ -85,5 +77,3 @@ function App() {
     </HelmetProvider>
   );
 }
-
-export default App;

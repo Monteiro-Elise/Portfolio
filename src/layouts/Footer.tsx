@@ -1,7 +1,7 @@
-import { CONSTANTS } from '../utils/constants';
 import { useLanguage } from '../hooks/useLanguage';
+import { CONSTANTS } from '../utils/constants';
 
-function Footer() {
+export default function Footer() {
   const { t } = useLanguage();
   return (
     <footer className="py-8 border-t bg-primary border-accent text-text-primary">
@@ -13,5 +13,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

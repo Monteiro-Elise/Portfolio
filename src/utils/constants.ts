@@ -1,11 +1,15 @@
 import { lazy } from 'react';
+
 import AboutSection from './../sections/AboutSection';
 
-const SkillsSection = lazy(() => import('./../sections/SkillsSection'));
-const ProjectsSection = lazy(() => import('./../sections/ProjectsSection'));
+const SkillsSection = lazy(() => import('../sections/skill/SkillsSection'));
+const ProjectsSection = lazy(
+  () => import('../sections/project/ProjectsSection')
+);
 
 export const CONSTANTS = {
-  languages: ['fr', 'en'],
+  languages: ['fr', 'en'], // Hardcoded in index.html for initial language setup
+  languageStorageKey: 'i18nextLng', // Hardcoded in index.html
   name: 'Elise Monteiro',
   mail: 'elise.ma.monteiro@orange.fr',
   linkedin: 'https://www.linkedin.com/in/elise-monteiro-60b752253/',

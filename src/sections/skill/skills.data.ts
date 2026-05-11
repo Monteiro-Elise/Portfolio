@@ -1,34 +1,36 @@
+import { BiLogoVisualStudio } from 'react-icons/bi';
+import { BiLogoPostgresql } from 'react-icons/bi';
+import { DiEclipse, DiJavascript1, DiRedis } from 'react-icons/di';
 import {
-  FaGitAlt,
-  FaPython,
-  FaDocker,
-  FaJava,
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
   FaAngular,
-  FaVuejs,
-  FaNodeJs,
+  FaCss3Alt,
   FaDatabase,
+  FaDocker,
+  FaGitAlt,
+  FaHtml5,
+  FaJava,
+  FaNodeJs,
+  FaPython,
+  FaReact,
+  FaVuejs,
 } from 'react-icons/fa';
 import { FaC } from 'react-icons/fa6';
 import { FaGolang } from 'react-icons/fa6';
+import { GrMysql } from 'react-icons/gr';
 import {
+  SiDjango,
   SiGithubactions,
-  SiPhp,
   SiIntellijidea,
   SiKotlin,
-  SiTypescript,
-  SiDjango,
-  SiSpring,
   SiMongodb,
+  SiPhp,
+  SiSpring,
+  SiTypescript,
 } from 'react-icons/si';
-import { BiLogoVisualStudio } from 'react-icons/bi';
-import { DiEclipse, DiJavascript1, DiRedis } from 'react-icons/di';
-import { GrMysql } from 'react-icons/gr';
-import { BiLogoPostgresql } from 'react-icons/bi';
 
-export function getSkillsData(t: (key: string) => string) {
+import type { Category } from './skills.type';
+
+export function getSkillsData(t: (key: string) => string): Category[] {
   return [
     {
       category: t('category.languages'),

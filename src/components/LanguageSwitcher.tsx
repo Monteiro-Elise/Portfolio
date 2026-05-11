@@ -1,14 +1,17 @@
-import { FiGlobe } from 'react-icons/fi';
+import { Content, Root, Trigger } from '@radix-ui/react-popover';
 import { useState } from 'react';
-import { Root, Trigger, Content } from '@radix-ui/react-popover';
+import { FiGlobe } from 'react-icons/fi';
+
 import { useLanguage } from '../hooks/useLanguage';
 import { useScrollVisibility } from './../hooks/useScrollVisibility';
 
-function LanguageSwitcher() {
-  const { t, currentLanguage, changeLanguage, languages } = useLanguage();
+export default function LanguageSwitcher() {
+  const { t, currentLanguage, changeLanguage, languages, isLanguage } =
+    useLanguage();
   const [open, setOpen] = useState(false);
   const { isVisible } = useScrollVisibility();
   const handleLanguageChange = (lang: string) => {
+    if (!isLanguage(lang)) return;
     changeLanguage(lang);
     setOpen(false);
   };
@@ -45,7 +48,7 @@ function LanguageSwitcher() {
               aria-pressed={currentLanguage === lang}
               key={index}
               onClick={() => handleLanguageChange(lang)}
-              className={`w-full text-left px-4 py-2 sm:text-sm transition-colors hover border-b-0 first:rounded-t-md last:rounded-b-md ${
+              className={`w-full text-left px-4 py-2 sm:text-sm hover border-b-0 first:rounded-t-md last:rounded-b-md ${
                 currentLanguage === lang
                   ? 'bg-accent text-primary'
                   : 'bg-component text-accent'
@@ -59,5 +62,3 @@ function LanguageSwitcher() {
     </Root>
   );
 }
-
-export default LanguageSwitcher;

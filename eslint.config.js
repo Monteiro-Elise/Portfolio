@@ -6,6 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import globals from 'globals';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import { FlatCompat } from '@eslint/eslintrc';
 const compat = new FlatCompat({ baseDirectory: process.cwd() });
 
@@ -38,6 +39,7 @@ export default [
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint,
       'jsx-a11y': jsxA11y,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -65,6 +67,9 @@ export default [
       'no-debugger': 'warn',
       eqeqeq: ['warn', 'smart'],
       curly: ['warn', 'multi-line'],
+
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
     },
   },
 ];

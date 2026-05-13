@@ -38,7 +38,7 @@ export default function ProjectItem({
                   muted
                   playsInline
                   preload="none"
-                  poster={`/project/preview_${project.id}.webp`}
+                  poster={`/project/preview-${project.id}.webp`}
                   controls={false}
                   className="w-full h-auto"
                   aria-describedby={`project-${project.id}-video-desc`}

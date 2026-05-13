@@ -10,8 +10,8 @@ export function getProjectsData(
       id: 'review',
       isVideo: true,
       media: isMobile
-        ? `/project/mobile_review.mp4`
-        : `/project/desktop_review.mp4`,
+        ? `/project/mobile-review.mp4`
+        : `/project/desktop-review.mp4`,
       mediaDescription: t('projects.review.media_description'),
       title: t('projects.review.title'),
       description: t('projects.review.description'),
@@ -44,7 +44,7 @@ export function getProjectsData(
     {
       id: 'compiler',
       isVideo: false,
-      media: `/project/compiler_${currentLanguage}.webp`,
+      media: `/project/compiler-${currentLanguage}.webp`,
       mediaDescription: t('projects.compiler.media_description'),
       title: t('projects.compiler.title'),
       description: t('projects.compiler.description'),
@@ -71,7 +71,7 @@ export function getProjectsData(
     {
       id: 'distribu_calcul',
       isVideo: false,
-      media: '/project/distribuCalcul.webp',
+      media: '/project/distribu-calcul.webp',
       mediaDescription: t('projects.distribu_calcul.media_description'),
       title: t('projects.distribu_calcul.title'),
       description: t('projects.distribu_calcul.description'),
@@ -87,7 +87,7 @@ export function getProjectsData(
     {
       id: 'dodge_run',
       isVideo: false,
-      media: '/project/dodgeRun.png',
+      media: '/project/dodge-run.png',
       mediaDescription: t('projects.dodge_run.media_description'),
       title: t('projects.dodge_run.title'),
       description: t('projects.dodge_run.description'),

@@ -15,7 +15,7 @@ import { CONSTANTS } from './utils/constants';
 export default function App() {
   const { t } = useLanguage();
   const isDarkMode = getInitialDarkMode();
-  const device = getInitialIsMobile() ? 'mobile_hero' : 'hero';
+  const device = getInitialIsMobile() ? 'mobile-hero' : 'desktop-hero';
 
   return (
     <HelmetProvider>
@@ -34,19 +34,19 @@ export default function App() {
         />
         <meta property="og:description" content={t('description')} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/preview.jpg" />
+        <meta property="og:image" content="/site-preview.png" />
         <meta property="og:url" content={CONSTANTS.domain} />
         <link
           rel="preload"
           as="image"
-          href={`/hero/${device}${isDarkMode ? '_dark' : ''}.webp`}
+          href={`/hero/${device}${isDarkMode ? '-dark' : ''}.webp`}
           fetchPriority="high"
           type="image/webp"
         />
         <link
           rel="prefetch"
           as="image"
-          href={`/hero/${device}${isDarkMode ? '' : '_dark'}.webp`}
+          href={`/hero/${device}${isDarkMode ? '' : '-dark'}.webp`}
           type="image/webp"
         />
       </Helmet>

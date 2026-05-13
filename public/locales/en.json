@@ -29,7 +29,7 @@
     "languages": "Languages",
     "tools": "Tools"
   },
-  "copy-right": "All rights reserved",
+  "copyright": "All rights reserved",
   "description": "Welcome to my portfolio, a space where I centralize my projects, my resume, and various ways to get to know me.",
   "job": "Fullstack Developer",
   "lang": {
@@ -41,42 +41,42 @@
     "compiler": {
       "description": "This project translates a subset of the C language into executable assembly code (NASM).",
       "features": {
-        "amd64_code": "Generation of code compliant with AMD64 conventions",
+        "amd64Code": "Generation of code compliant with AMD64 conventions",
         "ast": "Construction and traversal of an abstract syntax tree (AST)",
-        "lex_syntax": "Lexical and syntactic analysis of the TPC language",
-        "test_coverage": "Implementation of tests covering all known scenarios: success, syntax errors, semantic errors, and warnings.",
-        "test_report": "Automated and centralized generation of test reports."
+        "lexSyntax": "Lexical and syntactic analysis of the TPC language",
+        "testCoverage": "Implementation of tests covering all known scenarios: success, syntax errors, semantic errors, and warnings.",
+        "testReport": "Automated and centralized generation of test reports."
       },
-      "media_description": "Diagram of the compiler project workflow: a .tcp file is lexically and syntactically analyzed using Flex and Bison to produce an abstract syntax tree, then converted into assembly code (.asm) by a C program.",
+      "mediaDescription": "Diagram of the compiler project workflow: a .tcp file is lexically and syntactically analyzed using Flex and Bison to produce an abstract syntax tree, then converted into assembly code (.asm) by a C program.",
       "title": "Compiler"
     },
-    "distribu_calcul": {
+    "distribuCalcul": {
       "description": "TCP-based distributed system for delegating and executing intensive computations across a network of machines.",
       "features": {
         "architecture": "Distributed architecture with parent/child management between machines",
-        "connection_handling": "Handling connections, disconnections, and failures without data loss",
-        "distributed_execution": "Distributed execution of conjectures over value ranges",
-        "non_blocking": "Non-blocking download of JARs containing algorithms",
+        "connectionHandling": "Handling connections, disconnections, and failures without data loss",
+        "distributedExecution": "Distributed execution of conjectures over value ranges",
+        "nonBlocking": "Non-blocking download of JARs containing algorithms",
         "results": "Centralization of results into a file"
       },
-      "media_description": "Illustration of a distributed system",
+      "mediaDescription": "Illustration of a distributed system",
       "title": "DistribuMath"
     },
-    "dodge_run": {
+    "dodgeRun": {
       "description": "A small real-time game where the player controls a character. This mini-project demonstrates the practical use of data structures to determine the execution order of events, including the use of a priority queue to schedule events.",
-      "media_description": "Image of the DodgeRun game",
+      "mediaDescription": "Image of the DodgeRun game",
       "title": "DodgeRun"
     },
     "review": {
       "description": "This project allows users to submit Java code and unit tests to receive reviews from other users. The platform provides features for tracking, voting, and commenting on code and reviews.",
       "features": {
         "collaboration": "Collaboration in a team of 5 using Agile Scrum methodology",
-        "mvc_role": "MVC architecture with role-based access control",
+        "mvcRole": "MVC architecture with role-based access control",
         "secure": "Secure authentication system and user data protection",
         "setup": "Application and database configuration",
         "test": "Microservice for safely executing unit tests"
       },
-      "media_description": "Video demonstrating the use of a code review platform: a user browses a list of published code, sorts it by date, views code in detail, runs associated tests, then logs in to publish code, vote, follow other users, and add a review by reusing a previous one.",
+      "mediaDescription": "Video demonstrating the use of a code review platform: a user browses a list of published code, sorts it by date, views code in detail, runs associated tests, then logs in to publish code, vote, follow other users, and add a review by reusing a previous one.",
       "title": "Review"
     }
   },

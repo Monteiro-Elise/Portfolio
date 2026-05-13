@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="py-8 border-t bg-primary border-accent text-text-primary">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm">
-          © 2026 {CONSTANTS.name}. {t('copy-right')}.
+          © 2026 {CONSTANTS.name}. {t('copyright')}.
         </p>
       </div>
     </footer>

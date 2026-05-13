@@ -4,7 +4,7 @@ import InViewReveal from '../../components/InViewReveal';
 import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
-import Nav from './Nav';
+import HeaderNav from './HeaderNav';
 import { useNav } from './useNav';
 
 export default function Header() {
@@ -31,7 +31,7 @@ export default function Header() {
           {/* Navigation */}
           <div className="flex items-center justify-center gap-3">
             {/* DesktopNavigation */}
-            <Nav
+            <HeaderNav
               id="desktop-nav"
               ariaLabel="desktop navigation"
               className="desktop-nav hidden-mobile"
@@ -56,7 +56,7 @@ export default function Header() {
         {/* MobileNavigation */}
         <div ref={menuRef}>
           {isMobileNavMenuOpen && (
-            <Nav
+            <HeaderNav
               id="mobile-nav"
               ariaLabel="mobile navigation"
               className="mobile-nav show-mobile"

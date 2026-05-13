@@ -1,14 +1,19 @@
 import { useLanguage } from '../../hooks/useLanguage';
 import { CONSTANTS } from '../../utils/constants';
 
-type NavProps = {
+type HeaderNavProps = {
   id: string;
   ariaLabel: string;
   className: string;
   closeMenu: () => void;
 };
 
-export default function Nav({ id, ariaLabel, closeMenu, className }: NavProps) {
+export default function HeaderNav({
+  id,
+  ariaLabel,
+  closeMenu,
+  className,
+}: HeaderNavProps) {
   const { t } = useLanguage();
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>

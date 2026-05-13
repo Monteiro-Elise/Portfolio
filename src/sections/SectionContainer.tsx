@@ -4,19 +4,19 @@ import DiagonalSeparator from '../components/DiagonalSeparator';
 import InViewReveal from '../components/InViewReveal';
 import { useLanguage } from '../hooks/useLanguage';
 
-type LayoutSectionProps = {
+type SectionContainerProps = {
   id: string;
   index: number;
   total: number;
   children: ReactNode;
 };
 
-export default function LayoutSection({
+export default function SectionContainer({
   id,
   index,
   total,
   children,
-}: LayoutSectionProps) {
+}: SectionContainerProps) {
   const { t } = useLanguage();
   const colors = ['bg-primary', 'bg-secondary'];
   const bg = colors[index % 2];

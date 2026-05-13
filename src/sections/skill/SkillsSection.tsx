@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import Reveal from '../../components/Reveal';
+import InViewReveal from '../../components/InViewReveal';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
 import { getSkillsData } from './skills.data';
@@ -15,14 +15,17 @@ export default function SkillsSection() {
   return (
     <ul className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
       {skillsData.map((category, index) => (
-        <Reveal key={index} delay={500 + (isMobile ? 0 : (index % 2) * 300)}>
+        <InViewReveal
+          key={index}
+          delay={500 + (isMobile ? 0 : (index % 2) * 300)}
+        >
           <li>
             <SkillsCategory
               category={category.category}
               skills={category.skills}
             />
           </li>
-        </Reveal>
+        </InViewReveal>
       ))}
     </ul>
   );

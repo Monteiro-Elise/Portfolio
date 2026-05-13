@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import Reveal from '../components/Reveal';
+import InViewReveal from '../components/InViewReveal';
 import { useLanguage } from '../hooks/useLanguage';
 
 const AboutSection = memo(function AboutSection() {
@@ -15,7 +15,7 @@ const AboutSection = memo(function AboutSection() {
   };
 
   return (
-    <Reveal delay={200}>
+    <InViewReveal delay={200}>
       <div className="section-content">
         <div className="text-lg leading-relaxed space-y-8">
           <p>{aboutSection.construction}</p>
@@ -26,7 +26,7 @@ const AboutSection = memo(function AboutSection() {
           <p>{aboutSection.contact}</p>
         </div>
       </div>
-    </Reveal>
+    </InViewReveal>
   );
 });
 

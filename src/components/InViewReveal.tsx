@@ -1,16 +1,19 @@
 import { type ReactNode } from 'react';
 import { useRef } from 'react';
 
-import { useVisibility } from '../hooks/useVisibility';
+import { useFirstInView } from '../hooks/useFirstInView';
 
-type RevealProps = {
+type InViewRevealProps = {
   children: ReactNode;
   delay?: number;
 };
 
-export default function Reveal({ children, delay = 0 }: RevealProps) {
+export default function InViewReveal({
+  children,
+  delay = 0,
+}: InViewRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isVisible = useVisibility(ref, { threshold: 0.15 });
+  const isVisible = useFirstInView(ref, { threshold: 0.15 });
 
   return (
     <div

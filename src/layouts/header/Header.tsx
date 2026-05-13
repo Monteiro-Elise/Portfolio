@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import Reveal from '../../components/Reveal';
+import InViewReveal from '../../components/InViewReveal';
 import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
@@ -25,8 +25,8 @@ export default function Header() {
         isVisible || isMobileNavMenuOpen ? 'translate-y-0' : '-translate-y-full'
       } shadow`}
     >
-      {/* Avoid Reveal on Header wrapper due to scroll animation conflicts */}
-      <Reveal delay={300}>
+      {/* Avoid InViewReveal on Header wrapper due to scroll animation conflicts */}
+      <InViewReveal delay={300}>
         <div className="flex justify-between py-1 sm:py-0">
           {/* Navigation */}
           <div className="flex items-center justify-center gap-3">
@@ -64,7 +64,7 @@ export default function Header() {
             />
           )}
         </div>
-      </Reveal>
+      </InViewReveal>
     </header>
   );
 }

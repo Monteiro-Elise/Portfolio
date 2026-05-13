@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
 
-import Reveal from '../../components/Reveal';
+import InViewReveal from '../../components/InViewReveal';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useVisibility } from '../../hooks/useVisibility';
@@ -25,7 +25,7 @@ export default function ProjectItem({
     <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
       <div className={`project-container ${contentPosition}`}>
         <figure className="project-media">
-          <Reveal delay={isMobile ? 200 : 400}>
+          <InViewReveal delay={isMobile ? 200 : 400}>
             {project.isVideo ? (
               <>
                 <p id={`project-${project.id}-video-desc`} className="sr-only">
@@ -55,10 +55,10 @@ export default function ProjectItem({
                 className="w-full h-auto rounded-lg"
               />
             )}
-          </Reveal>
+          </InViewReveal>
         </figure>
         <div className={`project-content ${contentPosition}`}>
-          <Reveal delay={100}>
+          <InViewReveal delay={100}>
             <h3 className="py-4">{project.title}</h3>
             <p className="text-center">
               <b>{project.description}</b>
@@ -109,7 +109,7 @@ export default function ProjectItem({
                 )}
               </div>
             </div>
-          </Reveal>
+          </InViewReveal>
         </div>
       </div>
     </article>

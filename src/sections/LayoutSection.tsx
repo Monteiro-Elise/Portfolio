@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 import DiagonalSeparator from '../components/DiagonalSeparator';
-import Reveal from '../components/Reveal';
+import InViewReveal from '../components/InViewReveal';
 import { useLanguage } from '../hooks/useLanguage';
 
 type LayoutSectionProps = {
@@ -31,11 +31,11 @@ export default function LayoutSection({
         className={`py-20 ${bg}`}
       >
         <div className="container mx-auto px-4">
-          <Reveal delay={200}>
+          <InViewReveal delay={200}>
             <h2 id={`title-section-${id}`} className="scroll-mt-15">
               {t(`sections.${id}`)}
             </h2>
-          </Reveal>
+          </InViewReveal>
           <div className="section-content">{children}</div>
         </div>
       </section>

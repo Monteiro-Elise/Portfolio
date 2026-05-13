@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 
 import Hero from './components/Hero';
-import Reveal from './components/Reveal';
+import InViewReveal from './components/InViewReveal';
 import { getInitialDarkMode } from './hooks/useDarkMode';
 import { getInitialIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
@@ -53,9 +53,9 @@ export default function App() {
       <div className="min-h-screen bg-primary">
         <Header />
         <main>
-          <Reveal delay={100}>
+          <InViewReveal delay={100}>
             <Hero />
-          </Reveal>
+          </InViewReveal>
           {CONSTANTS.sections.map((section, index) => {
             const Component = section.component;
             return (

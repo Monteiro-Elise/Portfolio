@@ -3,13 +3,13 @@ import { useState } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { useScrollVisibility } from './../hooks/useScrollVisibility';
+import { useScrollDirection } from '../hooks/useScrollDirection';
 
 export default function LanguageSwitcher() {
   const { t, currentLanguage, changeLanguage, languages, isLanguage } =
     useLanguage();
   const [open, setOpen] = useState(false);
-  const { isVisible } = useScrollVisibility();
+  const { scrollDirection } = useScrollDirection();
   const handleLanguageChange = (lang: string) => {
     if (!isLanguage(lang)) return;
     changeLanguage(lang);
@@ -38,7 +38,7 @@ export default function LanguageSwitcher() {
       <Content>
         <div
           id="language-menu"
-          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${scrollDirection === 'up' ? 'translate-y-0' : '-translate-y-full'}`}
         >
           {languages.map((lang, index) => (
             <button

@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 
 import InViewReveal from '../../components/InViewReveal';
-import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useMobile } from '../../hooks/useMobile';
 import { getSkillsData } from './skills.data';
 import SkillsCategory from './SkillsCategory';
 
 export default function SkillsSection() {
   const { t } = useLanguage();
-  const isMobile = useIsMobile();
+  const isMobile = useMobile();
 
   const skillsData = useMemo(() => getSkillsData(t), [t]);
 

@@ -1,13 +1,13 @@
 import { useMemo } from 'react';
 
-import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
+import { useMobile } from '../../hooks/useMobile';
 import ProjectItem from './ProjectItem';
 import { getProjectsData } from './projects.data';
 
 export default function ProjectsSection() {
   const { t, currentLanguage } = useLanguage();
-  const isMobile = useIsMobile();
+  const isMobile = useMobile();
   const projects = useMemo(
     () => getProjectsData(t, currentLanguage, isMobile),
     [t, currentLanguage, isMobile]

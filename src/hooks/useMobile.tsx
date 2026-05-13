@@ -8,7 +8,7 @@ export function getInitialIsMobile(): boolean {
   return window.matchMedia?.(MOBILE_QUERY).matches;
 }
 
-export function useIsMobile() {
+export function useMobile() {
   const [isMobile, setIsMobile] = useState(getInitialIsMobile);
 
   useEffect(() => {

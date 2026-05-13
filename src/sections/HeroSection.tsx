@@ -3,7 +3,7 @@ import { FiMail, FiPhone } from 'react-icons/fi';
 import { useLanguage } from '../hooks/useLanguage';
 import { CONSTANTS } from '../utils/constants';
 
-export default function Hero() {
+export default function HeroSection() {
   const { t, currentLanguage } = useLanguage();
   return (
     <section id="hero" className="h-32 md:h-54 bg-hero bg-cover bg-center">

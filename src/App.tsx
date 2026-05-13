@@ -2,13 +2,13 @@ import { Suspense } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { HelmetProvider } from 'react-helmet-async';
 
-import Hero from './components/Hero';
 import InViewReveal from './components/InViewReveal';
 import { getInitialDarkMode } from './hooks/useDarkMode';
 import { useLanguage } from './hooks/useLanguage';
 import { getInitialIsMobile } from './hooks/useMobile';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
+import HeroSection from './sections/HeroSection';
 import SectionContainer from './sections/SectionContainer';
 import { CONSTANTS } from './utils/constants';
 
@@ -54,7 +54,7 @@ export default function App() {
         <Header />
         <main>
           <InViewReveal delay={100}>
-            <Hero />
+            <HeroSection />
           </InViewReveal>
           {CONSTANTS.sections.map((section, index) => {
             const Component = section.component;

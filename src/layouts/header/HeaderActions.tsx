@@ -9,13 +9,13 @@ import { CONSTANTS } from '../../utils/constants';
 
 export default function HeaderActions() {
   const { t, currentLanguage } = useLanguage();
-  const cvHref = `/cv/CV_Elise_MONTEIRO_${currentLanguage}.pdf`;
+  const resumeHref = `/resume/Resume-Elise-MONTEIRO-${currentLanguage}.pdf`;
 
   return (
     <>
-      {/* Download CV Button */}
+      {/* Download Resume Button */}
       <a
-        href={cvHref}
+        href={resumeHref}
         download={`${CONSTANTS.name} ${t(`resume`)}.pdf`}
         className="icon-btn show-pc"
         aria-label={t('aria-label.resume')}

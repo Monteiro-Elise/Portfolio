@@ -1,6 +1,6 @@
 import { type RefObject, useEffect, useState } from 'react';
 
-export function useNav<T extends HTMLElement, U extends HTMLElement>({
+export function useMobileNav<T extends HTMLElement, U extends HTMLElement>({
   buttonRef,
   menuRef,
 }: {

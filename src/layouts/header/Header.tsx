@@ -5,12 +5,12 @@ import { useScrollVisibility } from './../../hooks/useScrollVisibility';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
 import HeaderNav from './HeaderNav';
-import { useNav } from './useNav';
+import { useMobileNav } from './useMobileNav';
 
 export default function Header() {
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
-  const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useNav({
+  const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useMobileNav({
     buttonRef,
     menuRef,
   });

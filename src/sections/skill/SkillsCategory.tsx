@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import { useLanguage } from '../../hooks/useLanguage';
-import type { Category } from './skills.type';
+import type { Category } from './skills.types';
 
 export default function SkillsCategory({ category, skills }: Category) {
   const { t } = useLanguage();

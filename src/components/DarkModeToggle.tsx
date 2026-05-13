@@ -3,13 +3,13 @@ import { FiMoon, FiSun } from 'react-icons/fi';
 import { useDarkMode } from '../hooks/useDarkMode';
 import { useLanguage } from '../hooks/useLanguage';
 
-export default function ToggleDarkMode() {
+export default function DarkModeToggle() {
   const { t } = useLanguage();
-  const { toggleDarkMode } = useDarkMode();
+  const { darkModeToggle } = useDarkMode();
 
   return (
     <button
-      onClick={toggleDarkMode}
+      onClick={darkModeToggle}
       className="icon-btn"
       aria-label={t('aria-label.theme')}
     >

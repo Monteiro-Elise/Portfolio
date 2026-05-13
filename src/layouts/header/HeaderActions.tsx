@@ -2,8 +2,8 @@ import { FaLinkedin } from 'react-icons/fa6';
 import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 
+import DarkModeToggle from '../../components/DarkModeToggle';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
-import ToggleDarkMode from '../../components/ToggleDarkMode';
 import { useLanguage } from '../../hooks/useLanguage';
 import { CONSTANTS } from '../../utils/constants';
 
@@ -54,7 +54,7 @@ export default function HeaderActions() {
         <FiMail className="icon-header" aria-hidden="true" />
       </a>
 
-      <ToggleDarkMode />
+      <DarkModeToggle />
 
       <LanguageSwitcher />
     </>

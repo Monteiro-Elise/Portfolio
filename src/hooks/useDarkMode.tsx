@@ -14,7 +14,7 @@ export function getInitialDarkMode(): boolean {
 export function useDarkMode() {
   const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
 
-  const toggleDarkMode = useCallback(() => {
+  const darkModeToggle = useCallback(() => {
     setIsDarkMode((prev) => !prev);
   }, []);
 
@@ -39,5 +39,5 @@ export function useDarkMode() {
     return () => window.removeEventListener('storage', onStorage);
   }, []);
 
-  return { isDarkMode, toggleDarkMode };
+  return { isDarkMode, darkModeToggle };
 }

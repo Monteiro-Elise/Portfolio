@@ -1,4 +1,4 @@
-import type { Project } from './projects.type';
+import type { Project } from './projects.types';
 
 export function getProjectsData(
   t: (key: string) => string,

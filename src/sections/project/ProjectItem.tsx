@@ -6,7 +6,7 @@ import Reveal from '../../components/Reveal';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useVisibility } from '../../hooks/useVisibility';
-import type { Project } from './projects.type';
+import type { Project } from './projects.types';
 
 export default function ProjectItem({
   isTextRight,

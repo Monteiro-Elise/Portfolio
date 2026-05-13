@@ -3,9 +3,9 @@ import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
 
 import InViewReveal from '../../components/InViewReveal';
+import { useFirstInView } from '../../hooks/useFirstInView';
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { useLanguage } from '../../hooks/useLanguage';
-import { useVisibility } from '../../hooks/useVisibility';
 import type { Project } from './projects.types';
 
 export default function ProjectItem({
@@ -18,7 +18,7 @@ export default function ProjectItem({
   const contentPosition = isTextRight ? 'right' : 'left';
   const { t } = useLanguage();
   const refVideo = useRef<HTMLVideoElement>(null);
-  const isVisible = useVisibility(refVideo, { rootMargin: '200px' });
+  const isVisible = useFirstInView(refVideo, { rootMargin: '200px' });
   const isMobile = useIsMobile();
 
   return (

@@ -8,8 +8,8 @@ import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
 
 export default function HeaderActions() {
-  const { t, currentLanguage } = useLanguage();
-  const resumeHref = `/resume/Resume-Elise-MONTEIRO-${currentLanguage}.pdf`;
+  const { t, language } = useLanguage();
+  const resumeHref = `/resume/Resume-Elise-MONTEIRO-${language}.pdf`;
 
   return (
     <>

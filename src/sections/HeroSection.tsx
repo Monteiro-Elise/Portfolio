@@ -4,7 +4,7 @@ import { appConfig } from '../config/app.config';
 import { useLanguage } from '../hooks/useLanguage';
 
 export default function HeroSection() {
-  const { t, currentLanguage } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section id="hero" className="h-32 md:h-54 bg-hero bg-cover bg-center">
       <div className="relative z-10 container mx-auto px-4 pt-1 md:pt-4">
@@ -17,7 +17,7 @@ export default function HeroSection() {
             <div className="flex items-center justify-end gap-2 text-white">
               <FiPhone className="icon-decoration" aria-hidden="true" />
               <span className="text-sm md:text-base">
-                {currentLanguage === 'fr'
+                {language === 'fr'
                   ? appConfig.contact.localPhone
                   : appConfig.contact.internationalPhone}
               </span>

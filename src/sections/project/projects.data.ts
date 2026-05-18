@@ -2,7 +2,7 @@ import type { Project } from './projects.types';
 
 export function getProjectsData(
   t: (key: string) => string,
-  currentLanguage: string,
+  language: string,
   isMobile: boolean
 ): Project[] {
   return [
@@ -44,7 +44,7 @@ export function getProjectsData(
     {
       id: 'compiler',
       isVideo: false,
-      media: `/project/compiler-${currentLanguage}.webp`,
+      media: `/project/compiler-${language}.webp`,
       mediaDescription: t('projects.compiler.mediaDescription'),
       title: t('projects.compiler.title'),
       description: t('projects.compiler.description'),

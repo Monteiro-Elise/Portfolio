@@ -7,12 +7,12 @@ type Language = (typeof appConfig.i18n.supportedLanguages)[number];
 
 export function useLanguage() {
   const { i18n, t } = useTranslation();
-  const isLanguage = (value: string): value is Language =>
+  const isSupportedLanguage = (value: string): value is Language =>
     (appConfig.i18n.supportedLanguages as readonly string[]).includes(value);
 
   const changeLanguage = useCallback(
     (lang: Language) => {
-      if (lang === i18n.language || !isLanguage(lang)) return;
+      if (lang === i18n.language || !isSupportedLanguage(lang)) return;
       i18n.changeLanguage(lang);
     },
     [i18n]
@@ -29,7 +29,7 @@ export function useLanguage() {
       if (
         e.key !== appConfig.i18n.languageStorageKey ||
         !e.newValue ||
-        !isLanguage(e.newValue)
+        !isSupportedLanguage(e.newValue)
       ) {
         return;
       }
@@ -42,9 +42,9 @@ export function useLanguage() {
 
   return {
     t,
-    currentLanguage: i18n.language,
-    languages: appConfig.i18n.supportedLanguages,
+    language: i18n.language,
+    supportedLanguages: appConfig.i18n.supportedLanguages,
     changeLanguage,
-    isLanguage,
+    isSupportedLanguage,
   };
 }

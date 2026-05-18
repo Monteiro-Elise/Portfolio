@@ -6,11 +6,11 @@ import ProjectItem from './ProjectItem';
 import { getProjectsData } from './projects.data';
 
 export default function ProjectsSection() {
-  const { t, currentLanguage } = useLanguage();
+  const { t, language } = useLanguage();
   const isMobile = useMobile();
   const projects = useMemo(
-    () => getProjectsData(t, currentLanguage, isMobile),
-    [t, currentLanguage, isMobile]
+    () => getProjectsData(t, language, isMobile),
+    [t, language, isMobile]
   );
 
   return (

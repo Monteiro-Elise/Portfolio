@@ -1,5 +1,5 @@
+import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
-import { CONSTANTS } from '../../utils/constants';
 
 type HeaderNavProps = {
   id: string;
@@ -18,7 +18,7 @@ export default function HeaderNav({
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
       <ul>
-        {CONSTANTS.sections.map((section, index) => (
+        {appConfig.sections.map((section, index) => (
           <li key={index}>
             <a
               href={`#title-section-${section.id}`}

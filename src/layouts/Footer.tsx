@@ -1,5 +1,5 @@
+import { appConfig } from '../config/app.config';
 import { useLanguage } from '../hooks/useLanguage';
-import { CONSTANTS } from '../utils/constants';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="py-8 border-t bg-primary border-accent text-text-primary">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm">
-          © 2026 {CONSTANTS.name}. {t('copyright')}.
+          © 2026 {appConfig.name}. {t('copyright')}.
         </p>
       </div>
     </footer>

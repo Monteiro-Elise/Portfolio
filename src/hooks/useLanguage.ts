@@ -1,14 +1,14 @@
 import { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { CONSTANTS } from '../utils/constants';
+import { appConfig } from '../config/app.config';
 
-type Language = (typeof CONSTANTS.languages)[number];
+type Language = (typeof appConfig.i18n.supportedLanguages)[number];
 
 export function useLanguage() {
   const { i18n, t } = useTranslation();
   const isLanguage = (value: string): value is Language =>
-    (CONSTANTS.languages as readonly string[]).includes(value);
+    (appConfig.i18n.supportedLanguages as readonly string[]).includes(value);
 
   const changeLanguage = useCallback(
     (lang: Language) => {
@@ -27,7 +27,7 @@ export function useLanguage() {
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (
-        e.key !== CONSTANTS.languageStorageKey ||
+        e.key !== appConfig.i18n.languageStorageKey ||
         !e.newValue ||
         !isLanguage(e.newValue)
       ) {
@@ -43,7 +43,7 @@ export function useLanguage() {
   return {
     t,
     currentLanguage: i18n.language,
-    languages: CONSTANTS.languages,
+    languages: appConfig.i18n.supportedLanguages,
     changeLanguage,
     isLanguage,
   };

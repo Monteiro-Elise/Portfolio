@@ -1,7 +1,7 @@
 import { FiMail, FiPhone } from 'react-icons/fi';
 
+import { appConfig } from '../config/app.config';
 import { useLanguage } from '../hooks/useLanguage';
-import { CONSTANTS } from '../utils/constants';
 
 export default function HeroSection() {
   const { t, currentLanguage } = useLanguage();
@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 pt-1 md:pt-4">
         <div className="flex justify-end">
           <div className="max-w-lg text-right">
-            <h1>{CONSTANTS.name}</h1>
+            <h1>{appConfig.name}</h1>
             <div className="text-xl md:text-3xl mb-2 md:mb-6 text-other">
               <span>{t('job')}</span>
             </div>
@@ -18,13 +18,15 @@ export default function HeroSection() {
               <FiPhone className="icon-decoration" aria-hidden="true" />
               <span className="text-sm md:text-base">
                 {currentLanguage === 'fr'
-                  ? CONSTANTS.phoneLocal
-                  : CONSTANTS.phoneInternational}
+                  ? appConfig.contact.localPhone
+                  : appConfig.contact.internationalPhone}
               </span>
             </div>
             <div className="flex items-center justify-end gap-2 text-white">
               <FiMail className="icon-decoration" aria-hidden="true" />
-              <span className="text-sm md:text-base">{CONSTANTS.mail}</span>
+              <span className="text-sm md:text-base">
+                {appConfig.contact.email}
+              </span>
             </div>
           </div>
         </div>

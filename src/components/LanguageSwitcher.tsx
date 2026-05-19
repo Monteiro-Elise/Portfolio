@@ -25,7 +25,7 @@ export default function LanguageSwitcher() {
     <Root open={open} onOpenChange={setOpen}>
       <Trigger asChild>
         <button
-          className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hover"
+          className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hoverable"
           aria-label={
             open
               ? t('aria-label.closeLanguageMenu')

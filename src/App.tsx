@@ -15,7 +15,7 @@ import SectionContainer from './sections/SectionContainer';
 export default function App() {
   const { t } = useLanguage();
   const isDarkMode = getInitialDarkMode();
-  const device = getInitialIsMobile() ? 'mobile-hero' : 'desktop-hero';
+  const device = getInitialIsMobile() ? 'mobile' : 'desktop';
 
   return (
     <HelmetProvider>
@@ -39,14 +39,14 @@ export default function App() {
         <link
           rel="preload"
           as="image"
-          href={`/hero/${device}${isDarkMode ? '-dark' : ''}.webp`}
+          href={`/hero/hero${isDarkMode ? '-dark' : ''}-${device}.webp`}
           fetchPriority="high"
           type="image/webp"
         />
         <link
           rel="prefetch"
           as="image"
-          href={`/hero/${device}${isDarkMode ? '' : '-dark'}.webp`}
+          href={`/hero/hero${isDarkMode ? '' : '-dark'}-${device}.webp`}
           type="image/webp"
         />
       </Helmet>

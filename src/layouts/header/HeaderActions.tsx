@@ -9,7 +9,7 @@ import { useLanguage } from '../../hooks/useLanguage';
 
 export default function HeaderActions() {
   const { t, language } = useLanguage();
-  const resumeHref = `/resume/Resume-Elise-MONTEIRO-${language}.pdf`;
+  const resumeHref = `/resume/resume-elise-monteiro-${language}.pdf`;
 
   return (
     <>

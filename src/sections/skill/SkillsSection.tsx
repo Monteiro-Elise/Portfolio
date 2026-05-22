@@ -13,14 +13,14 @@ export default function SkillsSection() {
   return (
     <ul className="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-6">
       {skillsData.map((category, index) => (
-        <InViewReveal key={index} delay={300}>
-          <li>
+        <li key={index}>
+          <InViewReveal delay={300}>
             <SkillsCategory
               category={category.category}
               skills={category.skills}
             />
-          </li>
-        </InViewReveal>
+          </InViewReveal>
+        </li>
       ))}
     </ul>
   );

@@ -1,11 +1,10 @@
-import { useRef } from 'react';
 import { FaPlay } from 'react-icons/fa6';
 import { SiGithub } from 'react-icons/si';
 
 import InViewReveal from '../../components/InViewReveal';
-import { useFirstInView } from '../../hooks/useFirstInView';
 import { useLanguage } from '../../hooks/useLanguage';
 import type { Project } from './projects.types';
+import ProjectVideo from './ProjectVideo';
 
 export default function ProjectItem({
   isTextRight,
@@ -16,8 +15,6 @@ export default function ProjectItem({
 }) {
   const contentPosition = isTextRight ? 'right' : 'left';
   const { t } = useLanguage();
-  const refVideo = useRef<HTMLVideoElement>(null);
-  const isVisible = useFirstInView(refVideo, { rootMargin: '200px' });
 
   return (
     <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
@@ -25,26 +22,7 @@ export default function ProjectItem({
         <figure className="project-media">
           <InViewReveal delay={300}>
             {project.isVideo ? (
-              <>
-                <p id={`project-${project.id}-video-desc`} className="sr-only">
-                  {project.mediaDescription}
-                </p>
-                <video
-                  ref={refVideo}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="none"
-                  poster={`/project/${project.id}-preview.webp`}
-                  controls={false}
-                  className="w-full h-auto"
-                  aria-describedby={`project-${project.id}-video-desc`}
-                >
-                  {isVisible && <source src={project.media} type="video/mp4" />}
-                  {t('videoNotSupported')}
-                </video>
-              </>
+              <ProjectVideo project={project} />
             ) : (
               <img
                 src={project.media}

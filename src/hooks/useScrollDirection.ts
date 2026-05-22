@@ -18,7 +18,7 @@ export function useScrollDirection() {
           const currentScrollY = window.scrollY;
           const delta = currentScrollY - lastScrollY;
 
-          if (delta * delta >= THRESHOLD * THRESHOLD) {
+          if (Math.abs(delta) >= THRESHOLD) {
             setScrollDirection(delta < 0 ? 'up' : 'down');
             lastScrollY = currentScrollY;
           }

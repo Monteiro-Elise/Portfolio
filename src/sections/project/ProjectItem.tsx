@@ -5,7 +5,6 @@ import { SiGithub } from 'react-icons/si';
 import InViewReveal from '../../components/InViewReveal';
 import { useFirstInView } from '../../hooks/useFirstInView';
 import { useLanguage } from '../../hooks/useLanguage';
-import { useMobile } from '../../hooks/useMobile';
 import type { Project } from './projects.types';
 
 export default function ProjectItem({
@@ -19,13 +18,12 @@ export default function ProjectItem({
   const { t } = useLanguage();
   const refVideo = useRef<HTMLVideoElement>(null);
   const isVisible = useFirstInView(refVideo, { rootMargin: '200px' });
-  const isMobile = useMobile();
 
   return (
     <article className="mx-auto max-w-5xl px-4 gap-12 py-12">
       <div className={`project-container ${contentPosition}`}>
         <figure className="project-media">
-          <InViewReveal delay={isMobile ? 200 : 400}>
+          <InViewReveal delay={300}>
             {project.isVideo ? (
               <>
                 <p id={`project-${project.id}-video-desc`} className="sr-only">

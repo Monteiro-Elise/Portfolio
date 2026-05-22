@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
 
@@ -5,15 +7,10 @@ type HeaderNavProps = {
   id: string;
   ariaLabel: string;
   className: string;
-  closeMenu: () => void;
+  closeMenu?: () => void;
 };
 
-export default function HeaderNav({
-  id,
-  ariaLabel,
-  closeMenu,
-  className,
-}: HeaderNavProps) {
+function HeaderNav({ id, ariaLabel, closeMenu, className }: HeaderNavProps) {
   const { t } = useLanguage();
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
@@ -22,7 +19,7 @@ export default function HeaderNav({
           <li key={index}>
             <a
               href={`#title-section-${section.id}`}
-              onClick={() => closeMenu()}
+              onClick={() => closeMenu?.()}
               aria-label={t('aria-label.nav', {
                 section: t(`sections.${section.id}`),
               })}
@@ -35,3 +32,5 @@ export default function HeaderNav({
     </nav>
   );
 }
+
+export default memo(HeaderNav);

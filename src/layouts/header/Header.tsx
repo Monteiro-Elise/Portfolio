@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import InViewReveal from '../../components/InViewReveal';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
@@ -15,9 +15,9 @@ export default function Header() {
     buttonRef,
     menuRef,
   });
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setIsMobileNavMenuOpen(false);
-  };
+  }, [setIsMobileNavMenuOpen]);
 
   return (
     <header
@@ -37,7 +37,6 @@ export default function Header() {
               id="desktop-nav"
               ariaLabel="desktop navigation"
               className="desktop-nav hidden-mobile"
-              closeMenu={() => {}}
             />
 
             {/* MobileNavigationToggle */}

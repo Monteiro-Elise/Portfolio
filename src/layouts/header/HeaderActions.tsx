@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { FaLinkedin } from 'react-icons/fa6';
 import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
@@ -7,7 +8,7 @@ import LanguageSwitcher from '../../components/LanguageSwitcher';
 import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
 
-export default function HeaderActions() {
+function HeaderActions() {
   const { t, language } = useLanguage();
   const resumeHref = `/resume/resume-elise-monteiro-${language}.pdf`;
 
@@ -60,3 +61,5 @@ export default function HeaderActions() {
     </>
   );
 }
+
+export default memo(HeaderActions);

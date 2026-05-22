@@ -13,26 +13,26 @@ export default function LanguageSwitcher() {
     supportedLanguages,
     isSupportedLanguage,
   } = useLanguage();
-  const [open, setOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollDirection } = useScrollDirection();
   const handleLanguageChange = (lang: string) => {
     if (!isSupportedLanguage(lang)) return;
     changeLanguage(lang);
-    setOpen(false);
+    setIsMenuOpen(false);
   };
 
   return (
-    <Root open={open} onOpenChange={setOpen}>
+    <Root open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <Trigger asChild>
         <button
           className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hoverable"
           aria-label={
-            open
+            isMenuOpen
               ? t('aria-label.closeLanguageMenu')
               : t('aria-label.openLanguageMenu')
           }
           aria-controls="language-menu"
-          aria-expanded={open}
+          aria-expanded={isMenuOpen}
         >
           <FiGlobe className="w-5 h-5 sm:w-4 sm:h-4" aria-hidden="true" />
           <span>

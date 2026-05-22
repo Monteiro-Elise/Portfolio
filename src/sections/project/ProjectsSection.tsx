@@ -8,14 +8,14 @@ import { getProjectsData } from './projects.data';
 export default function ProjectsSection() {
   const { t, language } = useLanguage();
   const isMobile = useMobile();
-  const projects = useMemo(
+  const projectsData = useMemo(
     () => getProjectsData(t, language, isMobile),
     [t, language, isMobile]
   );
 
   return (
     <ul>
-      {projects.map((project, index) => (
+      {projectsData.map((project, index) => (
         <li key={index}>
           <ProjectItem isTextRight={index % 2 === 0} project={project} />
         </li>

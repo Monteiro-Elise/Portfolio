@@ -57,7 +57,7 @@ export default function App() {
             <HeroSection />
           </InViewReveal>
           {appConfig.sections.map((section, index) => {
-            const Component = section.component;
+            const SectionComponent = section.component;
             return (
               <SectionContainer
                 key={index}
@@ -66,7 +66,7 @@ export default function App() {
                 total={appConfig.sections.length}
               >
                 <Suspense>
-                  <Component />
+                  <SectionComponent />
                 </Suspense>
               </SectionContainer>
             );

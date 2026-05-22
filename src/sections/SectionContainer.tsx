@@ -18,9 +18,9 @@ export default function SectionContainer({
   children,
 }: SectionContainerProps) {
   const { t } = useLanguage();
-  const colors = ['bg-primary', 'bg-secondary'];
-  const bg = colors[index % 2];
-  const nextBg = colors[(index + 1) % 2];
+  const bgColors = ['bg-primary', 'bg-secondary'];
+  const bg = bgColors[index % 2];
+  const nextBg = bgColors[(index + 1) % 2];
   const isNotLast = index !== total - 1;
 
   return (

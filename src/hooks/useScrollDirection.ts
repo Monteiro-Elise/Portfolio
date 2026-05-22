@@ -35,5 +35,5 @@ export function useScrollDirection() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return { scrollDirection };
+  return scrollDirection;
 }

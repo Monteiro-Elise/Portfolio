@@ -8,13 +8,13 @@ import HeaderNav from './HeaderNav';
 import { useMobileNav } from './useMobileNav';
 
 export default function Header() {
+  const scrollDirection = useScrollDirection();
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useMobileNav({
     buttonRef,
     menuRef,
   });
-  const { scrollDirection } = useScrollDirection();
   const closeMenu = () => {
     setIsMobileNavMenuOpen(false);
   };

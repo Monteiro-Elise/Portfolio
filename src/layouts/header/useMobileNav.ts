@@ -53,5 +53,5 @@ export function useMobileNav<T extends HTMLElement, U extends HTMLElement>({
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobileNavMenuOpen, buttonRef, menuRef]);
-  return { setIsMobileNavMenuOpen, isMobileNavMenuOpen };
+  return { isMobileNavMenuOpen, setIsMobileNavMenuOpen };
 }

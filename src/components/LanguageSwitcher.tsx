@@ -14,7 +14,7 @@ export default function LanguageSwitcher() {
     isSupportedLanguage,
   } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { scrollDirection } = useScrollDirection();
+  const scrollDirection = useScrollDirection();
   const handleLanguageChange = (lang: string) => {
     if (!isSupportedLanguage(lang)) return;
     changeLanguage(lang);

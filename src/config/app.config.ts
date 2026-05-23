@@ -29,5 +29,8 @@ export const appConfig = {
     { id: 'skills', component: SkillsSection },
     { id: 'projects', component: ProjectsSection },
   ],
+  theme: {
+    themeStorageKey: 'theme',
+  },
   siteUrl: env.appUrl,
 } as const;

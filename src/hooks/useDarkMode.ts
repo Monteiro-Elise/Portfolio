@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import { appConfig } from '../config/app.config';
+
 export function getInitialDarkMode(): boolean {
   if (typeof window === 'undefined') return false;
   try {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem(appConfig.theme.themeStorageKey);
     if (savedTheme) return savedTheme === 'dark';
   } catch {
     //nothing
@@ -21,14 +23,17 @@ export function useDarkMode() {
   useEffect(() => {
     if (typeof document === 'undefined') return;
     document.documentElement.classList.toggle('dark', isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    localStorage.setItem(
+      appConfig.theme.themeStorageKey,
+      isDarkMode ? 'dark' : 'light'
+    );
   }, [isDarkMode]);
 
   // Sync theme mode changes across tabs.
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
       if (
-        e.key !== 'theme' ||
+        e.key !== appConfig.theme.themeStorageKey ||
         (e.newValue !== 'dark' && e.newValue !== 'light')
       ) {
         return;

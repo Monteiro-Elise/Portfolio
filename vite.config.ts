@@ -14,17 +14,5 @@ export default defineConfig(({ mode }) => {
         hostname: env.VITE_APP_URL,
       }),
     ],
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['react', 'react-dom'],
-            i18n: ['i18next', 'react-i18next'],
-            ui: ['@radix-ui/react-popover', 'react-icons'],
-            utils: ['i18next-browser-languagedetector'],
-          },
-        },
-      },
-    },
   };
 });

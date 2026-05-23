@@ -41,6 +41,7 @@ export default function SkillsCategory({ category, skills }: Category) {
                 ? t('aria-label.showLessSkills', { category })
                 : t('aria-label.showMoreSkills', { category })
             }
+            aria-expanded={isExpanded}
           >
             <ToggleIcon className="icon-action" />
           </button>

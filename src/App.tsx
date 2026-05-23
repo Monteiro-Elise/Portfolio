@@ -15,7 +15,9 @@ import { SECTIONS } from './utils/app.constants';
 export default function App() {
   const { t } = useLanguage();
   const isDarkMode = getInitialDarkMode();
-  const device = getInitialIsMobile() ? 'mobile' : 'desktop';
+  const isMobile = getInitialIsMobile();
+  const heroSrc = (isDark: boolean, isMobile: boolean) =>
+    `/hero/hero${isDark ? '-dark' : ''}-${isMobile ? 'mobile' : 'desktop'}.webp`;
 
   return (
     <HelmetProvider>
@@ -37,14 +39,14 @@ export default function App() {
         <link
           rel="preload"
           as="image"
-          href={`/hero/hero${isDarkMode ? '-dark' : ''}-${device}.webp`}
+          href={heroSrc(isDarkMode, isMobile)}
           fetchPriority="high"
           type="image/webp"
         />
         <link
           rel="prefetch"
           as="image"
-          href={`/hero/hero${isDarkMode ? '' : '-dark'}-${device}.webp`}
+          href={heroSrc(!isDarkMode, isMobile)}
           type="image/webp"
         />
       </Helmet>

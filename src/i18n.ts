@@ -29,5 +29,3 @@ i18n
       lookupLocalStorage: appConfig.i18n.languageStorageKey,
     },
   });
-
-export default i18n;

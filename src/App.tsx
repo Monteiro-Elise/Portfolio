@@ -23,8 +23,6 @@ export default function App() {
 
         <meta name="description" content={t('description')} />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <meta name="author" content={appConfig.name} />
 
         <meta

@@ -1,3 +1,4 @@
+import type { TFunction } from 'i18next';
 import { BiLogoPostgresql, BiLogoVisualStudio } from 'react-icons/bi';
 import { DiEclipse, DiJavascript1, DiRedis } from 'react-icons/di';
 import {
@@ -28,7 +29,7 @@ import {
 
 import type { Category } from './skills.types';
 
-export function getSkillsData(t: (key: string) => string): Category[] {
+export function getSkillsData(t: TFunction): Category[] {
   return [
     {
       category: t('category.languages'),

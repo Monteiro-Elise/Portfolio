@@ -1,7 +1,9 @@
+import type { TFunction } from 'i18next';
+
 import type { Project } from './projects.types';
 
 export function getProjectsData(
-  t: (key: string) => string,
+  t: TFunction,
   language: string,
   isMobile: boolean
 ): Project[] {

@@ -1,6 +1,6 @@
 import { type RefObject, useEffect, useState } from 'react';
 
-type useFirstInViewOptions = {
+type UseFirstInViewOptions = {
   threshold?: number;
   rootMargin?: string;
   root?: Element | null;
@@ -8,7 +8,7 @@ type useFirstInViewOptions = {
 
 export function useFirstInView<T extends HTMLElement>(
   ref: RefObject<T | null>,
-  options: useFirstInViewOptions = {}
+  options: UseFirstInViewOptions = {}
 ) {
   const { threshold = 0, rootMargin = '0px', root = null } = options;
   const [isVisible, setIsVisible] = useState(

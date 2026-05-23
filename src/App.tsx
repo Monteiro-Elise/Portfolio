@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 import InViewReveal from './components/InViewReveal';
 import { appConfig } from './config/app.config';

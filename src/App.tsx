@@ -10,6 +10,7 @@ import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
 import HeroSection from './sections/HeroSection';
 import SectionContainer from './sections/SectionContainer';
+import { SECTIONS } from './utils/app.constants';
 
 export default function App() {
   const { t } = useLanguage();
@@ -53,14 +54,14 @@ export default function App() {
           <InViewReveal delay={100}>
             <HeroSection />
           </InViewReveal>
-          {appConfig.sections.map((section, index) => {
+          {SECTIONS.map((section, index) => {
             const SectionComponent = section.component;
             return (
               <SectionContainer
                 key={index}
                 id={section.id}
                 index={index}
-                total={appConfig.sections.length}
+                total={SECTIONS.length}
               >
                 <Suspense>
                   <SectionComponent />

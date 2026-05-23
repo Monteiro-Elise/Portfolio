@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
+import { SECTIONS } from '../../utils/app.constants';
 
 type HeaderNavProps = {
   id: string;
@@ -15,7 +15,7 @@ function HeaderNav({ id, ariaLabel, closeMenu, className }: HeaderNavProps) {
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
       <ul>
-        {appConfig.sections.map((section, index) => (
+        {SECTIONS.map((section, index) => (
           <li key={index}>
             <a
               href={`#title-section-${section.id}`}

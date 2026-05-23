@@ -17,12 +17,6 @@
   --shadow-color-secondary: rgba(245, 73, 0, 0.24);
 }
 
-@media (max-width: 767px) {
-  :root {
-    --background-image-hero: url('/hero/hero-mobile.webp');
-  }
-}
-
 .dark {
   --color-primary: #000000;
   --color-secondary: #3c0366;
@@ -38,7 +32,10 @@
   --shadow-color-secondary: rgba(173, 70, 255, 0.5);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  :root {
+    --background-image-hero: url('/hero/hero-mobile.webp');
+  }
   .dark {
     --background-image-hero: url('/hero/hero-dark-mobile.webp');
   }

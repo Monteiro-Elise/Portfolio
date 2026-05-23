@@ -9,11 +9,13 @@
   "aria-label": {
     "closeLanguageMenu": "Fermer le menu des langues",
     "closeSectionMenu": "Fermer le menu des sections",
+    "desktopNav": "navigation pour ordinateur",
     "email": "Envoyer un email",
     "github": "Voir mon profil GitHub",
     "githubRepo": "Voir le dépôt GitHub du projet {{project}}",
     "linkedin": "Voir mon profil LinkedIn",
     "liveDemo": "Voir la démo en ligne du projet {{project}}",
+    "mobileNav": "navigation pour mobile",
     "nav": "Aller à la section {{section}}",
     "openLanguageMenu": "Ouvrir le menu des langues",
     "openSectionMenu": "Ouvrir le menu des sections",

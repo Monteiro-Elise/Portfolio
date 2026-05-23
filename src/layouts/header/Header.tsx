@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react';
 
 import InViewReveal from '../../components/InViewReveal';
+import { useLanguage } from '../../hooks/useLanguage';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
@@ -9,6 +10,7 @@ import { useMobileNav } from './useMobileNav';
 
 export default function Header() {
   const scrollDirection = useScrollDirection();
+  const { t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useMobileNav({
@@ -35,7 +37,7 @@ export default function Header() {
             {/* DesktopNavigation */}
             <HeaderNav
               id="desktop-nav"
-              ariaLabel="desktop navigation"
+              ariaLabel={t('aria-label.desktopNav')}
               className="desktop-nav hidden-mobile"
             />
 
@@ -59,7 +61,7 @@ export default function Header() {
           {isMobileNavMenuOpen && (
             <HeaderNav
               id="mobile-nav"
-              ariaLabel="mobile navigation"
+              ariaLabel={t('aria-label.mobileNav')}
               className="mobile-nav show-mobile"
               closeMenu={closeMenu}
             />

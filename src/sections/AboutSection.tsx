@@ -6,7 +6,7 @@ export default function AboutSection() {
 
   return (
     <InViewReveal delay={200}>
-      <div className="section-content">
+      <div>
         <div className="text-lg leading-relaxed space-y-8">
           <p>{t('about.construction')}</p>
           <p>

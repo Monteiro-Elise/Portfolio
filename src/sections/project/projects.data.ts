@@ -1,8 +1,10 @@
-import type { Project } from './projects.type';
+import type { TFunction } from 'i18next';
+
+import type { Project } from './projects.types';
 
 export function getProjectsData(
-  t: (key: string) => string,
-  currentLanguage: string,
+  t: TFunction,
+  language: string,
   isMobile: boolean
 ): Project[] {
   return [
@@ -10,15 +12,15 @@ export function getProjectsData(
       id: 'review',
       isVideo: true,
       media: isMobile
-        ? `/project/mobile_review.mp4`
-        : `/project/desktop_review.mp4`,
-      mediaDescription: t('projects.review.media_description'),
+        ? `/project/review-mobile.mp4`
+        : `/project/review-desktop.mp4`,
+      mediaDescription: t('projects.review.mediaDescription'),
       title: t('projects.review.title'),
       description: t('projects.review.description'),
       features: [
         t('projects.review.features.collaboration'),
         t('projects.review.features.setup'),
-        t('projects.review.features.mvc_role'),
+        t('projects.review.features.mvcRole'),
         t('projects.review.features.secure'),
         t('projects.review.features.test'),
       ],
@@ -44,16 +46,16 @@ export function getProjectsData(
     {
       id: 'compiler',
       isVideo: false,
-      media: `/project/compiler_${currentLanguage}.webp`,
-      mediaDescription: t('projects.compiler.media_description'),
+      media: `/project/compiler-${language}.webp`,
+      mediaDescription: t('projects.compiler.mediaDescription'),
       title: t('projects.compiler.title'),
       description: t('projects.compiler.description'),
       features: [
-        t('projects.compiler.features.lex_syntax'),
+        t('projects.compiler.features.lexSyntax'),
         t('projects.compiler.features.ast'),
-        t('projects.compiler.features.amd64_code'),
-        t('projects.compiler.features.test_coverage'),
-        t('projects.compiler.features.test_report'),
+        t('projects.compiler.features.amd64Code'),
+        t('projects.compiler.features.testCoverage'),
+        t('projects.compiler.features.testReport'),
       ],
       skills: [
         'C',
@@ -71,26 +73,26 @@ export function getProjectsData(
     {
       id: 'distribu_calcul',
       isVideo: false,
-      media: '/project/distribuCalcul.webp',
-      mediaDescription: t('projects.distribu_calcul.media_description'),
-      title: t('projects.distribu_calcul.title'),
-      description: t('projects.distribu_calcul.description'),
+      media: '/project/distribucalcul.webp',
+      mediaDescription: t('projects.distribuCalcul.mediaDescription'),
+      title: t('projects.distribuCalcul.title'),
+      description: t('projects.distribuCalcul.description'),
       features: [
-        t('projects.distribu_calcul.features.architecture'),
-        t('projects.distribu_calcul.features.distributed_execution'),
-        t('projects.distribu_calcul.features.connection_handling'),
-        t('projects.distribu_calcul.features.results'),
-        t('projects.distribu_calcul.features.non_blocking'),
+        t('projects.distribuCalcul.features.architecture'),
+        t('projects.distribuCalcul.features.distributedExecution'),
+        t('projects.distribuCalcul.features.connectionHandling'),
+        t('projects.distribuCalcul.features.results'),
+        t('projects.distribuCalcul.features.nonBlocking'),
       ],
       skills: ['Java', 'TCP', 'IP', 'Threads', 'Jar', 'RFC', 'JUnit', 'Gitlab'],
     },
     {
       id: 'dodge_run',
       isVideo: false,
-      media: '/project/dodgeRun.png',
-      mediaDescription: t('projects.dodge_run.media_description'),
-      title: t('projects.dodge_run.title'),
-      description: t('projects.dodge_run.description'),
+      media: '/project/dodgerun.png',
+      mediaDescription: t('projects.dodgeRun.mediaDescription'),
+      title: t('projects.dodgeRun.title'),
+      description: t('projects.dodgeRun.description'),
       features: [],
       skills: ['C', 'MLV', 'Makefile', 'Git', 'Redmine'],
     },

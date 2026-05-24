@@ -1,5 +1,5 @@
-import { BiLogoVisualStudio } from 'react-icons/bi';
-import { BiLogoPostgresql } from 'react-icons/bi';
+import type { TFunction } from 'i18next';
+import { BiLogoPostgresql, BiLogoVisualStudio } from 'react-icons/bi';
 import { DiEclipse, DiJavascript1, DiRedis } from 'react-icons/di';
 import {
   FaAngular,
@@ -14,8 +14,7 @@ import {
   FaReact,
   FaVuejs,
 } from 'react-icons/fa';
-import { FaC } from 'react-icons/fa6';
-import { FaGolang } from 'react-icons/fa6';
+import { FaC, FaGolang } from 'react-icons/fa6';
 import { GrMysql } from 'react-icons/gr';
 import {
   SiDjango,
@@ -28,9 +27,9 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
-import type { Category } from './skills.type';
+import type { Category } from './skills.types';
 
-export function getSkillsData(t: (key: string) => string): Category[] {
+export function getSkillsData(t: TFunction): Category[] {
   return [
     {
       category: t('category.languages'),

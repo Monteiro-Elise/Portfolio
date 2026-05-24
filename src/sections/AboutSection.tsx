@@ -1,33 +1,21 @@
-import { memo } from 'react';
-
-import Reveal from '../components/Reveal';
+import InViewReveal from '../components/InViewReveal';
 import { useLanguage } from '../hooks/useLanguage';
 
-const AboutSection = memo(function AboutSection() {
+export default function AboutSection() {
   const { t } = useLanguage();
 
-  const aboutSection = {
-    construction: t('about.construction'),
-    intro: t('about.intro'),
-    passion: t('about.passion'),
-    skills: t('about.skills'),
-    contact: t('about.contact'),
-  };
-
   return (
-    <Reveal delay={200}>
-      <div className="section-content">
+    <InViewReveal delay={200}>
+      <div>
         <div className="text-lg leading-relaxed space-y-8">
-          <p>{aboutSection.construction}</p>
+          <p>{t('about.construction')}</p>
           <p>
-            {aboutSection.intro} {aboutSection.passion}
+            {t('about.intro')} {t('about.passion')}
           </p>
-          <p>{aboutSection.skills}</p>
-          <p>{aboutSection.contact}</p>
+          <p>{t('about.skills')}</p>
+          <p>{t('about.contact')}</p>
         </div>
       </div>
-    </Reveal>
+    </InViewReveal>
   );
-});
-
-export default AboutSection;
+}

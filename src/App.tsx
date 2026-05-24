@@ -1,74 +1,77 @@
 import { Suspense } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
-import Banner from './components/Banner';
-import Reveal from './components/Reveal';
+import InViewReveal from './components/InViewReveal';
+import { appConfig } from './config/app.config';
 import { getInitialDarkMode } from './hooks/useDarkMode';
-import { getInitialIsMobile } from './hooks/useIsMobile';
 import { useLanguage } from './hooks/useLanguage';
+import { getInitialIsMobile } from './hooks/useMobile';
 import Footer from './layouts/Footer';
 import Header from './layouts/header/Header';
-import LayoutSection from './sections/LayoutSection';
-import { CONSTANTS } from './utils/constants';
+import HeroSection from './sections/HeroSection';
+import SectionContainer from './sections/SectionContainer';
+import { SECTIONS } from './utils/app.constants';
 
 export default function App() {
   const { t } = useLanguage();
   const isDarkMode = getInitialDarkMode();
-  const device = getInitialIsMobile() ? 'mobile_banner' : 'banner';
+  const isMobile = getInitialIsMobile();
+  const heroSrc = (isDark: boolean, isMobile: boolean) =>
+    `/hero/hero${isDark ? '-dark' : ''}-${isMobile ? 'mobile' : 'desktop'}.webp`;
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>{t('title', { name: CONSTANTS.name })}</title>
+        <title>{t('title', { name: appConfig.name })}</title>
 
         <meta name="description" content={t('description')} />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <meta name="author" content={CONSTANTS.name} />
+        <meta name="author" content={appConfig.name} />
 
         <meta
           property="og:title"
-          content={t('title', { name: CONSTANTS.name })}
+          content={t('title', { name: appConfig.name })}
         />
         <meta property="og:description" content={t('description')} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/preview.jpg" />
-        <meta property="og:url" content={CONSTANTS.domain} />
+        <meta
+          property="og:image"
+          content={`${appConfig.siteUrl}/site-preview.png`}
+        />
+        <meta property="og:url" content={appConfig.siteUrl} />
         <link
           rel="preload"
           as="image"
-          href={`/banner/${device}${isDarkMode ? '_dark' : ''}.webp`}
+          href={heroSrc(isDarkMode, isMobile)}
           fetchPriority="high"
           type="image/webp"
         />
         <link
           rel="prefetch"
           as="image"
-          href={`/banner/${device}${isDarkMode ? '' : '_dark'}.webp`}
+          href={heroSrc(!isDarkMode, isMobile)}
           type="image/webp"
         />
       </Helmet>
       <div className="min-h-screen bg-primary">
         <Header />
         <main>
-          <Reveal delay={100}>
-            <Banner />
-          </Reveal>
-          {CONSTANTS.sections.map((section, index) => {
-            const Component = section.component;
+          <InViewReveal delay={100}>
+            <HeroSection />
+          </InViewReveal>
+          {SECTIONS.map((section, index) => {
+            const SectionComponent = section.component;
             return (
-              <LayoutSection
+              <SectionContainer
                 key={index}
                 id={section.id}
                 index={index}
-                total={CONSTANTS.sections.length}
+                total={SECTIONS.length}
               >
                 <Suspense>
-                  <Component />
+                  <SectionComponent />
                 </Suspense>
-              </LayoutSection>
+              </SectionContainer>
             );
           })}
         </main>

@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 import { useLanguage } from '../../hooks/useLanguage';
-import type { Category } from './skills.type';
+import type { Category } from './skills.types';
 
 export default function SkillsCategory({ category, skills }: Category) {
   const { t } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
   const displayedSkills = isExpanded ? skills : skills.slice(0, 5);
   const hasMore = skills.length > 5;
-  const Icon = isExpanded ? FaChevronUp : FaChevronDown;
+  const ToggleIcon = isExpanded ? FaChevronUp : FaChevronDown;
 
   return (
     <article className="bg-primary border-accent shadow-sm flex flex-col gap-6 rounded-xl border">
@@ -19,13 +19,13 @@ export default function SkillsCategory({ category, skills }: Category) {
       <div className="px-6 pb-4">
         <ul className="px-6 pb-4 space-y-2">
           {displayedSkills.map((skill, index) => {
-            const IconComponent = skill.icon;
+            const SkillIcon = skill.icon;
             return (
               <li
                 key={index}
                 className="flex items-center gap-3 px-3 py-2 rounded-lg bg-component text-text-primary"
               >
-                <IconComponent className="icon-decoration" aria-hidden="true" />
+                <SkillIcon className="icon-decoration" aria-hidden="true" />
                 <span className="text-sm">{skill.name}</span>
               </li>
             );
@@ -41,8 +41,9 @@ export default function SkillsCategory({ category, skills }: Category) {
                 ? t('aria-label.showLessSkills', { category })
                 : t('aria-label.showMoreSkills', { category })
             }
+            aria-expanded={isExpanded}
           >
-            <Icon className="icon-action" />
+            <ToggleIcon className="icon-action" />
           </button>
         )}
       </div>

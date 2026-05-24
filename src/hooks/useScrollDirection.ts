@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const THRESHOLD = 8;
+type ScrollDirection = 'up' | 'down';
 
-export function useScrollVisibility() {
-  const [isVisible, setIsVisible] = useState(true);
+export function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState<ScrollDirection>('up');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -17,9 +18,8 @@ export function useScrollVisibility() {
           const currentScrollY = window.scrollY;
           const delta = currentScrollY - lastScrollY;
 
-          if (delta * delta >= THRESHOLD * THRESHOLD) {
-            //faster than with Math.abs
-            setIsVisible(delta < 0);
+          if (Math.abs(delta) >= THRESHOLD) {
+            setScrollDirection(delta < 0 ? 'up' : 'down');
             lastScrollY = currentScrollY;
           }
 
@@ -35,5 +35,5 @@ export function useScrollVisibility() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return { isVisible };
+  return scrollDirection;
 }

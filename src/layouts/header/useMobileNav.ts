@@ -1,6 +1,6 @@
 import { type RefObject, useEffect, useState } from 'react';
 
-export function useNav<T extends HTMLElement, U extends HTMLElement>({
+export function useMobileNav<T extends HTMLElement, U extends HTMLElement>({
   buttonRef,
   menuRef,
 }: {
@@ -13,7 +13,7 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
     if (!isMobileNavMenuOpen || !menuRef.current || !buttonRef.current) return;
     menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus();
 
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleOutsideClick = (e: MouseEvent) => {
       const target = e.target as Node;
       if (
         !menuRef.current ||
@@ -45,13 +45,13 @@ export function useNav<T extends HTMLElement, U extends HTMLElement>({
       setIsMobileNavMenuOpen(false);
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleOutsideClick);
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleOutsideClick);
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isMobileNavMenuOpen, buttonRef, menuRef]);
-  return { setIsMobileNavMenuOpen, isMobileNavMenuOpen };
+  return { isMobileNavMenuOpen, setIsMobileNavMenuOpen };
 }

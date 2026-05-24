@@ -1,22 +1,23 @@
+import { memo } from 'react';
 import { FaLinkedin } from 'react-icons/fa6';
 import { FiDownload, FiMail } from 'react-icons/fi';
 import { SiGithub } from 'react-icons/si';
 
+import DarkModeToggle from '../../components/DarkModeToggle';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
-import ToggleDarkMode from '../../components/ToggleDarkMode';
+import { appConfig } from '../../config/app.config';
 import { useLanguage } from '../../hooks/useLanguage';
-import { CONSTANTS } from '../../utils/constants';
 
-export default function HeaderActions() {
-  const { t, currentLanguage } = useLanguage();
-  const cvHref = `/cv/CV_Elise_MONTEIRO_${currentLanguage}.pdf`;
+function HeaderActions() {
+  const { t, language } = useLanguage();
+  const resumeHref = `/resume/resume-elise-monteiro-${language}.pdf`;
 
   return (
     <>
-      {/* Download CV Button */}
+      {/* Download Resume Button */}
       <a
-        href={cvHref}
-        download={`${CONSTANTS.name} ${t(`resume`)}.pdf`}
+        href={resumeHref}
+        download={`${appConfig.name} ${t(`resume`)}.pdf`}
         className="icon-btn show-pc"
         aria-label={t('aria-label.resume')}
       >
@@ -26,7 +27,7 @@ export default function HeaderActions() {
       {/* Github */}
       <a
         aria-label={t('aria-label.github')}
-        href={CONSTANTS.github}
+        href={appConfig.contact.github}
         target="_blank"
         rel="noopener noreferrer"
         className="icon-btn show-pc"
@@ -36,7 +37,7 @@ export default function HeaderActions() {
 
       {/* Linkedin */}
       <a
-        href={CONSTANTS.linkedin}
+        href={appConfig.contact.linkedin}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t('aria-label.linkedin')}
@@ -47,16 +48,18 @@ export default function HeaderActions() {
 
       {/* Mail */}
       <a
-        href={`mailto:${CONSTANTS.mail}`}
+        href={`mailto:${appConfig.contact.email}`}
         aria-label={t('aria-label.email')}
         className="icon-btn show-pc"
       >
         <FiMail className="icon-header" aria-hidden="true" />
       </a>
 
-      <ToggleDarkMode />
+      <DarkModeToggle />
 
       <LanguageSwitcher />
     </>
   );
 }
+
+export default memo(HeaderActions);

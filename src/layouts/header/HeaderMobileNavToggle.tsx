@@ -1,9 +1,10 @@
+import { memo } from 'react';
 import { MdMenu } from 'react-icons/md';
 import { RxCrossCircled } from 'react-icons/rx';
 
 import { useLanguage } from '../../hooks/useLanguage';
 
-export default function HeaderMobileNavToggle({
+function HeaderMobileNavToggle({
   isOpen,
   setIsOpen,
 }: {
@@ -32,3 +33,5 @@ export default function HeaderMobileNavToggle({
     </button>
   );
 }
+
+export default memo(HeaderMobileNavToggle);

@@ -1,23 +1,25 @@
-import { useLanguage } from '../../hooks/useLanguage';
-import { CONSTANTS } from '../../utils/constants';
+import { memo } from 'react';
 
-type NavProps = {
+import { useLanguage } from '../../hooks/useLanguage';
+import { SECTIONS } from '../../utils/app.constants';
+
+type HeaderNavProps = {
   id: string;
   ariaLabel: string;
   className: string;
-  closeMenu: () => void;
+  closeMenu?: () => void;
 };
 
-export default function Nav({ id, ariaLabel, closeMenu, className }: NavProps) {
+function HeaderNav({ id, ariaLabel, closeMenu, className }: HeaderNavProps) {
   const { t } = useLanguage();
   return (
     <nav id={id} aria-label={ariaLabel} className={className}>
       <ul>
-        {CONSTANTS.sections.map((section, index) => (
+        {SECTIONS.map((section, index) => (
           <li key={index}>
             <a
               href={`#title-section-${section.id}`}
-              onClick={() => closeMenu()}
+              onClick={() => closeMenu?.()}
               aria-label={t('aria-label.nav', {
                 section: t(`sections.${section.id}`),
               })}
@@ -30,3 +32,5 @@ export default function Nav({ id, ariaLabel, closeMenu, className }: NavProps) {
     </nav>
   );
 }
+
+export default memo(HeaderNav);

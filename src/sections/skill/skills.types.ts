@@ -1,6 +1,6 @@
 import type { ComponentType } from 'react';
 
-export type Skill = {
+type Skill = {
   name: string;
   icon: ComponentType<{ className?: string }>;
 };

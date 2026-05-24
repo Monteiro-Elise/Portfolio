@@ -3,31 +3,36 @@ import { useState } from 'react';
 import { FiGlobe } from 'react-icons/fi';
 
 import { useLanguage } from '../hooks/useLanguage';
-import { useScrollVisibility } from './../hooks/useScrollVisibility';
+import { useScrollDirection } from '../hooks/useScrollDirection';
 
 export default function LanguageSwitcher() {
-  const { t, currentLanguage, changeLanguage, languages, isLanguage } =
-    useLanguage();
-  const [open, setOpen] = useState(false);
-  const { isVisible } = useScrollVisibility();
+  const {
+    t,
+    language,
+    changeLanguage,
+    supportedLanguages,
+    isSupportedLanguage,
+  } = useLanguage();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const scrollDirection = useScrollDirection();
   const handleLanguageChange = (lang: string) => {
-    if (!isLanguage(lang)) return;
+    if (!isSupportedLanguage(lang)) return;
     changeLanguage(lang);
-    setOpen(false);
+    setIsMenuOpen(false);
   };
 
   return (
-    <Root open={open} onOpenChange={setOpen}>
+    <Root open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <Trigger asChild>
         <button
-          className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hover"
+          className="flex items-center gap-2 px-3 py-2 sm:py-1 rounded-md sm:text-sm bg-accent text-primary hoverable"
           aria-label={
-            open
+            isMenuOpen
               ? t('aria-label.closeLanguageMenu')
               : t('aria-label.openLanguageMenu')
           }
           aria-controls="language-menu"
-          aria-expanded={open}
+          aria-expanded={isMenuOpen}
         >
           <FiGlobe className="w-5 h-5 sm:w-4 sm:h-4" aria-hidden="true" />
           <span>
@@ -38,18 +43,18 @@ export default function LanguageSwitcher() {
       <Content>
         <div
           id="language-menu"
-          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`mt-2 w-32 rounded-md shadow-lg z-50 bg-primary border border-accent duration-300 ${scrollDirection === 'up' ? 'translate-y-0' : '-translate-y-full'}`}
         >
-          {languages.map((lang, index) => (
+          {supportedLanguages.map((lang, index) => (
             <button
               aria-label={t('aria-label.setLanguage', {
                 language: t(`lang.${lang}`),
               })}
-              aria-pressed={currentLanguage === lang}
+              aria-pressed={language === lang}
               key={index}
               onClick={() => handleLanguageChange(lang)}
               className={`w-full text-left px-4 py-2 sm:text-sm hover border-b-0 first:rounded-t-md last:rounded-b-md ${
-                currentLanguage === lang
+                language === lang
                   ? 'bg-accent text-primary'
                   : 'bg-component text-accent'
               }`}

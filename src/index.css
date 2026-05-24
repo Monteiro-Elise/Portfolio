@@ -12,15 +12,9 @@
   --color-text-secondary: #9f2d00;
   --color-text-tertiary: #374151;
   --color-other: #faf5ba;
-  --background-image-banner: url('/banner/banner.webp');
+  --background-image-hero: url('/hero/hero-desktop.webp');
   --shadow-color-primary: rgba(126, 42, 12, 0.24);
   --shadow-color-secondary: rgba(245, 73, 0, 0.24);
-}
-
-@media (max-width: 767px) {
-  :root {
-    --background-image-banner: url('/banner/mobile_banner.webp');
-  }
 }
 
 .dark {
@@ -33,14 +27,17 @@
   --color-text-secondary: #c995f9;
   --color-text-tertiary: #e5e7eb;
   --color-other: #d4fff5;
-  --background-image-banner: url('/banner/banner_dark.webp');
+  --background-image-hero: url('/hero/hero-dark-desktop.webp');
   --shadow-color-primary: rgba(233, 212, 255, 0.5);
   --shadow-color-secondary: rgba(173, 70, 255, 0.5);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  :root {
+    --background-image-hero: url('/hero/hero-mobile.webp');
+  }
   .dark {
-    --background-image-banner: url('/banner/mobile_banner_dark.webp');
+    --background-image-hero: url('/hero/hero-dark-mobile.webp');
   }
 }
 
@@ -64,7 +61,7 @@ section p {
   @apply text-text-tertiary;
 }
 
-.hover {
+.hoverable {
   @apply hover:opacity-70 transition-opacity cursor-pointer;
 }
 

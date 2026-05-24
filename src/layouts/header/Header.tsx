@@ -1,41 +1,44 @@
-import { useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
-import Reveal from '../../components/Reveal';
-import { useScrollVisibility } from './../../hooks/useScrollVisibility';
+import InViewReveal from '../../components/InViewReveal';
+import { useLanguage } from '../../hooks/useLanguage';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 import HeaderActions from './HeaderActions';
 import HeaderMobileNavToggle from './HeaderMobileNavToggle';
-import Nav from './Nav';
-import { useNav } from './useNav';
+import HeaderNav from './HeaderNav';
+import { useMobileNav } from './useMobileNav';
 
 export default function Header() {
+  const scrollDirection = useScrollDirection();
+  const { t } = useLanguage();
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
-  const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useNav({
+  const { setIsMobileNavMenuOpen, isMobileNavMenuOpen } = useMobileNav({
     buttonRef,
     menuRef,
   });
-  const { isVisible } = useScrollVisibility();
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     setIsMobileNavMenuOpen(false);
-  };
+  }, [setIsMobileNavMenuOpen]);
 
   return (
     <header
       className={`sticky top-0 left-0 z-50 w-full bg-component backdrop-blur-sm transition-transform duration-500 ${
-        isVisible || isMobileNavMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        scrollDirection === 'up' || isMobileNavMenuOpen
+          ? 'translate-y-0'
+          : '-translate-y-full'
       } shadow`}
     >
-      {/* Avoid Reveal on Header wrapper due to scroll animation conflicts */}
-      <Reveal delay={300}>
+      {/* Avoid InViewReveal on Header wrapper due to scroll animation conflicts */}
+      <InViewReveal delay={300}>
         <div className="flex justify-between py-1 sm:py-0">
           {/* Navigation */}
           <div className="flex items-center justify-center gap-3">
             {/* DesktopNavigation */}
-            <Nav
+            <HeaderNav
               id="desktop-nav"
-              ariaLabel="desktop navigation"
+              ariaLabel={t('aria-label.desktopNav')}
               className="desktop-nav hidden-mobile"
-              closeMenu={() => {}}
             />
 
             {/* MobileNavigationToggle */}
@@ -56,15 +59,15 @@ export default function Header() {
         {/* MobileNavigation */}
         <div ref={menuRef}>
           {isMobileNavMenuOpen && (
-            <Nav
+            <HeaderNav
               id="mobile-nav"
-              ariaLabel="mobile navigation"
+              ariaLabel={t('aria-label.mobileNav')}
               className="mobile-nav show-mobile"
               closeMenu={closeMenu}
             />
           )}
         </div>
-      </Reveal>
+      </InViewReveal>
     </header>
   );
 }

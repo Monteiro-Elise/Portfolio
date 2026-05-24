@@ -34,7 +34,10 @@ export default function App() {
         />
         <meta property="og:description" content={t('description')} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/site-preview.png" />
+        <meta
+          property="og:image"
+          content={`${appConfig.siteUrl}/site-preview.png`}
+        />
         <meta property="og:url" content={appConfig.siteUrl} />
         <link
           rel="preload"
